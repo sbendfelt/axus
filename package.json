@@ -7,10 +7,12 @@
     "test": "tests"
   },
   "dependencies": {
+    "app-root-path": "^1.0.0",
     "companion": "0.0.2",
     "immutable": "^3.7.5",
     "synchronize": "^0.9.14",
-    "unirest": "^0.4.2"
+    "unirest": "^0.4.2",
+    "walk": "^2.3.9"
   },
   "devDependencies": {
     "babel": "^5.8.23",
