@@ -7,7 +7,7 @@ Your project will need a appx.json file in the projects root. This file contains
 To import the RESTful Providers along with your module:
 
 ```js
-var test-support = require('appx-test-support');
+let test-support = require('appx-test-support');
 test-support.requireRest('../path/to/my/script');
 ```
 
@@ -18,7 +18,7 @@ in order to simulate a synchronous environment.
 Any code relying on Providers.rest will need to be wrapped as such:
 
 ```js
-var sync = require('synchronize');
+let sync = require('synchronize');
 sync.fiber(() => {
   //your code goes here
 });

@@ -1,6 +1,6 @@
 /*jshint expr: true*/
-var expect = require('chai').expect;
-var lProviders = require('../lib/providers/providers')
+let expect = require('chai').expect;
+let lProviders = require('../lib/providers/providers')
   .local
   .seed({
     '$ParcelTrackerS1': {
@@ -13,7 +13,7 @@ var lProviders = require('../lib/providers/providers')
 describe('providers', () => {
   describe('local', () => {
     describe('queryprovider', () => {
-      var x = lProviders
+      let x = lProviders
         .getQueryProvider()
         .createQuery('$ParcelTrackerS1', 310)
         .setOQL('parcelTrackingId=123')
@@ -23,7 +23,7 @@ describe('providers', () => {
         done();
       });
       it('sets hasResults properly', (done) => {
-        var {
+        let {
           hasResults, result
         } = x;
         expect(hasResults).to.be.ok;
