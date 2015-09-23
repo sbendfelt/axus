@@ -1,8 +1,8 @@
-# AppX-Test-Support
+![axus](axus.jpg)
 
 ## Running locally against the REST API
 
-Your project will need a appx.json file in the projects root. This file contains the username, password, and dataKey needed to authenticate with the service, as well as the base url of the intended service.
+Your project will need a `appx.json` file in the projects root. This file contains the username, password, and dataKey needed to authenticate with the service, as well as the base url of the intended service.
 
 To import the RESTful Providers along with your module:
 
@@ -15,7 +15,7 @@ Node assumes all `IO` to be asynchronous. However, the AppXpress Providers opera
 in a synchronous manner. AppX-Test-Support relies on [synchronize.js](http://alexeypetrushin.github.io/synchronize/docs/index.html)
 in order to simulate a synchronous environment.
 
-Any code relying on Providers.rest will need to be wrapped as such:
+Any code relying on `Providers.rest` will need to be wrapped as such:
 
 ```js
 let sync = require('synchronize');
@@ -43,19 +43,18 @@ Being able to hit the REST api is great, but not ideal for unit testing. We want
     "another oql-string" : [
 
     ]
-  },
-  ...
+  }
 }
 ```
 
 # How it works
 
-## Loading Scripts
-
 These details are abstracted away by the appx-test-support library, but in the interest of education...
 
 AppXpress Modules are not *node-aware*, and are not ES6 compliant, there is no idea of a module system.
 As a result, we cannot `require` or `import` our appx modules in the traditional sense.
+
+To be brief, we supply node a sandbox and a script to run in that sandbox. The sandbox is an object wrapping the global dependencies of the script. In our case, the sandbox merely contains the Providers, which are really the only globals available in the AppXpress platform. The context returned is bound to the  Providers instance that is present in the sandbox.
 
 The [companion](https://github.com/rockgolem/companion) module does almost exactly what we need it to, with one caveat--companion doesn't always correctly resolve
 paths when it is required from another dependency. You can check out my fork of companion and quick fix [here](https://github.com/jjdonov/companion).
