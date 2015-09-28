@@ -2,7 +2,16 @@
 
 ## Running locally against the REST API
 
-Your project will need a `appx.json` file in the projects root. This file contains the username, password, and dataKey needed to authenticate with the service, as well as the base url of the intended service.
+Your project will need a `appx.json` file in the project's root. This file contains the username, password, and dataKey needed to authenticate with the service, as well as the base url of the intended service. Here's an example `appx.json` file:
+
+```json
+{
+  "username": "john.doe@gtnexus",
+  "password": "secretcatchphrase",
+  "dataKey": "36f71b26bca202c61973809143a58f7b12fe42a8",
+  "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
+}
+```
 
 To import the RESTful Providers along with your module:
 

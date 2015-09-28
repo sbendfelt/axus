@@ -7,7 +7,7 @@ let lProviders = require('../lib/providers/providers')
       'parcelTrackingId=123': [{
         'uid': 'jjd3790'
       }]
-    }
+    },
   });
 
 describe('providers', () => {
@@ -23,10 +23,30 @@ describe('providers', () => {
         done();
       });
       it('sets hasResults properly', (done) => {
-        let {
-          hasResults, result
-        } = x;
+        let {hasResults, result} = x;
         expect(hasResults).to.be.ok;
+        done();
+      });
+    });
+
+    describe('persistenceprovider', () => {
+      let x = lProviders.getPersistenceProvider();
+      let o = {
+        type: 'sampleO'
+      };
+      it('can record saves', (done) => {
+        x.save(o);
+        let saves = x.getSaves();
+        expect(saves).to.deep.equal([o]);
+        done();
+      });
+      it('can record actions', (done) => {
+        x.processAction(o, 'Action');
+        let actions = x.getActionsToProcess();
+        expect(actions).to.deep.equal([{
+          target: o,
+          action: 'Action'
+        }]);
         done();
       });
     });
