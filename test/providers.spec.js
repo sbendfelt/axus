@@ -12,7 +12,7 @@ let lProviders = require('../lib/providers/providers')
 
 describe('providers', () => {
   describe('local', () => {
-    describe('queryprovider', () => {
+    describe('queryProvider', () => {
       let x = lProviders
         .getQueryProvider()
         .createQuery('$ParcelTrackerS1', 310)
@@ -29,7 +29,7 @@ describe('providers', () => {
       });
     });
 
-    describe('persistenceprovider', () => {
+    describe('persistenceProvider', () => {
       let x = lProviders.getPersistenceProvider();
       let o = {
         type: 'sampleO'
@@ -47,6 +47,15 @@ describe('providers', () => {
           target: o,
           action: 'Action'
         }]);
+        done();
+      });
+    });
+
+    describe('objectFactoryProvider', () => {
+      it('can record new objects', (done) => {
+        let x = lProviders.getObjectFactoryProvider();
+        let created = x.newObject('$MyType');
+        expect(x.getCreated()).to.deep.equal([created]);
         done();
       });
     });
