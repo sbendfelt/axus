@@ -30,3 +30,5 @@ node_modules
 target/
 # Generated Docs
 README.pdf
+
+desktop.ini
