@@ -59,5 +59,10 @@ describe('providers', () => {
         done();
       });
     });
+
+    describe('messageProvider', () => {
+      //TODO
+
+    });
   });
 });
