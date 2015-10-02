@@ -7,10 +7,14 @@ let lProviders = require('../lib/providers/providers')
       'parcelTrackingId=123': [{
         'uid': 'jjd3790'
       }]
-    },
+    }
   });
 
 describe('providers', () => {
+  beforeEach(() => {
+    lProviders.reset();
+  });
+
   describe('local', () => {
     describe('queryProvider', () => {
       let x = lProviders
@@ -23,7 +27,9 @@ describe('providers', () => {
         done();
       });
       it('sets hasResults properly', (done) => {
-        let {hasResults, result} = x;
+        let {
+          hasResults, result
+        } = x;
         expect(hasResults).to.be.ok;
         done();
       });
@@ -61,8 +67,23 @@ describe('providers', () => {
     });
 
     describe('messageProvider', () => {
-      //TODO
-
+      it('can log a simpel error msg', (done) => {
+        let msg = lProviders.getMessageProvider()
+          .error()
+          .suppressible(true)
+          .build();
+        expect([msg]).to.deep.equal(lProviders.getMessageProvider().getMessages());
+        done();
+      });
+      it('can log a simple info msg', (done) => {
+        let msg = lProviders.getMessageProvider()
+          .info()
+          .msgId(1)
+          .build();
+        expect([msg]).to.deep.equal(lProviders.getMessageProvider().getMessages());
+        expect(msg.msgId).to.equal(1);
+        done();
+      });
     });
   });
 });
