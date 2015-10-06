@@ -21,8 +21,10 @@ describe('appx-test-support', () => {
     done();
   });
 
-  it('correctly loads a script that has imports', (done) => {
-    let ctx = appx.requireLocal('./test/resources/libimport/jake.js');
+  it('correctly loads a script after overrideLib', (done) => {
+    let ctx = appx
+      .overrideLib('./test/resources/vanilla/')
+      .requireLocal('./test/resources/libimport/jake.js');
     expect(ctx.adventure).to.be.defined;
     done();
   });
