@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "dependencies": {
+    "app-root-dir": "^1.0.2",
     "app-root-path": "^1.0.0",
-    "companion": "file:..\\..\\..\\..\\code\\js\\node\\companion",
     "immutable": "^3.7.5",
     "synchronize": "^0.9.14",
     "unirest": "^0.4.2",
