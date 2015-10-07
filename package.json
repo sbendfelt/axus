@@ -1,7 +1,7 @@
 {
-  "name": "appx-test-support",
+  "name": "axus",
   "version": "0.0.1",
-  "description": "AppXpress wrapper for a CLI/REPL and Unit Testing",
+  "description": "AppXpress wrapper for a CLI/REPL and Unit Testing (AppXpress Unit test Support)",
   "main": "target/appx-test-support.js",
   "directories": {
     "test": "tests"
@@ -25,5 +25,9 @@
     "test": "./node_modules/.bin/mocha --compilers js:babel/register --reporter spec"
   },
   "author": "john.donovan@gtnexus.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AppXpress/axus.git"
+  },
   "license": "MIT"
 }
