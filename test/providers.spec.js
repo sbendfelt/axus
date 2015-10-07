@@ -67,7 +67,7 @@ describe('providers', () => {
     });
 
     describe('messageProvider', () => {
-      it('can log a simpel error msg', (done) => {
+      it('can log a simple error msg', (done) => {
         let msg = lProviders.getMessageProvider()
           .error()
           .suppressible(true)

@@ -64,6 +64,3 @@ AppXpress Modules are not *node-aware*, and are not ES6 compliant, there is no i
 As a result, we cannot `require` or `import` our appx modules in the traditional sense.
 
 To be brief, we supply node a sandbox and a script to run in that sandbox. The sandbox is an object wrapping the global dependencies of the script. In our case, the sandbox merely contains the Providers, which are really the only globals available in the AppXpress platform. The context returned is bound to the  Providers instance that is present in the sandbox.
-
-The [companion](https://github.com/rockgolem/companion) module does almost exactly what we need it to, with one caveat--companion doesn't always correctly resolve
-paths when it is required from another dependency. You can check out my fork of companion and quick fix [here](https://github.com/jjdonov/companion).
