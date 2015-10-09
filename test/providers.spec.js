@@ -55,6 +55,18 @@ describe('providers', () => {
         }]);
         done();
       });
+      it('can record publications', (done) => {
+        let publication = {
+          topic: 'sample topic',
+          content: {
+            uid: 'dummy'
+          }
+        };
+        x.publishOutbound(publication.content, publication.topic);
+        let publications = x.getPublications();
+        expect(publications[0]).to.deep.equal(publication);
+        done();
+      });
     });
 
     describe('objectFactoryProvider', () => {
