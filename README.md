@@ -1,5 +1,15 @@
 ![axus](axus.jpg)
 
+You might ask, “What is axus?”
+
+The short answer would be a unit testing support framework for appxpress. But the long answer is that it will aim to do a whole lot more.
+
+Providers are at the heart of AppXpress scripting. Really, you can't do anything without them. In order to provide developers with the best experience possible axus provides two implementations of the Providers -- [REST](#running-locally-against-the-rest-api) and [Local](#running-against-a-local-store).
+
+Rest Providers are great when you are just starting to develop, allowing you to query the REST API and get back real live data. Being able to do this allows you to spot mistakes early on and iterate quickly.
+
+Local Providers really shine when you already know what your data looks like, or you want to build out some unit tests to ensure that your module stays rock solid as it grows.
+
 ## Running locally against the REST API
 
 Your project will need a `appx.json` file in the project's root. This file contains the username, password, and dataKey needed to authenticate with the service, as well as the base url of the intended service. Here's an example `appx.json` file:
@@ -54,6 +64,106 @@ Being able to hit the REST api is great, but not ideal for unit testing. We want
     ]
   }
 }
+```
+
+## Sample Unit Tests with axus
+
+For this example, we will be using [mocha](https://mochajs.org/) as our unit testing framework.
+
+Suppose we have a module named `MyTestModule`, and in that module we have the following code:
+
+```js
+var Query = (function() {
+
+  var apiVersion = 310;
+
+  function queryFor(type, oql) {
+    return buildQueryPayLoad(
+      Providers
+      .getQueryProvider()
+      .createQuery(type, apiVersion)
+      .setOQL(oql).execute());
+  }
+
+  function buildQueryPayLoad(queryResult) {
+    var hasResults = false;
+    var payLoad = null;
+    if (queryResult) {
+      payLoad = queryResult.result || queryResult;
+      hasResults = payLoad.length > 0;
+    }
+    return {
+      'hasResults': hasResults,
+      'payLoad': payLoad
+    };
+  }
+
+  var emptyPayLoad = {
+    'hasResults' : false,
+    'payLoad': null
+  };
+
+  function setVersion(ver) {
+    this.apiVersion = ver;
+    return this;
+  }
+
+  //exports
+  return {
+    'emptyPayLoad':emptyPayLoad,
+    'queryFor' : queryFor,
+    'setApiVersion' : setVersion
+  };
+}());
+```
+
+A simple unit test for that code might look like:
+
+```js
+var expect = require('chai').expect;
+var sync = require('synchronize');
+var Query = require('axus')
+  .requireLocal('../modules/MyModule', 'Query', {
+    '$MyGlobalType' : {
+      'someAttr=\'someVal\'': {
+        id: 1
+      }
+    }
+  });
+
+describe('Query', function() {
+  describe('queryFor', function() {
+    it('correctly returns some results', function(done) {
+      sync.fiber(() => {
+        var result = Query.queryFor('$MyGlobalType', 'someAttr=\'someVal\'');
+        expect(result.hasResults).to.equal(true);
+        done();
+      });
+    });
+  });
+});
+```
+
+A RESTful version:
+
+```js
+var expect = require('chai').expect;
+var sync = require('synchronize');
+var Query = require('axus')
+  .requireRest('../modules/MyModule', 'Query');
+
+describe.skip('Query', function() {
+  describe('queryFor', function() {
+    it('correctly returns some results', function(done) {
+      this.timeout(10000); //give the REST service time to return
+      sync.fiber(() => {
+        var result = Query.queryFor('$MyGlobalType', 'someAttr=\'someVal\'');
+        expect(result.hasResults).to.equal(true);
+        done();
+      });
+    });
+  });
+});
 ```
 
 # How it works
