@@ -4,11 +4,17 @@ You might ask, “What is axus?”
 
 The short answer would be a unit testing support framework for appxpress. But the long answer is that it will aim to do a whole lot more.
 
-Providers are at the heart of AppXpress scripting. Really, you can't do anything without them. In order to provide developers with the best experience possible axus provides two implementations of the Providers -- [REST](#running-locally-against-the-rest-api) and [Local](#running-against-a-local-store).
+[Providers are at the heart of AppXpress scripting](https://developer.gtnexus.com/platform/scripts). Really, you can't do anything without them. In order to provide developers with the best experience possible axus provides two implementations of the Providers -- [REST](#running-locally-against-the-rest-api) and [Local](#running-against-a-local-store).
 
 Rest Providers are great when you are just starting to develop, allowing you to query the REST API and get back real live data. Being able to do this allows you to spot mistakes early on and iterate quickly.
 
 Local Providers really shine when you already know what your data looks like, or you want to build out some unit tests to ensure that your module stays rock solid as it grows.
+
+## Acquiring axus
+
+```bash
+  npm install axus
+```
 
 ## Running locally against the REST API
 
