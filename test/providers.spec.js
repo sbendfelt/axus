@@ -10,6 +10,16 @@ let lProviders = require('../lib/providers/providers')
     }
   });
 
+// let lProviders2 = require('../lib/providers/providers')
+//   .local
+//   .seed({
+//     '$ParcelTrackerS1': {
+//       'parcelTrackingId=123': {
+//         'uid': 'jjd3790'
+//       }
+//     }
+//   });
+
 describe('providers', () => {
   beforeEach(() => {
     lProviders.reset();
@@ -26,11 +36,12 @@ describe('providers', () => {
         expect(x).to.be.a('object');
         done();
       });
-      it('sets hasResults properly', (done) => {
+      it('sets result and resultInfo correctly', (done) => {
         let {
-          hasResults, result
+          result, resultInfo
         } = x;
-        expect(hasResults).to.be.ok;
+        expect(resultInfo).to.be.a('object');
+        expect(result).to.be.a('array');
         done();
       });
     });
