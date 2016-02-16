@@ -57,7 +57,13 @@ Being able to hit the REST api is great, but not ideal for unit testing. We want
   "globalType": {
     "oql-string" : [
 
-    ]
+    ],
+    "UID" : {
+
+    },
+    "another-UID" : {
+
+    }
   },
   "anotherGlobalType": {
     "another oql-string" : [
@@ -66,6 +72,8 @@ Being able to hit the REST api is great, but not ideal for unit testing. We want
   }
 }
 ```
+
+This format permits QueryProvider to resolve objects via OQL, and the PersistenceProvider to resolve obejcts by UID.
 
 # Sample Unit Tests with axus
 For this example, we will be using [mocha](https://mochajs.org/) as our unit testing framework.

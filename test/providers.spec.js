@@ -1,24 +1,18 @@
 /*jshint expr: true*/
 let expect = require('chai').expect;
+const seed = {
+  '$ParcelTrackerS1': {
+    'parcelTrackingId=123': [{
+      'uid': 'jjd3790'
+    }],
+    'a123': {
+      'attr': 'value'
+    }
+  }
+};
 let lProviders = require('../lib/providers/providers')
   .local
-  .seed({
-    '$ParcelTrackerS1': {
-      'parcelTrackingId=123': [{
-        'uid': 'jjd3790'
-      }]
-    }
-  });
-
-// let lProviders2 = require('../lib/providers/providers')
-//   .local
-//   .seed({
-//     '$ParcelTrackerS1': {
-//       'parcelTrackingId=123': {
-//         'uid': 'jjd3790'
-//       }
-//     }
-//   });
+  .seed(seed);
 
 describe('providers', () => {
   beforeEach(() => {
@@ -38,7 +32,8 @@ describe('providers', () => {
       });
       it('sets result and resultInfo correctly', (done) => {
         let {
-          result, resultInfo
+          result,
+          resultInfo
         } = x;
         expect(resultInfo).to.be.a('object');
         expect(result).to.be.a('array');
@@ -76,6 +71,13 @@ describe('providers', () => {
         x.publishOutbound(publication.content, publication.topic);
         let publications = x.getPublications();
         expect(publications[0]).to.deep.equal(publication);
+        done();
+      });
+      it('can make a fetch request', (done) => {
+        const resp = x
+          .createFetchRequest('$ParcelTrackerS1', 310, 'a123')
+          .execute();
+        expect(resp).to.equal(seed.$ParcelTrackerS1.a123);
         done();
       });
     });
