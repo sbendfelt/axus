@@ -1,9 +1,10 @@
+/*jshint expr: true*/
 let expect = require('chai').expect;
 let LocalFetchRequest = require('../lib/providers/fetch/local-fetch-request');
 let RestFetchRequest = require('../lib/providers/fetch/rest-fetch-request');
 let sync = require('synchronize');
 
-describe('restful fetch request', () => {
+describe.skip('restful fetch request', () => {
   it('can fetch', function(done) {
     this.timeout(10000); //give api some time
     const req = new RestFetchRequest({
