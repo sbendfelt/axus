@@ -61,18 +61,45 @@ describe('providers', () => {
         }]);
         done();
       });
-      it('can record publications', (done) => {
+      it('can record single target publications', (done) => {
         let publication = {
-          topic: 'sample topic',
-          content: {
+          target: {
             uid: 'dummy'
-          }
+          },
+          topic: 'single target topic'
         };
-        x.publishOutbound(publication.content, publication.topic);
+        x.publishOutbound(publication.target, publication.topic);
         let publications = x.getPublications();
         expect(publications[0]).to.deep.equal(publication);
         done();
       });
+      it('can record multi target publications', (done) => {
+        let publication = {
+          target: {
+            uid: 'dummy'
+          },
+          topic: 'multi target topic',
+          withObjects: [{
+            type: 'OrderDetail',
+            id: '123'
+          },
+          {
+            type: 'InvoiceDetail',
+            id: '123Inv'
+          }]
+        };
+        let builder = x.publishOutbound();
+        builder.topic(publication.topic);
+        builder.target(publication.target);
+        publication.withObjects.forEach(function(object) {
+          builder.withObject(object.type, object.id);
+        });
+        builder.build();
+        let publications = x.getPublications();
+        expect(publications[0]).to.deep.equal(publication);
+        done();
+      });
+
       it('can make a fetch request', (done) => {
         const resp = x
           .createFetchRequest('$ParcelTrackerS1', 310, 'a123')
