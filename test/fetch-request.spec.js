@@ -1,8 +1,17 @@
 /*jshint expr: true*/
 let expect = require('chai').expect;
+let BaseFetchRequest = require('../lib/providers/fetch/fetch-request');
 let LocalFetchRequest = require('../lib/providers/fetch/local-fetch-request');
 let RestFetchRequest = require('../lib/providers/fetch/rest-fetch-request');
 let sync = require('synchronize');
+
+describe('Base FetchRequest', () => {
+  it('exposes resource()', () => {
+    const fetchReq = new BaseFetchRequest();
+    console.log('**** ' + fetchReq.resource);
+    expect(fetchReq.resource()).to.deep.equal(fetchReq);
+  });
+});
 
 describe.skip('restful fetch request', () => {
   it('can fetch', function(done) {
@@ -30,15 +39,24 @@ describe.skip('restful fetch request', () => {
 
 describe('local fetch request', () => {
   it('throws 404 on not found', (done) => {
-    const req = new LocalFetchRequest({store: {}}, '$GlobalType', 310, 123);
+    const req = new LocalFetchRequest({
+      store: {}
+    }, '$GlobalType', 310, 123);
     expect(req.execute).to.throw(Error);
     done();
+  });
+
+  it('reveals resource()', () => {
+    const req = new LocalFetchRequest({
+      store: {}
+    }, '$GlobalType', 310, 123);
+    expect(req.resource).to.be.a('function');
   });
 
   it('returns correctly when type and uid specified', (done) => {
     const req = new LocalFetchRequest({
       store: {
-        '$GlobalType' :{
+        '$GlobalType': {
           123: {
             attr: 'value'
           }
