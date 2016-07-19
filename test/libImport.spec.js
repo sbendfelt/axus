@@ -1,7 +1,7 @@
 let expect = require('chai').expect;
-let LibImport = require('../lib/import/libImport.js');
+let LibImport = require('../lib/import/lib-import.js');
 
-describe('libImport', () => {
+describe('lib-import', () => {
   it('can read a single line, single import stmnt', (done) => {
     let scripts = ["//!import dummy.js\r\nvar jake = (() => {\r\n  return {\r\n    name: 'jake',\r\n    isADog: 'true'\r\n  };\r\n}());"];
     let imports = LibImport.scan(scripts);
