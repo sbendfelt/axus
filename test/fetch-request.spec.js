@@ -8,7 +8,6 @@ let sync = require('synchronize');
 describe('Base FetchRequest', () => {
   it('exposes resource()', () => {
     const fetchReq = new BaseFetchRequest();
-    console.log('**** ' + fetchReq.resource);
     expect(fetchReq.resource()).to.deep.equal(fetchReq);
   });
 });
@@ -18,8 +17,8 @@ describe.skip('restful fetch request', () => {
     this.timeout(10000); //give api some time
     const req = new RestFetchRequest({
         config: {
-          "username": "john.donovan@gtnexus",
-          "password": "abura-ya",
+          "username": "@gtnexus",
+          "password": "",
           "dataKey": "36f71b26bca202c61973809143a58f7b12fe42a8",
           "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
         }
