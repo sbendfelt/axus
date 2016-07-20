@@ -8,8 +8,7 @@ let sync = require('synchronize');
 describe('Base FetchRequest', () => {
   it('exposes resource()', () => {
     const fetchReq = new BaseFetchRequest();
-    console.log('**** ' + fetchReq.resource);
-    expect(fetchReq.resource()).to.deep.equal(fetchReq);
+    expect(fetchReq.resource('')).to.deep.equal(fetchReq);
   });
 });
 
@@ -18,9 +17,9 @@ describe.skip('restful fetch request', () => {
     this.timeout(10000); //give api some time
     const req = new RestFetchRequest({
         config: {
-          "username": "john.donovan@gtnexus",
-          "password": "abura-ya",
-          "dataKey": "36f71b26bca202c61973809143a58f7b12fe42a8",
+          "username": "<username>",
+          "password": "<password>",
+          "dataKey": "<dataKey>",
           "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
         }
       },
@@ -32,6 +31,50 @@ describe.skip('restful fetch request', () => {
       const response = req.execute();
       expect(response).to.be.ok;
       expect(response.__metadata.uid).to.equal('157613553');
+      done();
+    });
+  });
+  it('can fetch all attachments', function(done) {
+    this.timeout(10000); //give api some time
+    const req = new RestFetchRequest({
+        config: {
+          "username": "<username>",
+          "password": "<password>",
+          "dataKey": "<dataKey>",
+          "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
+        }
+      },
+      '$DocumentPouchC1',
+      310,
+      '180556998'
+    );
+    req.resource('attachments');
+    sync.fiber(() => {
+      const response = req.execute();
+      expect(response).to.be.ok;
+      expect(response.result.length).to.equal(2);
+      done();
+    });
+  });
+  it('can fetch an attachment', function(done) {
+    this.timeout(10000); //give api some time
+    const req = new RestFetchRequest({
+        config: {
+          "username": "<username>",
+          "password": "<password>",
+          "dataKey": "<dataKey>",
+          "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
+        }
+      },
+      '$DocumentPouchC1',
+      310,
+      '180556998'
+    );
+    req.resource('attachment', '180780897');
+    sync.fiber(() => {
+      const response = req.execute();
+      expect(response).to.be.ok;
+      expect(response).to.not.equal(undefined);
       done();
     });
   });
@@ -65,6 +108,28 @@ describe('local fetch request', () => {
     }, '$GlobalType', 310, 123);
     const resp = req.execute();
     expect(resp.attr).to.equal('value');
+    done();
+  });
+
+  it('supports resource("attachments")', (done) => {
+    const req = new LocalFetchRequest({
+      store: {
+        '$GlobalType': {
+          '123/attachments': [{
+              "attachmentUid": "1",
+          }, {
+              "attachmentUid": "2",
+          }, {
+              "attachmentUid": "3",
+          }, {
+              "attachmentUid": "4",
+          }]
+        }
+      }
+    }, '$GlobalType', 310, 123);
+    req.resource('attachments');
+    const resp = req.execute();
+    expect(resp.length).to.equal(4);
     done();
   });
 
