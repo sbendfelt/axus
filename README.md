@@ -1,5 +1,7 @@
 ![axus](axus.jpg)
 
+[![Build Status](https://travis-ci.org/AppXpress/axus.svg?branch=master)](https://travis-ci.org/AppXpress/axus)
+
 You might ask, "What is axus?"
 
 The short answer would be a unit testing support framework for appxpress. But the long answer is that it will aim to do a whole lot more.
