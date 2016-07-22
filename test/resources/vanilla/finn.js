@@ -1,1 +1,3 @@
-function adventure() { console.log('time'); }
+function adventure() {
+  console.log('time');
+}
