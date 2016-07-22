@@ -1,6 +1,6 @@
 /*jshint expr: true*/
 let expect = require('chai').expect;
-let LocalQuery = require('../lib/providers/query/LocalQuery');
+let LocalQuery = require('../lib/providers/query/localquery');
 
 describe('LocalQuery', () => {
   it('handles null results', (done) => {
