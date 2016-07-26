@@ -1,6 +1,6 @@
 /*jshint expr: true*/
 let expect = require('chai').expect;
-let axus = require('../lib/appx-test-support');
+let axus = require('../lib/appx-test-support', undefined, {console:console});
 
 describe('axus-test-support', () => {
   it('correctly loads a vanilla script', (done) => {
@@ -15,6 +15,10 @@ describe('axus-test-support', () => {
   it('correctly loads a directory of vanilla', (done) => {
     let ctx = axus.requireLocal('./test/resources/vanilla').seed();
     let jake = axus.requireRest('./test/resources/vanilla/jake.js', 'jake');
+
+    let cods = ctx.Providers.getConfigurations().getCustomObjectDesignConfigurations();
+    console.log(cods);
+
     expect(ctx).to.be.defined;
     expect(ctx.jake).to.be.defined;
     expect(ctx.jake).to.deep.equal(jake);
@@ -26,6 +30,12 @@ describe('axus-test-support', () => {
       .overrideLib('./test/resources/vanilla/')
       .requireLocal('./test/resources/libimport/jake.js');
     expect(ctx.adventure).to.be.defined;
+    done();
+  });
+
+  it('correctly loads a module directory in vanilla', (done) => {
+    let ctx = axus.requireLocal('./test/resources/vanilla/testModule').seed();
+    expect(ctx).to.be.defined;
     done();
   });
 
