@@ -1,6 +1,6 @@
 /*jshint expr: true*/
 let expect = require('chai').expect;
-let axus = require('../lib/appx-test-support', undefined, {console:console});
+let axus = require('../lib/appx-test-support');
 
 describe('axus-test-support', () => {
   it('correctly loads a vanilla script', (done) => {
@@ -15,10 +15,6 @@ describe('axus-test-support', () => {
   it('correctly loads a directory of vanilla', (done) => {
     let ctx = axus.requireLocal('./test/resources/vanilla').seed();
     let jake = axus.requireRest('./test/resources/vanilla/jake.js', 'jake');
-
-    let cods = ctx.Providers.getConfigurations().getCustomObjectDesignConfigurations();
-    console.log(cods);
-
     expect(ctx).to.be.defined;
     expect(ctx.jake).to.be.defined;
     expect(ctx.jake).to.deep.equal(jake);
