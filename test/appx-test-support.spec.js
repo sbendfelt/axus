@@ -50,5 +50,20 @@ describe('axus-test-support', () => {
     done();
   });
 
+  it('correctly loads a custom appx module', (done) => {
+    let ctx = axus.requireLocal('./test/resources/testModule').seed();
+    let obiWan = axus.requireRest('./test/resources/testModule', 'obiWan');
+    expect(ctx).to.be.defined;
+    expect(ctx.obiWan).to.be.defined;
+    expect(ctx.obiWan).to.deep.equal(obiWan);
+    done();
+  });
+
+  it('correctly loads a custom appx module configurations', (done) => {
+    let ctx = axus.requireLocal('./test/resources/testModule').seed();
+    expect(ctx).to.be.defined;
+    expect(ctx.Providers.configurations).to.be.defined;
+    done();
+  });
 
 });
