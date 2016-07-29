@@ -12,7 +12,7 @@ const seed = {
 };
 let lProviders = require('../lib/providers/providers')
   .local
-  .seed(seed);
+  .seed(seed, []);
 
 describe('providers', () => {
   beforeEach(() => {
