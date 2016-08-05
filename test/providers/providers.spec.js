@@ -10,7 +10,7 @@ const seed = {
     }
   }
 };
-const lProviders = require('../lib/providers/providers')
+const lProviders = require('../../lib/providers/providers')
   .local
   .seed(seed, []);
 

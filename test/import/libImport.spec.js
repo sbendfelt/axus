@@ -1,5 +1,5 @@
 let expect = require('chai').expect;
-let ImportScanner = require('../lib/import/lib-import/import-scanner.js');
+let ImportScanner = require('../../lib/import/lib-import/import-scanner.js');
 
 describe('library-importer', () => {
   it('can read a single line, single import stmnt', (done) => {
