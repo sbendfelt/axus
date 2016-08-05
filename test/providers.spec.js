@@ -1,5 +1,5 @@
 /*jshint expr: true*/
-let expect = require('chai').expect;
+const expect = require('chai').expect;
 const seed = {
   '$ParcelTrackerS1': {
     'parcelTrackingId=123': [{
@@ -10,7 +10,7 @@ const seed = {
     }
   }
 };
-let lProviders = require('../lib/providers/providers')
+const lProviders = require('../lib/providers/providers')
   .local
   .seed(seed, []);
 
@@ -21,7 +21,7 @@ describe('providers', () => {
 
   describe('local', () => {
     describe('queryProvider', () => {
-      let x = lProviders
+      const x = lProviders
         .getQueryProvider()
         .createQuery('$ParcelTrackerS1', 310)
         .setOQL('parcelTrackingId=123')
@@ -42,8 +42,8 @@ describe('providers', () => {
     });
 
     describe('persistenceProvider', () => {
-      let x = lProviders.getPersistenceProvider();
-      let o = {
+      const x = lProviders.getPersistenceProvider();
+      const o = {
         type: 'sampleO'
       };
       it('can record saves', (done) => {
@@ -101,7 +101,8 @@ describe('providers', () => {
       });
 
       it('can make a fetch request', (done) => {
-        const resp = x
+        const resp = lProviders
+          .getPersistenceProvider()
           .createFetchRequest('$ParcelTrackerS1', 310, 'a123')
           .execute();
         expect(resp).to.equal(seed.$ParcelTrackerS1.a123);
