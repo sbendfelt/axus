@@ -13,17 +13,19 @@ describe('Base FetchRequest', () => {
   });
 });
 
-describe.skip('restful fetch request', () => {
+describe.only('restful fetch request', () => {
   it('can fetch', function(done) {
+    const bridge = new Bridge({
+      rest: {
+        "username": "",
+        "password": "",
+        "dataKey": "",
+        "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
+      }
+    }, []);
     this.timeout(10000); //give api some time
-    const req = new RestFetchRequest({
-        config: {
-          "username": "@gtnexus",
-          "password": "",
-          "dataKey": "36f71b26bca202c61973809143a58f7b12fe42a8",
-          "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
-        }
-      },
+    const req = new RestFetchRequest(
+      bridge,
       '$DocPouchInvoiceLinkS1',
       310,
       '157613553'
