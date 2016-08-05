@@ -13,7 +13,7 @@ describe('Base FetchRequest', () => {
   });
 });
 
-describe.only('restful fetch request', () => {
+describe.skip('restful fetch request', () => {
   it('can fetch', function(done) {
     const bridge = new Bridge({
       rest: {
