@@ -38,39 +38,56 @@ describe('providers', () => {
 
     describe('local', () => {
         describe('customTableProvider', () => {
-            const lookup = lProviders.getCustomTableProvider().lookup('$testTableQ1', 'testEntries', 'field1 = \'fieldValue\'');
-            const matchLookup = lProviders.getCustomTableProvider()
+            const lookup_positive = lProviders.getCustomTableProvider().lookup('$testTableQ1', 'testEntries', 'field1 = \'fieldValue\'');
+            const lookup_negative = lProviders.getCustomTableProvider().lookup('$testTableQ2', 'testEntries', 'field1 = \'fieldValue\'');
+            const matchLookup_positive = lProviders.getCustomTableProvider()
                 .matchLookup('$testTableQ1', 'testEntries')
                 .withOql("field1 = 'fieldValue'")
                 .optionalMatch("columnA ='value1'", "columnA")
                 .optionalMatch("columnC ='ZZZZZZ'", "columnC")
                 .execute();
+            const matchLookup_negative = lProviders.getCustomTableProvider()
+                .matchLookup('$testTableQ2', 'testEntries')
+                .withOql("field1 = 'fieldValue'")
+                .optionalMatch("columnA ='value1'", "columnA")
+                .optionalMatch("columnC ='ZZZZZZ'", "columnC")
+                .execute();
             it('can perform a table lookup succesfully', (done) => {
-                expect(lookup).to.be.a('array');
-                expect(lookup.length).to.be.ok;
+                expect(lookup_positive).to.be.a('array');
+                expect(lookup_positive.length).to.be.ok;
                 done();
             });
             it('returns the target lookup row', (done) => {
-                expect(lookup.length).to.equal(1);
-                expect(lookup).to.deep.equal([{
+                expect(lookup_positive.length).to.equal(1);
+                expect(lookup_positive).to.deep.equal([{
                     'columnA': 'value1',
                     'columnB': 'value1',
                     'columnC': 'value1'
                 }]);
                 done();
             });
+            it('returns empty when no match is found', (done) => {
+                expect(lookup_negative).to.be.a('array');
+                expect(lookup_negative.length).to.equal(0);
+                done();
+            });
             it('can perform a table matchLookup succesfully', (done) => {
-                expect(matchLookup).to.be.a('array');
-                expect(matchLookup.length).to.be.ok;
+                expect(matchLookup_positive).to.be.a('array');
+                expect(matchLookup_positive.length).to.be.ok;
                 done();
             });
             it('returns the target matchLookup row', (done) => {
-                expect(matchLookup.length).to.equal(1);
-                expect(matchLookup).to.deep.equal([{
+                expect(matchLookup_positive.length).to.equal(1);
+                expect(matchLookup_positive).to.deep.equal([{
                     'columnA': 'value1',
                     'columnB': 'value1',
                     'columnC': 'AAAAAA'
                 }]);
+                done();
+            });
+            it('returns empty when no match is found', (done) => {
+                expect(matchLookup_negative).to.be.a('array');
+                expect(matchLookup_negative.length).to.equal(0);
                 done();
             });
         });
