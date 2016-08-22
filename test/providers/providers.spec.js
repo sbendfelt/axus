@@ -187,6 +187,15 @@ describe('providers', () => {
         expect(resp).to.equal(seed.$ParcelTrackerS1.a123);
         done();
       });
+      it('can make a fetch request using incremental parameters', (done) => {
+        const lfetchRequest = lProviders
+          .getPersistenceProvider()
+          .createFetchRequest('$ParcelTrackerS1', null, 'a123');
+          lfetchRequest.apiVersion(310);
+          const resp = lfetchRequest.execute();
+        expect(resp).to.equal(seed.$ParcelTrackerS1.a123);
+        done();
+      });
     });
 
     describe('objectFactoryProvider', () => {
