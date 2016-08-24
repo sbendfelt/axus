@@ -9,12 +9,11 @@ const sync = require('synchronize');
 describe('Base FetchRequest', () => {
   it('exposes resource()', () => {
     const fetchReq = new BaseFetchRequest();
-    expect(fetchReq.resource()).to.deep.equal(fetchReq);
+    expect(fetchReq.resource('')).to.deep.equal(fetchReq);
   });
 });
 
 describe.skip('restful fetch request', () => {
-  it('can fetch', function(done) {
     const bridge = new Bridge({
       rest: {
         "username": "",
@@ -23,17 +22,50 @@ describe.skip('restful fetch request', () => {
         "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
       }
     }, []);
+  it('can fetch', function(done) {
     this.timeout(10000); //give api some time
     const req = new RestFetchRequest(
       bridge,
-      'OrderDetail',
+      '$DocumentPouchC1',
       310,
-      '418143768'
+      '404477900'
     );
     sync.fiber(() => {
       const response = req.execute();
       expect(response).to.be.ok;
-      expect(response.__metadata.uid).to.equal('418143768');
+      expect(response.__metadata.uid).to.equal('404477900');
+      done();
+    });
+  });
+  it('can fetch all attachments', function(done) {
+    this.timeout(10000); //give api some time
+    const req = new RestFetchRequest(
+      bridge,
+      '$DocumentPouchC1',
+      310,
+      '404477900'
+    );
+    req.resource('attachments');
+    sync.fiber(() => {
+      const response = req.execute();
+      expect(response).to.be.ok;
+      expect(response.result.length).to.equal(2);
+      done();
+    });
+  });
+  it('can fetch an attachment', function(done) {
+    this.timeout(10000); //give api some time
+    const req = new RestFetchRequest(
+      bridge,
+      '$DocumentPouchC1',
+      310,
+      '404477900'
+    );
+    req.resource('attachment', '404583599');
+    sync.fiber(() => {
+      const response = req.execute();
+      expect(response).to.be.ok;
+      expect(response).to.not.equal(undefined);
       done();
     });
   });
@@ -71,9 +103,26 @@ describe('local fetch request', () => {
     done();
   });
 
-  // -- these tests are here to ensure that our validator is catching these
-  // -- these cases early.
-  // -- Once we have a full implementation of local fetch we can deconste these.
-  it('throws error on resource request');
-  it('throws error on additional params');
+  it('supports resource("attachments")', (done) => {
+    const bridge = new Bridge({
+      local: {
+        '$GlobalType': {
+          '123/attachments': [{
+              "attachmentUid": "1",
+          }, {
+              "attachmentUid": "2",
+          }, {
+              "attachmentUid": "3",
+          }, {
+              "attachmentUid": "4",
+          }]
+        }
+      }
+    }, []);
+    const req = new LocalFetchRequest(bridge, '$GlobalType', 310, 123);
+    req.resource('attachments');
+    const resp = req.execute();
+    expect(resp.result.length).to.equal(4);
+    done();
+  });
 });
