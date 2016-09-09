@@ -1,9 +1,10 @@
 /*jshint expr: true*/
-let expect = require('chai').expect;
-let BaseFetchRequest = require('../lib/providers/fetch/fetch-request');
-let LocalFetchRequest = require('../lib/providers/fetch/local-fetch-request');
-let RestFetchRequest = require('../lib/providers/fetch/rest-fetch-request');
-let sync = require('synchronize');
+const expect = require('chai').expect;
+const Bridge = require('../../lib/providers/bridge');
+const BaseFetchRequest = require('../../lib/providers/fetch/fetch-request');
+const LocalFetchRequest = require('../../lib/providers/fetch/local-fetch-request');
+const RestFetchRequest = require('../../lib/providers/fetch/rest-fetch-request');
+const sync = require('synchronize');
 
 describe('Base FetchRequest', () => {
   it('exposes resource()', () => {
@@ -14,23 +15,25 @@ describe('Base FetchRequest', () => {
 
 describe.skip('restful fetch request', () => {
   it('can fetch', function(done) {
+    const bridge = new Bridge({
+      rest: {
+        "username": "",
+        "password": "",
+        "dataKey": "",
+        "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
+      }
+    }, []);
     this.timeout(10000); //give api some time
-    const req = new RestFetchRequest({
-        config: {
-          "username": "@gtnexus",
-          "password": "",
-          "dataKey": "36f71b26bca202c61973809143a58f7b12fe42a8",
-          "url": "https://commerce-supportq.qa.gtnexus.com/rest/"
-        }
-      },
-      '$DocPouchInvoiceLinkS1',
+    const req = new RestFetchRequest(
+      bridge,
+      'OrderDetail',
       310,
-      '157613553'
+      '418143768'
     );
     sync.fiber(() => {
       const response = req.execute();
       expect(response).to.be.ok;
-      expect(response.__metadata.uid).to.equal('157613553');
+      expect(response.__metadata.uid).to.equal('418143768');
       done();
     });
   });
@@ -53,15 +56,16 @@ describe('local fetch request', () => {
   });
 
   it('returns correctly when type and uid specified', (done) => {
-    const req = new LocalFetchRequest({
-      store: {
+    const bridge = new Bridge({
+      local: {
         '$GlobalType': {
           123: {
             attr: 'value'
           }
         }
       }
-    }, '$GlobalType', 310, 123);
+    }, []);
+    const req = new LocalFetchRequest(bridge, '$GlobalType', 310, 123);
     const resp = req.execute();
     expect(resp.attr).to.equal('value');
     done();
@@ -69,7 +73,7 @@ describe('local fetch request', () => {
 
   // -- these tests are here to ensure that our validator is catching these
   // -- these cases early.
-  // -- Once we have a full implementation of local fetch we can delete these.
+  // -- Once we have a full implementation of local fetch we can deconste these.
   it('throws error on resource request');
   it('throws error on additional params');
 });

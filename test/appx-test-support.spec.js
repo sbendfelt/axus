@@ -1,12 +1,13 @@
 /*jshint expr: true*/
-let expect = require('chai').expect;
-let axus = require('../lib/appx-test-support');
+const expect = require('chai').expect;
+const axus = require('../lib/appx-test-support');
 
 describe('axus-test-support', () => {
   it('correctly loads a vanilla script', (done) => {
     let ctx = axus.requireLocal('./test/resources/vanilla/jake.js').seed();
     let jake = axus.requireRest('./test/resources/vanilla/jake.js', 'jake');
     expect(ctx).to.be.defined;
+    expect(jake).to.be.defined;
     expect(ctx.jake).to.deep.equal(jake);
     expect(jake.isADog).to.be.ok;
     done();
@@ -29,6 +30,12 @@ describe('axus-test-support', () => {
     done();
   });
 
+  it('correctly loads a module directory', (done) => {
+    let ctx = axus.requireLocal('./test/resources/testModule').seed();
+    expect(ctx).to.be.defined;
+    done();
+  });
+
   it('contextualizes providers.', (done) => {
     let ctx = axus
       .requireLocal('./test/resources/vanilla/loginfo.js')
@@ -43,5 +50,20 @@ describe('axus-test-support', () => {
     done();
   });
 
+  it('correctly loads a custom appx module', (done) => {
+    let ctx = axus.requireLocal('./test/resources/testModule').seed();
+    let obiWan = axus.requireRest('./test/resources/testModule', 'obiWan');
+    expect(ctx).to.be.defined;
+    expect(ctx.obiWan).to.be.defined;
+    expect(ctx.obiWan).to.deep.equal(obiWan);
+    done();
+  });
+
+  it('correctly loads a custom appx module configurations', (done) => {
+    let ctx = axus.requireLocal('./test/resources/testModule').seed();
+    expect(ctx).to.be.defined;
+    expect(ctx.Providers.configurations).to.be.defined;
+    done();
+  });
 
 });
