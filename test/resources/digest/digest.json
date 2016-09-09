@@ -1,0 +1,249 @@
+["var obiWan = (function() {\n  return \"These aren't the droids you're looking for\";\n}());", {
+    "PlatformModule": {
+        "__metadata": [{
+            "apiVersion": ["400"],
+            "type": ["PlatformModule"],
+            "uid": ["16417201631"],
+            "createTimestamp": ["2014-10-08 14:19:17.703"],
+            "modifyTimestamp": ["2014-10-08 14:20:16.956"],
+            "status": ["Active"],
+            "fingerprint": ["0577690e346669c1bc07d789e52b9069"]
+        }],
+        "authorType": ["Organization"],
+        "moduleId": ["16417201631"],
+        "ownerId": ["5000900010003000"],
+        "ownerType": ["TradeCustomer"],
+        "modifyTimestamp": ["2014-10-08 14:20:16.956"],
+        "authorId": ["-1"],
+        "createTimestamp": ["2014-10-08 14:19:17.703"],
+        "userVersion": ["0.1"],
+        "name": ["testModule"],
+        "customUiConfiguration": [{
+            "uiType": ["STANDARD"],
+            "globalObjectType": ["$testTableQ1"]
+        }]
+    }
+}, {
+    "CustomObjectModuleV110": {
+        "name": ["testModule"],
+        "userVersion": [""],
+        "description": [""]
+    }
+}, {
+    "CustomObjectDesignV110": {
+        "version": ["0"],
+        "globalObjectType": ["$testEntryQ1"],
+        "name": ["testEntry"],
+        "designType": ["SUPPORTING"],
+        "scalarField": [{
+            "fieldName": ["PurchaseGroup"],
+            "fieldNumber": ["1"],
+            "description": ["Purchase Group"],
+            "fieldPosition": ["10"],
+            "dataType": ["TEXT"],
+            "detailedDataType": ["TEXT"],
+            "indexed": ["true"],
+            "summaryField": ["true"],
+            "maxLength": ["3"],
+            "renderedOnUi": ["NORMAL"],
+            "extendedData": [{
+                "dataKey": ["TABINDEX"]
+            }, {
+                "dataKey": ["TEXTAREAROWS"]
+            }]
+        }, {
+            "fieldName": ["ProfitCenter"],
+            "fieldNumber": ["2"],
+            "description": ["Profit Center"],
+            "fieldPosition": ["30"],
+            "dataType": ["TEXT"],
+            "detailedDataType": ["TEXT"],
+            "indexed": ["false"],
+            "summaryField": ["true"],
+            "maxLength": ["20"],
+            "renderedOnUi": ["NORMAL"],
+            "extendedData": [{
+                "dataKey": ["TABINDEX"]
+            }, {
+                "dataKey": ["TEXTAREAROWS"]
+            }]
+        }, {
+            "fieldName": ["PurchaseGroupDescription"],
+            "fieldNumber": ["3"],
+            "description": ["Purchase Group Description"],
+            "fieldPosition": ["20"],
+            "dataType": ["TEXT"],
+            "detailedDataType": ["TEXT"],
+            "indexed": ["false"],
+            "summaryField": ["true"],
+            "maxLength": ["200"],
+            "renderedOnUi": ["NORMAL"],
+            "extendedData": [{
+                "dataKey": ["TABINDEX"]
+            }, {
+                "dataKey": ["TEXTAREAROWS"]
+            }]
+        }, {
+            "fieldName": ["ProfitCenterDescription"],
+            "fieldNumber": ["4"],
+            "description": ["Profit Center Description"],
+            "fieldPosition": ["40"],
+            "dataType": ["TEXT"],
+            "detailedDataType": ["TEXT"],
+            "indexed": ["false"],
+            "summaryField": ["true"],
+            "maxLength": ["200"],
+            "renderedOnUi": ["NORMAL"],
+            "extendedData": [{
+                "dataKey": ["TABINDEX"]
+            }, {
+                "dataKey": ["TEXTAREAROWS"]
+            }]
+        }],
+        "codSection": [""],
+        "schemaVers": ["V12_3"]
+    }
+}, {
+    "CustomObjectDesignV110": {
+        "version": ["0"],
+        "globalObjectType": ["$testTableQ1"],
+        "name": ["testTable"],
+        "uniqueIdentifier": ["uniqueId"],
+        "designType": ["PRIMARY"],
+        "scalarField": [{
+            "fieldName": ["uniqueId"],
+            "fieldNumber": ["1"],
+            "description": ["Unique Id"],
+            "fieldPosition": ["10"],
+            "dataType": ["TEXT"],
+            "detailedDataType": ["TEXT"],
+            "indexed": ["true"],
+            "summaryField": ["false"],
+            "maxLength": ["200"],
+            "renderedOnUi": ["NORMAL"],
+            "extendedData": [{
+                "dataKey": ["TABINDEX"],
+                "stringValue": ["10"]
+            }, {
+                "dataKey": ["TEXTAREAROWS"]
+            }]
+        }, {
+            "fieldName": ["Status"],
+            "fieldNumber": ["2"],
+            "description": ["Status"],
+            "fieldPosition": ["20"],
+            "dataType": ["TEXT"],
+            "detailedDataType": ["TEXT"],
+            "indexed": ["true"],
+            "summaryField": ["true"],
+            "maxLength": ["200"],
+            "renderedOnUi": ["READONLY"],
+            "extendedData": [{
+                "dataKey": ["TABINDEX"],
+                "stringValue": ["20"]
+            }, {
+                "dataKey": ["TEXTAREAROWS"]
+            }]
+        }],
+        "linkField": [{
+            "fieldName": ["testEntries"],
+            "fieldNumber": ["1"],
+            "description": ["Test Entries"],
+            "fieldPosition": ["30"],
+            "linkToDesign": ["testEntry"],
+            "renderedOnUi": ["NORMAL"],
+            "isCollection": ["true"]
+        }],
+        "workflowFeature": [{
+            "enabled": ["true"],
+            "businessStatusField": ["Status"],
+            "workflow": [{
+                "name": ["$$testTableQ1CodWorkflowDesign"],
+                "initialStatus": ["New"],
+                "step": [{
+                    "editRoles": ["Licensee,ObjectCreator"],
+                    "state": ["New"],
+                    "systemDelete": ["false"]
+                }, {
+                    "state": ["Active"],
+                    "systemDelete": ["false"]
+                }, {
+                    "editRoles": ["Licensee,ObjectCreator"],
+                    "state": ["Inactive"],
+                    "systemDelete": ["false"]
+                }, {
+                    "editRoles": ["Licensee,ObjectCreator"],
+                    "state": ["FailedValidate"],
+                    "systemDelete": ["false"]
+                }, {
+                    "state": ["Deleted"],
+                    "systemDelete": ["false"]
+                }],
+                "transition": [{
+                    "fromState": ["New"],
+                    "toState": ["Active"],
+                    "action": ["activate"],
+                    "roles": ["Licensee,ObjectCreator"],
+                    "validationFn": ["validateObject"]
+                }, {
+                    "fromState": ["Active"],
+                    "toState": ["Inactive"],
+                    "action": ["markAsInactive"],
+                    "roles": ["Licensee,ObjectCreator"]
+                }, {
+                    "fromState": ["Inactive"],
+                    "toState": ["Active"],
+                    "action": ["activate"],
+                    "roles": ["Licensee,ObjectCreator"],
+                    "validationFn": ["validateObject"]
+                }, {
+                    "fromState": ["Inactive"],
+                    "toState": ["Deleted"],
+                    "action": ["markAsDeleted"],
+                    "roles": ["Licensee,ObjectCreator"]
+                }, {
+                    "fromState": ["FailedValidate"],
+                    "toState": ["Active"],
+                    "action": ["activate"],
+                    "roles": ["Licensee,ObjectCreator"],
+                    "validationFn": ["validateObject"]
+                }]
+            }]
+        }],
+        "scriptingFeature": [{
+            "enabled": ["true"],
+            "mimeType": ["text/plain"],
+            "description": ["test.js"],
+            "fileName": ["ScriptDesign_$testTableQ1.js"]
+        }],
+        "integrationFeature": [{
+            "enabled": ["true"],
+            "downloadRuntimeEnabled": ["true"],
+            "uploadRuntimeEnabled": ["true"]
+        }],
+        "navFeature": [{
+            "enabled": ["true"],
+            "navHeading": ["admin"],
+            "landingOQL": ["Status != 'Deleted'"]
+        }],
+        "visibilityType": ["COMMUNITY"],
+        "roleSecurity": [{
+            "role": ["Buyer"],
+            "action": ["create"]
+        }, {
+            "role": ["Licensee"],
+            "action": ["create"]
+        }, {
+            "role": ["Licensee"],
+            "action": ["modify"]
+        }, {
+            "role": ["ObjectCreator"],
+            "action": ["modify"]
+        }],
+        "codSection": [{
+            "numberOfDisplayColumns": ["2"]
+        }],
+        "schemaVers": ["V12_3"],
+        "apiVersion": ["310"]
+    }
+}]

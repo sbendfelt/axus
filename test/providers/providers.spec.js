@@ -8,11 +8,28 @@ const seed = {
     'a123': {
       'attr': 'value'
     }
+  },
+  '$testTableQ1': {
+    'Status = \'Active\'': [{
+      'testEntries': {
+        'field1 = \'fieldValue\'': [{
+          'columnA': 'value1',
+          'columnB': 'value1',
+          'columnC': 'value1'
+        }],
+        'field1 = \'fieldValue\'columnA =\'value1\',columnA:columnC =\'ZZZZZZ\',columnC': [{
+          'columnA': 'value1',
+          'columnB': 'value1',
+          'columnC': 'AAAAAA'
+        }]
+      }
+    }]
   }
 };
+const digest = require('../../test/resources/digest/digest.json');
 const lProviders = require('../../lib/providers/providers')
   .local
-  .seed(seed, []);
+  .seed(seed, digest);
 
 describe('providers', () => {
   beforeEach(() => {
@@ -20,6 +37,69 @@ describe('providers', () => {
   });
 
   describe('local', () => {
+    describe('customTableProvider', () => {
+      describe('lookup', () => {
+        const lookup_positive = lProviders
+          .getCustomTableProvider()
+          .lookup('$testTableQ1', 'testEntries', 'field1 = \'fieldValue\'');
+        const lookup_negative = lProviders
+          .getCustomTableProvider()
+          .lookup('$testTableQ2', 'testEntries', 'field1 = \'fieldValue\'');
+        it('can perform a table lookup succesfully', (done) => {
+          expect(lookup_positive).to.be.a('array');
+          expect(lookup_positive.length).to.be.ok;
+          done();
+        });
+        it('returns the target lookup row', () => {
+          expect(lookup_positive.length).to.equal(1);
+          expect(lookup_positive).to.deep.equal([{
+            'columnA': 'value1',
+            'columnB': 'value1',
+            'columnC': 'value1'
+          }]);
+        });
+        it('returns empty when no match is found', () => {
+          expect(lookup_negative).to.be.a('array');
+          expect(lookup_negative.length).to.equal(0);
+        });
+      });
+      describe('matchLookup', () => {
+        const matchLookup_positive = lProviders.getCustomTableProvider()
+          .matchLookup('$testTableQ1', 'testEntries')
+          .withOql("field1 = 'fieldValue'")
+          .optionalMatch("columnA ='value1'", "columnA")
+          .optionalMatch("columnC ='ZZZZZZ'", "columnC")
+          .execute();
+        const matchLookup_negative = lProviders.getCustomTableProvider()
+          .matchLookup('$testTableQ2', 'testEntries')
+          .withOql("field1 = 'fieldValue'")
+          .optionalMatch("columnA ='value1'", "columnA")
+          .optionalMatch("columnC ='ZZZZZZ'", "columnC")
+          .execute();
+        console.log(`***spec result:matchLookup_positive\n
+          ${JSON.stringify(matchLookup_positive)}\n***`);
+        it('can perform a table matchLookup succesfully', (done) => {
+          expect(matchLookup_positive).to.be.a('array');
+          expect(matchLookup_positive.length).to.be.ok;
+          done();
+        });
+        it('returns the target matchLookup row', (done) => {
+          expect(matchLookup_positive.length).to.equal(1);
+          expect(matchLookup_positive).to.deep.equal([{
+            'columnA': 'value1',
+            'columnB': 'value1',
+            'columnC': 'AAAAAA'
+          }]);
+          done();
+        });
+        it('returns empty when no match is found', (done) => {
+          expect(matchLookup_negative).to.be.a('array');
+          expect(matchLookup_negative.length).to.equal(0);
+          done();
+        });
+      });
+    });
+
     describe('queryProvider', () => {
       const x = lProviders
         .getQueryProvider()
@@ -82,8 +162,7 @@ describe('providers', () => {
           withObjects: [{
             type: 'OrderDetail',
             id: '123'
-          },
-          {
+          }, {
             type: 'InvoiceDetail',
             id: '123Inv'
           }]
@@ -108,6 +187,15 @@ describe('providers', () => {
         expect(resp).to.equal(seed.$ParcelTrackerS1.a123);
         done();
       });
+      it('can make a fetch request using incremental parameters', (done) => {
+        const lfetchRequest = lProviders
+          .getPersistenceProvider()
+          .createFetchRequest('$ParcelTrackerS1', null, 'a123');
+          lfetchRequest.apiVersion(310);
+          const resp = lfetchRequest.execute();
+        expect(resp).to.equal(seed.$ParcelTrackerS1.a123);
+        done();
+      });
     });
 
     describe('objectFactoryProvider', () => {
@@ -121,7 +209,6 @@ describe('providers', () => {
 
     describe('messageProvider', () => {
       it('can log a simple error msg', (done) => {
-        console.log('running message prov t1');
         let msg = lProviders.getMessageProvider()
           .error()
           .suppressible(true)
