@@ -26,14 +26,14 @@ describe.skip('restful fetch request', () => {
     this.timeout(10000); //give api some time
     const req = new RestFetchRequest(
       bridge,
-      '$DocPouchInvoiceLinkS1',
+      'OrderDetail',
       310,
-      '157613553'
+      '418143768'
     );
     sync.fiber(() => {
       const response = req.execute();
       expect(response).to.be.ok;
-      expect(response.__metadata.uid).to.equal('157613553');
+      expect(response.__metadata.uid).to.equal('418143768');
       done();
     });
   });
