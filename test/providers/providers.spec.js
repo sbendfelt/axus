@@ -119,6 +119,14 @@ describe('providers', () => {
         expect(result).to.be.a('array');
         done();
       });
+      it('can execute a previously created query', () => {
+        const query = lProviders
+          .getQueryProvider()
+          .createQuery('$ParcelTrackerS1', 310)
+          .setOQL('parcelTrackingId=123');
+        const result = lProviders.getQueryProvider().execute(query);
+        expect(result).to.deep.equal(x);
+      });
     });
 
     describe('persistenceProvider', () => {
