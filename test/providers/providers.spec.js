@@ -46,12 +46,19 @@ const seed = {
         }
     }
 };
+const runAsScope = {
+  'userId': 'Han@ShotFirst',
+  'orgId': '1234',
+  'orgName': 'MulleniumFalcon',
+  'orgRoles': ['Smuggler','Gunship']
+};
+const apiVersion = '3.1.0'
 const digest = require('../../test/resources/digest/digest.json');
 const Bridge = require('../../lib/providers/bridge');
 const Providers = require('../../lib/providers/providers');
 const ModuleDigest = require('../../lib/digest/module-digest');
 const lProviders = new Providers(
-    new Bridge(seed).addModuleDigest(ModuleDigest.build(digest))
+    new Bridge(seed, apiVersion, runAsScope).addModuleDigest(ModuleDigest.build(digest))
 );
 
 describe('providers', () => {
@@ -279,6 +286,22 @@ describe('providers', () => {
                 expect(msg.msgId).to.equal(1);
                 done();
             });
+        });
+
+        describe('sessionProvider', () => {
+          let sessionProvider = lProviders.getSessionProvider();
+          it('can return currentUserId', () => {
+            expect(sessionProvider.getCurrentUserId()).to.equal('Han@ShotFirst');
+          });
+          it('can return currentOrgId', () => {
+            expect(sessionProvider.getCurrentOrgId()).to.equal('1234');
+          });
+          it('can return currentOrgName', () => {
+            expect(sessionProvider.getCurrentOrgName()).to.equal('MulleniumFalcon');
+          });
+          it('can return currentOrgRoles', () => {
+            expect(sessionProvider.getCurrentOrgRoles()).to.deep.equal(['Smuggler','Gunship']);
+          });
         });
     });
 });
