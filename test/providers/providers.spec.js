@@ -204,6 +204,15 @@ describe('providers', () => {
         expect(resp).to.equal(seed.$ParcelTrackerS1.a123);
         done();
       });
+
+      it('can record fetch requests', () => {
+        lProviders
+          .getPersistenceProvider()
+          .createFetchRequest('$ParcelTrackerS1', 310, 'a123')
+          .execute();
+        const fetches = lProviders.getPersistenceProvider().getFetchRequests();
+        expect(fetches).to.have.length(1);
+      });
     });
 
     describe('objectFactoryProvider', () => {
