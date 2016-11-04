@@ -1,0 +1,110 @@
+{
+  "OriginCity": {
+      "CityName": "Oakland",
+      "CityCode":[{
+          "value": "CNNGB",
+          "qualifier": "UN"
+        }, {
+          "value": "57020",
+          "qualifier": "N"
+        }],
+      "State": "CA"
+  },
+  "Equipment": [
+    {
+      "Code": "HC40",
+      "Type": "40' High Cube Dry",
+      "Quantity": "1.0",
+      "MinTemp": {
+        "value": "0.0"
+      },
+      "MaxTemp": {
+        "value": "0.0"
+      },
+      "HumidityPercent": "0.0",
+      "AirExchange": "0.0",
+      "EquipmentLoadTypeCode": "NONE",
+      "EquipmentCheckDigit": "0"
+    },
+    {
+      "Code": "R40",
+      "Type": "40' Reefer",
+      "Quantity": "1.0",
+      "MinTemp": {
+        "value": "0.0"
+      },
+      "MaxTemp": {
+        "value": "0.0"
+      },
+      "HumidityPercent": "0.0",
+      "AirExchange": "0.0",
+      "EquipmentLoadTypeCode": "NONE",
+      "EquipmentCheckDigit": "0"
+    }
+  ],
+  "ReturnExportDocumentationTo": "",
+	"ReturnExportDocumentationToLL": "安康",
+  "Quantity": "1.0",
+  "ETAPortOfDischargeDate": "2016-06-15T20:00:00Z",
+  "ShippingDeclaration1": {
+		"value": "true"
+	},
+  "PartyInfo": [{
+	  "Type": "Customer",
+	  "Name": "Dollar Tree",
+	  "AddressLine1": "500 Volvo Pkwy",
+	  "PostalCode": "23320",
+	  "Phone": "757-321-5380",
+	  "References": [
+	    {
+	      "Type": "TelephoneNumber",
+	      "Value": "757-321-5380"
+	    }
+	  ]
+	},
+  {
+	  "Type": "Broker",
+	  "Code": "EXPWA",
+	  "Name": "Expeditors International",
+	  "City": {
+	    "CityName": "Seattle",
+	    "CityCode": [
+	      {
+	        "value": "USSEA",
+	        "Qualifier": "UN"
+	      },
+	      {
+	        "value": "3001",
+	        "Qualifier": "D"
+	      }
+	    ],
+	    "State": "WA",
+	    "CountryCode": "US",
+	    "CountryName": "United States"
+	  }
+	},
+	{
+	  "Type": "Consolidator",
+	  "Code": "UPS_OW",
+	  "Name": "UPS Supply Chain Solutions, Inc"
+	},
+	{
+	  "Type": "Consignee",
+	  "Code": "DT",
+	  "Name": "Dollar Tree Stores+1",
+	  "AddressLine1": "500 Volvo Pkwy",
+	  "PostalCode": "23320",
+	  "City": {
+	    "CityName": "Chesapeake",
+	    "CityCode": [
+	      {
+	        "value": "USUFG",
+	        "Qualifier": "UN"
+	      }
+	    ],
+	    "State": "VA",
+	    "CountryCode": "US",
+	    "CountryName": "United States"
+	  }
+	}]
+}

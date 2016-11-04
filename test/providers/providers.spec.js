@@ -76,8 +76,6 @@ describe('providers', () => {
           .optionalMatch("columnA ='value1'", "columnA")
           .optionalMatch("columnC ='ZZZZZZ'", "columnC")
           .execute();
-        console.log(`***spec result:matchLookup_positive\n
-          ${JSON.stringify(matchLookup_positive)}\n***`);
         it('can perform a table matchLookup succesfully', (done) => {
           expect(matchLookup_positive).to.be.a('array');
           expect(matchLookup_positive.length).to.be.ok;

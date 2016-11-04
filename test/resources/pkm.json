@@ -1,0 +1,749 @@
+{
+  "__metadata": {
+    "apiVersion": "310",
+    "type": "PackingListDetail",
+    "uid": "143755222",
+    "createTimestamp": "2015-08-10 12:09:03.096",
+    "modifyTimestamp": "2015-08-20 02:52:56.271",
+    "status": "Active",
+    "fingerprint": "1eeb1f7e226738486f050c023c337362",
+    "redirectUrl": "https://commerce-supportq.qa.gtnexus.com/en/trade/ManifestFolder?key=143755222",
+    "self": "https://commerce-supportq.qa.gtnexus.com/rest/310/PackingListDetail/143755222"
+  },
+  "shipmentOrder": {
+    "TU6GSDA": {
+      "packageDetailLink": {
+        "packageDetailXref": {
+          "0001": "2",
+          "0002": "1",
+          "0003": "2",
+          "0004": "1"
+        },
+        "packageDimensionSummary": {
+          "volumeUnitCode": "CC",
+          "totalGrossWeight": "24.5000",
+          "packMethodCode": "CT",
+          "totalNetWeight": "19.5000",
+          "totalPackageQuantity": "6",
+          "totalGrossVolume": "78657.9100",
+          "totalNetNetWeight": "9.9000",
+          "weightUnitCode": "KG"
+        }
+      },
+      "shipmentOrderKey": "TU6GSDA",
+      "orderReference": {
+        "orderUid": "143755115",
+        "poNumber": "TU6GSDA",
+        "reference": {
+          "ContractNumber": "TU6GSDA-DPO-684914",
+          "OrderPaymentTerms": "NET 30 DAYS",
+          "DiscountDays": "45",
+          "BuyerIdCode": "LISA SALAMONE",
+          "BuyerFirstName": null,
+          "BuyerLastName": "LISA SALAMONE",
+          "OrderClass": "DPO",
+          "OrderClassCode": "Packing PO",
+          "OriginalPONumber": "TU6GSDA",
+          "DivisionName": "Gap, Inc. (Enterprise)",
+          "DeptCode": "1124",
+          "DeptName": "MENS SWEATERS",
+          "ContractShipCancelDate": "2015-09-05",
+          "MasterPOCreateDate": "2015-06-23",
+          "ContractDate": null,
+          "POPriorityCode": "Not Specified",
+          "PaymentTerms": "BP",
+          "OrderPaymentMethod": "OA",
+          "HardTagFlow": "Vendor",
+          "OriginCountry": "LK",
+          "DestinationCountry": "US",
+          "ChannelDesc": "Retail",
+          "POType": "Reorder",
+          "POLifeCycleCode": "Active",
+          "MarketDesc": "US RETAIL",
+          "RevisionDate": "2015-06-23",
+          "MarketPOCreateDate": "2015-06-23",
+          "OrderCreateDate": "2015-06-23",
+          "UserName": "RAJESW MUTHUPANDIAN",
+          "QuotaIndicator": "OPEN ACCOUNT",
+          "CartonPackFactorNo": "24",
+          "POLevelNo": "Packing PO",
+          "MasterPONo": "J52243",
+          "BrandId": "1",
+          "ChannelId": "1",
+          "MarketId": "1",
+          "POBuildTypeCode": "TnR",
+          "MarketPONo": "TU6GS",
+          "OrderNumber": "TU6GSDA",
+          "PaymentType": "Check",
+          "Brand": "GAP",
+          "OriginCity": "Colombo",
+          "OrderType": "Cross-border",
+          "ShipmentMethodCustomRef": "Private Parcel Service"
+        }
+      },
+      "itemXref": [{
+        "itemKey": "6849140010000",
+        "quantity": "90",
+        "itemTypeCode": "Main",
+        "poNumber": "TU6GSDA"
+      }, {
+        "itemKey": "6849140010001",
+        "quantity": "90",
+        "itemTypeCode": "Main",
+        "poNumber": "TU6GSDA"
+      }],
+      "poNumber": "TU6GSDA"
+    }
+  },
+  "packingListNumber": "143755222",
+  "revisionNumber": "1",
+  "shipmentDocumentDate": {
+    "Issue": "2015-08-06"
+  },
+  "shipment": {
+    "equipmentLoadTypeCode": "CC",
+    "shipmentUid": "143755227",
+    "itemXref": [{
+      "itemKey": "6849140010000",
+      "quantity": "90",
+      "itemTypeCode": "Main",
+      "poNumber": "TU6GSDA"
+    }, {
+      "itemKey": "6849140010001",
+      "quantity": "90",
+      "itemTypeCode": "Main",
+      "poNumber": "TU6GSDA"
+    }],
+    "party": {
+      "Buyer": [{
+        "partyRoleCode": "Buyer",
+        "address": {
+          "addressUid": "143755224",
+          "countryCode": "US",
+          "stateOrProvince": "CA",
+          "postalCodeNumber": "94105",
+          "addressLine1": "2 FOLSOM STREET",
+          "city": "San Francisco"
+        },
+        "partyUid": "143755224",
+        "name": "THE GAP, INC.",
+        "memberId": "1717989018043343",
+        "contact": {}
+      }],
+      "Seller": [{
+        "partyRoleCode": "Seller",
+        "address": {
+          "addressUid": "143755225",
+          "countryCode": "LK",
+          "stateOrProvince": "11",
+          "addressLine2": "KANDAWALAWATTE - KANDAWALA",
+          "postalCodeNumber": "10370",
+          "addressLine1": "7TH LANE OFF BORUPANA ROAD",
+          "city": "Ratmalana"
+        },
+        "partyUid": "143755225",
+        "name": "MAS INTIMATES (PVT) LTD",
+        "memberId": "1717989018047075",
+        "contact": {}
+      }],
+      "Consignee": [{
+        "partyRoleCode": "Consignee",
+        "address": {
+          "addressUid": "143755261"
+        },
+        "partyUid": "143755261",
+        "name": "06-1763255",
+        "contact": {
+          "department": "06-1763255"
+        }
+      }],
+      "OriginOfGoods": [{
+        "partyRoleCode": "OriginOfGoods",
+        "address": {
+          "addressUid": "143755228",
+          "countryCode": "LK",
+          "stateOrProvince": "11",
+          "addressLine2": "VEYANGODA",
+          "postalCodeNumber": "11100",
+          "addressLine1": "DAMBUWA ESTATE, DADAGAMUWA",
+          "city": "Colombo"
+        },
+        "partyUid": "143755228",
+        "name": "CARLOS EMBELLISHERS (PVT) LTD",
+        "contact": {}
+      }],
+      "NotifyParty1": [{
+        "partyRoleCode": "NotifyParty1",
+        "address": {
+          "addressUid": "143755262",
+          "countryCode": "US",
+          "stateOrProvince": "CA",
+          "postalCodeNumber": "94105",
+          "addressLine1": "Two Folsom Street",
+          "city": "San Francisco"
+        },
+        "partyUid": "143755262",
+        "name": "Gap, Inc. (Enterprise)",
+        "memberId": "1717989018043343",
+        "contact": {},
+        "reference": {
+          "BUYER_ALT_ID": "default"
+        }
+      }],
+      "FinalDestination": [{
+        "partyRoleCode": "FinalDestination",
+        "address": {
+          "addressUid": "143755263",
+          "countryCode": "US",
+          "stateOrProvince": "NE",
+          "postalCodeNumber": "68118",
+          "addressLine1": "168TH & DODGE",
+          "city": "Omaha"
+        },
+        "partyUid": "143755263",
+        "name": "VILLAGE POINTE S/C||THE GAP, INC.",
+        "contact": {},
+        "reference": {
+          "FinalDestinationCode": "000002760"
+        }
+      }]
+    },
+    "invoiceReference": [{
+      "invoiceUid": "144105989",
+      "invoiceNumber": "13G15",
+      "reference": {
+        "masterBillOfLadingNumber": "TBC",
+        "GtnPaymentTerms": "BP",
+        "FilterOutbound": "N"
+      }
+    }],
+    "packageDetailLink": {
+      "packageDetailXref": {
+        "0001": "2",
+        "0002": "1",
+        "0003": "2",
+        "0004": "1"
+      },
+      "packageDimensionSummary": {
+        "volumeUnitCode": "CC",
+        "totalGrossWeight": "24.5000",
+        "packMethodCode": "CT",
+        "totalNetWeight": "19.5000",
+        "totalPackageQuantity": "6",
+        "totalGrossVolume": "78657.9100",
+        "totalNetNetWeight": "9.9000",
+        "weightUnitCode": "KG"
+      }
+    },
+    "shipmentDate": {
+      "ExFactory": "2015-08-06T00:00:00Z",
+      "EstimatedDeparture": "2015-08-06T00:00:00Z",
+      "Dispatch": "2015-08-06T00:00:00Z"
+    },
+    "shipmentNumber": "143755222",
+    "shipmentStage": [{
+      "shipmentDate": {
+        "Dispatch": "2015-08-06T00:00:00Z",
+        "ActualEntry": "2015-08-13T00:00:00Z"
+      },
+      "shipmentStageTypeCode": "MainCarriage",
+      "shipmentLocation": [{
+        "partyRoleCode": "DepartureLocation",
+        "address": {
+          "locationCode": "CMB",
+          "addressUid": "143755230"
+        },
+        "partyUid": "143755230",
+        "name": "DepartureLocation",
+        "contact": {}
+      }, {
+        "partyRoleCode": "EntryLocation",
+        "address": {
+          "locationCode": "OMA",
+          "addressUid": "143755231"
+        },
+        "partyUid": "143755231",
+        "name": "EntryLocation",
+        "contact": {}
+      }],
+      "shipmentMethodCode": "U",
+      "transportMeansVehicleName": "NA"
+    }],
+    "shipmentOrderXref": {
+      "TU6GSDA": {
+        "shipmentOrderKey": "TU6GSDA"
+      }
+    },
+    "masterBillOfLadingNumber": "TBC",
+    "shipmentTotals": {
+      "totalMerchandiseAmount": "1100.00",
+      "totalAllowanceChargeAmount": "0.00"
+    },
+    "transportEquipment": [{
+      "packageDetailLink": {
+        "packageDetailXref": {
+          "0001": "2",
+          "0002": "1",
+          "0003": "2",
+          "0004": "1"
+        },
+        "packageDimensionSummary": {
+          "volumeUnitCode": "CC",
+          "totalGrossWeight": "24.5000",
+          "packMethodCode": "CT",
+          "totalNetWeight": "19.5000",
+          "totalPackageQuantity": "6",
+          "totalGrossVolume": "78657.9100",
+          "totalNetNetWeight": "9.9000",
+          "weightUnitCode": "KG"
+        }
+      },
+      "equipmentNumber": "0002",
+      "shipmentOrderXref": {
+        "TU6GSDA": {
+          "shipmentOrderKey": "TU6GSDA"
+        }
+      },
+      "equipmentLoadTypeCode": "CC",
+      "equipmentNumberPrefix": "MAS0",
+      "transportEquipmentTypeCode": "22G0",
+      "sealNumber": "MAS00003"
+    }],
+    "packageDimensionSummary": {
+      "volumeUnitCode": "CC",
+      "totalGrossWeight": "24.5000",
+      "packMethodCode": "CT",
+      "totalNetWeight": "19.5000",
+      "totalPackageQuantity": "6",
+      "totalVolumeWeight": "0",
+      "totalGrossVolume": "78657.9100",
+      "totalNetNetWeight": "9.9000",
+      "weightUnitCode": "KG"
+    }
+  },
+  "shipmentItem": [{
+    "packageDetailLink": {
+      "packageDetailXref": {
+        "0001": "2",
+        "0002": "1"
+      },
+      "packageDimensionSummary": {
+        "volumeUnitCode": "CC",
+        "totalGrossWeight": "12.0000",
+        "packMethodCode": "CT",
+        "totalNetWeight": "9.5000",
+        "totalPackageQuantity": "3",
+        "totalGrossVolume": "39328.9550",
+        "totalNetNetWeight": "5.4000",
+        "weightUnitCode": "KG"
+      }
+    },
+    "shipmentOrderXref": {
+      "TU6GSDA": {
+        "shipmentOrderKey": "TU6GSDA"
+      }
+    },
+    "orderedQuantity": "50",
+    "itemKey": "6849140010000",
+    "poNumber": "TU6GSDA",
+    "baseItem": {
+      "packageInstruction": {
+        "quantityPerOuterPackage": "24"
+      },
+      "itemUid": "25356301",
+      "itemTypeCode": "Main",
+      "party": [{
+        "partyRoleCode": "ShipmentDestination",
+        "name": "VILLAGE POINTE S/C||THE GAP, INC."
+      }],
+      "measurement": [{
+        "measurementTypeCode": "NetWeight",
+        "unitOfMeasureCode": "KG",
+        "measurementValue": "4.00"
+      }, {
+        "measurementTypeCode": "NetNetWeight",
+        "unitOfMeasureCode": "KG",
+        "measurementValue": "2.4000"
+      }],
+      "itemIdentifier": {
+        "ItemSequenceNumber": "0001",
+        "BuyerNumber": "684914",
+        "ShortDescription": "RIB FULL ZIP",
+        "SkuNumber": "6849140010000",
+        "IdColor": "00"
+      },
+      "quantity": "90"
+    }
+  }, {
+    "packageDetailLink": {
+      "packageDetailXref": {
+        "0003": "2",
+        "0004": "1"
+      },
+      "packageDimensionSummary": {
+        "volumeUnitCode": "CC",
+        "totalGrossWeight": "12.5000",
+        "packMethodCode": "CT",
+        "totalNetWeight": "10.0000",
+        "totalPackageQuantity": "3",
+        "totalGrossVolume": "39328.9550",
+        "totalNetNetWeight": "4.5000",
+        "weightUnitCode": "KG"
+      }
+    },
+    "shipmentOrderXref": {
+      "TU6GSDA": {
+        "shipmentOrderKey": "TU6GSDA"
+      }
+    },
+    "orderedQuantity": "50",
+    "itemKey": "6849140010001",
+    "poNumber": "TU6GSDA",
+    "baseItem": {
+      "packageInstruction": {
+        "quantityPerOuterPackage": "24"
+      },
+      "itemUid": "25356302",
+      "itemTypeCode": "Main",
+      "party": [{
+        "partyRoleCode": "ShipmentDestination",
+        "name": "VILLAGE POINTE S/C||THE GAP, INC."
+      }],
+      "measurement": [{
+        "measurementTypeCode": "NetWeight",
+        "unitOfMeasureCode": "KG",
+        "measurementValue": "4.2000"
+      }, {
+        "measurementTypeCode": "NetNetWeight",
+        "unitOfMeasureCode": "KG",
+        "measurementValue": "2.00"
+      }],
+      "itemIdentifier": {
+        "ItemSequenceNumber": "0002",
+        "BuyerNumber": "684914",
+        "ShortDescription": "RIB FULL ZIP",
+        "SkuNumber": "6849140010001",
+        "IdColor": "00"
+      },
+      "quantity": "90"
+    }
+  }],
+  "party": {
+    "OriginOfGoods": [{
+      "partyRoleCode": "OriginOfGoods",
+      "address": {
+        "locationCode": "CNZSN",
+        "addressUid": "143755226",
+        "countryCode": "LK",
+        "stateOrProvince": "11",
+        "addressLine2": "VEYANGODA",
+        "postalCodeNumber": "11100",
+        "addressLine1": "DAMBUWA ESTATE, DADAGAMUWA",
+        "city": "Colombo"
+      },
+      "partyUid": "143755226",
+      "name": "CARLOS EMBELLISHERS (PVT) LTD",
+      "memberId": "1717989018047075",
+      "contact": {}
+    }],
+    "Buyer": [{
+      "partyRoleCode": "Buyer",
+      "address": {
+        "addressUid": "143755224",
+        "countryCode": "US",
+        "stateOrProvince": "CA",
+        "postalCodeNumber": "94105",
+        "addressLine1": "2 FOLSOM STREET",
+        "city": "San Francisco"
+      },
+      "partyUid": "143755224",
+      "name": "THE GAP, INC.",
+      "memberId": "1717989018043343",
+      "contact": {}
+    }],
+    "Seller": [{
+      "partyRoleCode": "Seller",
+      "address": {
+        "addressUid": "143755225",
+        "countryCode": "LK",
+        "stateOrProvince": "11",
+        "addressLine2": "KANDAWALAWATTE - KANDAWALA",
+        "postalCodeNumber": "10370",
+        "addressLine1": "7TH LANE OFF BORUPANA ROAD",
+        "city": "Ratmalana"
+      },
+      "partyUid": "143755225",
+      "name": "MAS INTIMATES (PVT) LTD",
+      "memberId": "1717989018047075",
+      "contact": {}
+    }],
+    "Consignee": [{
+      "partyRoleCode": "Consignee",
+      "address": {
+        "addressUid": "143755261"
+      },
+      "partyUid": "143755261",
+      "name": "06-1763255",
+      "contact": {
+        "department": "06-1763255"
+      }
+    }],
+    "Consignor": [{
+      "partyRoleCode": "Consignor",
+      "address": {
+        "addressUid": "143755225",
+        "countryCode": "LK",
+        "stateOrProvince": "11",
+        "addressLine2": "KANDAWALAWATTE - KANDAWALA",
+        "postalCodeNumber": "10370",
+        "addressLine1": "7TH LANE OFF BORUPANA ROAD",
+        "city": "Ratmalana"
+      },
+      "partyUid": "143755225",
+      "name": "MAS INTIMATES (PVT) LTD",
+      "memberId": "1717989018047075",
+      "contact": {}
+    }]
+  },
+  "subMessageId": "1",
+  "reference": {
+    "ShipmentLoadType": "CFS",
+    "Consolidator": "UPSN",
+    "EarliestShipmentDate": "20150905",
+    "LatestShipmentDate": "20150905",
+    "OriginLocationCode": "LKCMB",
+    "CargoReadyDate": "20150916",
+    "BookingRequired": "No",
+    "Incoterm": "FOB",
+    "IncotermLocation": "LKCMB",
+    "GtnPaymentTerms": "BP",
+    "SCACCode": "SCAC12546",
+    "OrderClassCode": null,
+    "GenerateInvoiceNum": "false",
+    "DeptCode": null,
+    "OrderClass": null,
+    "PossibleShippingOrderNumbers": null,
+    "LastShipmentMethod": "U",
+    "ReopenCount": "2",
+    "FreightPaymentTerms": "CC"
+  },
+  "packageDetail": [{
+    "volumeUnitCode": "CC",
+    "itemXref": [{
+      "itemKey": "6849140010000",
+      "quantity": "40",
+      "itemTypeCode": "Main",
+      "poNumber": "TU6GSDA"
+    }],
+    "packageItemQuantity": "40",
+    "shipmentNumber": "143755222",
+    "height": "15.24",
+    "packageKey": "0001",
+    "netNetWeight": "2.4",
+    "packMethodCode": "CT",
+    "length": "25.4",
+    "totalPackageItemQuantity": "80",
+    "width": "20.32",
+    "dimensionUnitCode": "CM",
+    "packageQuantity": "2",
+    "grossVolume": "15731.582",
+    "reference": {
+      "SortCode": "000001",
+      "TareWeight": "0.500",
+      "ItemPackType": "Bulk"
+    },
+    "grossWeight": "5",
+    "netWeight": "4",
+    "packageMarkDetail": [{
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010607",
+        "mark": "UPC4306740000010607",
+        "markNumberTypeCode": "CP"
+      }]
+    }, {
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010614",
+        "mark": "UPC4306740000010614",
+        "markNumberTypeCode": "CP"
+      }]
+    }, {
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010607",
+        "markNumberTypeCode": "GM"
+      }]
+    }, {
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010614",
+        "markNumberTypeCode": "GM"
+      }]
+    }],
+    "shipmentOrderXref": {
+      "TU6GSDA": {
+        "shipmentOrderKey": "TU6GSDA"
+      }
+    },
+    "packageUid": "143755235",
+    "weightUnitCode": "KG"
+  }, {
+    "volumeUnitCode": "CC",
+    "itemXref": [{
+      "itemKey": "6849140010000",
+      "quantity": "10",
+      "itemTypeCode": "Main",
+      "poNumber": "TU6GSDA"
+    }],
+    "packageItemQuantity": "10",
+    "shipmentNumber": "143755222",
+    "height": "15.24",
+    "packageKey": "0002",
+    "netNetWeight": "0.6",
+    "packMethodCode": "CT",
+    "length": "25.4",
+    "totalPackageItemQuantity": "10",
+    "width": "20.32",
+    "dimensionUnitCode": "CM",
+    "packageQuantity": "1",
+    "grossVolume": "7865.791",
+    "reference": {
+      "SortCode": "000002",
+      "TareWeight": "0.500",
+      "ItemPackType": "Bulk"
+    },
+    "grossWeight": "2",
+    "netWeight": "1.5",
+    "packageMarkDetail": [{
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010621",
+        "mark": "UPC4306740000010621",
+        "markNumberTypeCode": "CP"
+      }]
+    }, {
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010621",
+        "markNumberTypeCode": "GM"
+      }]
+    }],
+    "shipmentOrderXref": {
+      "TU6GSDA": {
+        "shipmentOrderKey": "TU6GSDA"
+      }
+    },
+    "packageUid": "143755241",
+    "weightUnitCode": "KG"
+  }, {
+    "volumeUnitCode": "CC",
+    "itemXref": [{
+      "itemKey": "6849140010001",
+      "quantity": "40",
+      "itemTypeCode": "Main",
+      "poNumber": "TU6GSDA"
+    }],
+    "packageItemQuantity": "40",
+    "shipmentNumber": "143755222",
+    "height": "15.24",
+    "packageKey": "0003",
+    "netNetWeight": "2",
+    "packMethodCode": "CT",
+    "length": "25.4",
+    "totalPackageItemQuantity": "80",
+    "width": "20.32",
+    "dimensionUnitCode": "CM",
+    "packageQuantity": "2",
+    "grossVolume": "15731.582",
+    "reference": {
+      "SortCode": "000003",
+      "TareWeight": "0.500",
+      "ItemPackType": "Bulk"
+    },
+    "grossWeight": "5.2",
+    "netWeight": "4.2",
+    "packageMarkDetail": [{
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010638",
+        "mark": "UPC4306740000010638",
+        "markNumberTypeCode": "CP"
+      }]
+    }, {
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010645",
+        "mark": "UPC4306740000010645",
+        "markNumberTypeCode": "CP"
+      }]
+    }, {
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010638",
+        "markNumberTypeCode": "GM"
+      }]
+    }, {
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010645",
+        "markNumberTypeCode": "GM"
+      }]
+    }],
+    "shipmentOrderXref": {
+      "TU6GSDA": {
+        "shipmentOrderKey": "TU6GSDA"
+      }
+    },
+    "packageUid": "143755245",
+    "weightUnitCode": "KG"
+  }, {
+    "volumeUnitCode": "CC",
+    "itemXref": [{
+      "itemKey": "6849140010001",
+      "quantity": "10",
+      "itemTypeCode": "Main",
+      "poNumber": "TU6GSDA"
+    }],
+    "packageItemQuantity": "10",
+    "shipmentNumber": "143755222",
+    "height": "15.24",
+    "packageKey": "0004",
+    "netNetWeight": "0.5",
+    "packMethodCode": "CT",
+    "length": "25.4",
+    "totalPackageItemQuantity": "10",
+    "width": "20.32",
+    "dimensionUnitCode": "CM",
+    "packageQuantity": "1",
+    "grossVolume": "7865.791",
+    "reference": {
+      "SortCode": "000004",
+      "TareWeight": "0.500",
+      "ItemPackType": "Bulk"
+    },
+    "grossWeight": "2.1",
+    "netWeight": "1.6",
+    "packageMarkDetail": [{
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010652",
+        "mark": "UPC4306740000010652",
+        "markNumberTypeCode": "CP"
+      }]
+    }, {
+      "packageMark": [{
+        "markNumberFrom": "00004306740000010652",
+        "markNumberTypeCode": "GM"
+      }]
+    }],
+    "shipmentOrderXref": {
+      "TU6GSDA": {
+        "shipmentOrderKey": "TU6GSDA"
+      }
+    },
+    "packageUid": "143755251",
+    "weightUnitCode": "KG"
+  }],
+  "packingListUid": "143755222",
+  "reopenCount": "2",
+  "redirectUrl": "https://commerce-supportq.qa.gtnexus.com/en/trade/PackingManifest?key=144104707",
+  "shipmentDocumentTotals": {
+    "totalDocumentAmount": "1980.00",
+    "packagesTotalQuantity": "6",
+    "shipmentTotals": {
+      "totalMerchandiseAmount": "1980.00",
+      "totalAllowanceChargeAmount": "0.00"
+    },
+    "itemsTotalQuantity": "180"
+  }
+}

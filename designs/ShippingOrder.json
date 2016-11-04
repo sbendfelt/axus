@@ -1,0 +1,1696 @@
+{
+  "design": {
+    "filterAlias": [{
+      "alias": "cargoreadydatetime",
+      "location": "cargoreadydate"
+    }]
+  },
+  "DataDictionary": {
+    "type": "GtnxShippingOrder__ShippingOrder",
+    "GtnxShippingOrder__ShippingOrder": {
+      "PickupType": {
+        "type": "TEXT"
+      },
+      "ReturnExportDocumentationToLL": {
+        "type": "TEXT"
+      },
+      "SaveDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "VendorFax": {
+        "type": "TEXT"
+      },
+      "PackUnitList": {
+        "type": "GtnxShippingOrder__PackUnitListType"
+      },
+      "Origin": {
+        "type": "GtnxShippingOrder__LocationType"
+      },
+      "ShipTerms": {
+        "type": "GtnxShippingOrder__ShipTermsType"
+      },
+      "UserDefinedReferenceField1": {
+        "type": "TEXT"
+      },
+      "UserDefinedReferenceField2": {
+        "type": "TEXT"
+      },
+      "UserDefinedReferenceField3": {
+        "type": "TEXT"
+      },
+      "UserDefinedReferenceField4": {
+        "type": "TEXT"
+      },
+      "Weight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Item": {
+        "type": "GtnxShippingOrder__LineItem",
+        "isCollection": true
+      },
+      "TotalPackedNetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "LocalLanguage": {
+        "type": "TEXT"
+      },
+      "UserDefinedReferenceField5": {
+        "type": "TEXT"
+      },
+      "DocumentsCutOffDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "OrderPaymentTerms": {
+        "type": "TEXT"
+      },
+      "Equipment": {
+        "type": "GtnxShippingOrder__EquipmentType",
+        "isCollection": true
+      },
+      "LoadType": {
+        "type": "TEXT"
+      },
+      "ETAPlaceOfDeliveryDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PaymentTerms": {
+        "type": "TEXT"
+      },
+      "BLNumber": {
+        "type": "TEXT"
+      },
+      "Purpose": {
+        "type": "TEXT"
+      },
+      "CargoReadyDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PickupInfoLL": {
+        "type": "TEXT"
+      },
+      "CargoCutOffDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "UserDefReferenceNumber2": {
+        "type": "TEXT"
+      },
+      "UserDefReferenceNumber3": {
+        "type": "TEXT"
+      },
+      "UserDefReferenceNumber1": {
+        "type": "TEXT"
+      },
+      "PortOfLoading": {
+        "type": "GtnxShippingOrder__CityType"
+      },
+      "TotalPackedGrossWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "PickupFax": {
+        "type": "TEXT"
+      },
+      "SupplierBookingSubmissionDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "Vessel": {
+        "type": "TEXT"
+      },
+      "FactoryIsShipper": {
+        "type": "BOOLEAN"
+      },
+      "EmployeeName": {
+        "type": "TEXT"
+      },
+      "LabelStatus": {
+        "type": "TEXT"
+      },
+      "Volume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "UserDefReferenceDate2": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "ShippingOrderDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "UserDefReferenceDate1": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "UserDefReferenceDate3": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "ETAFinalDestinationDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PlaceOfDelivery": {
+        "type": "GtnxShippingOrder__CityType"
+      },
+      "PackUnitTxnKey": {
+        "type": "TEXT"
+      },
+      "TotalCartons": {
+        "type": "NUMBER"
+      },
+      "CommercialInvoiceNumber": {
+        "type": "TEXT"
+      },
+      "TransportationModeAlias": {
+        "type": "TEXT"
+      },
+      "ShippingOrderNumber1": {
+        "type": "TEXT"
+      },
+      "TransportationReferenceDate2": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "ProcessingInstruction": {
+        "type": "GtnxShippingOrder__ProcessingInstructionType",
+        "isCollection": true
+      },
+      "VendorTelephone": {
+        "type": "TEXT"
+      },
+      "TransportationReferenceDate1": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PickupPhone": {
+        "type": "TEXT"
+      },
+      "ETDOriginDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "InvoiceDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "TransportationMode": {
+        "type": "TEXT"
+      },
+      "TotalNetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Version": {
+        "type": "GtnxShippingOrder__VersionType"
+      },
+      "ShippingDeclaration2": {
+        "type": "GtnxShippingOrder__DeclarationLabel"
+      },
+      "PortOfDischarge": {
+        "type": "GtnxShippingOrder__CityType"
+      },
+      "ShippingDeclaration3": {
+        "type": "GtnxShippingOrder__DeclarationLabel"
+      },
+      "Comments": {
+        "type": "TEXT"
+      },
+      "ShippingDeclaration1": {
+        "type": "GtnxShippingOrder__DeclarationLabel"
+      },
+      "Voyage": {
+        "type": "TEXT"
+      },
+      "ShippingOrderNumber": {
+        "type": "TEXT"
+      },
+      "ShippingDeclaration8": {
+        "type": "GtnxShippingOrder__DeclarationLabel"
+      },
+      "BookingStatus": {
+        "type": "GtnxShippingOrder__BookingStatusType"
+      },
+      "ShippingDeclaration6": {
+        "type": "GtnxShippingOrder__DeclarationLabel"
+      },
+      "ShippingDeclaration7": {
+        "type": "GtnxShippingOrder__DeclarationLabel"
+      },
+      "ShippingDeclaration4": {
+        "type": "GtnxShippingOrder__DeclarationLabel"
+      },
+      "PickupOrDropoffDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "ShippingDeclaration5": {
+        "type": "GtnxShippingOrder__DeclarationLabel"
+      },
+      "CargoReceiptDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PackingStatus": {
+        "type": "TEXT"
+      },
+      "CargoType": {
+        "type": "TEXT"
+      },
+      "AppointmentType": {
+        "type": "TEXT"
+      },
+      "DocumentationStatus": {
+        "type": "TEXT"
+      },
+      "ReturnExportDocumentationTo": {
+        "type": "TEXT"
+      },
+      "PartyResponsibleForLocalChargesLL": {
+        "type": "TEXT"
+      },
+      "TriggerList": {
+        "type": "GtnxShippingOrder__TriggerListType",
+        "isCollection": true
+      },
+      "EmployeeTitle": {
+        "type": "TEXT"
+      },
+      "DeclineStatusReason": {
+        "type": "GtnxShippingOrder__DeclineStatusReasonType"
+      },
+      "Haulage": {
+        "type": "TEXT"
+      },
+      "TotalPackedCartons": {
+        "type": "NUMBER"
+      },
+      "PartyResponsibleForLocalCharges": {
+        "type": "TEXT"
+      },
+      "SupplierInvoiceNumber": {
+        "type": "TEXT"
+      },
+      "OriginCity": {
+        "type": "GtnxShippingOrder__CityType"
+      },
+      "PartyInfo": {
+        "type": "GtnxShippingOrder__PartyInfoType",
+        "isCollection": true
+      },
+      "OrderClass": {
+        "type": "GtnxShippingOrder__OrderClassType"
+      },
+      "PresentmentEmailRecipients": {
+        "type": "TEXT"
+      },
+      "PickupOrDropoffFlag": {
+        "type": "TEXT"
+      },
+      "ETDPortOfLoadDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "FinalDestination": {
+        "type": "GtnxShippingOrder__LocationType"
+      },
+      "Department": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "AppointmentNumber": {
+        "type": "TEXT"
+      },
+      "HandlingUnitList": {
+        "type": "GtnxShippingOrder__HandlingUnitListType"
+      },
+      "ExportCustomsClearanceDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "ETAPortOfDischargeDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "Status": {
+        "type": "TEXT"
+      },
+      "PickupName": {
+        "type": "TEXT"
+      },
+      "Division": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "ExFactoryDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "TotalPackedVolume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      }
+    },
+    "GtnxShippingOrder__PackUnitListType": {
+      "PackUnit": {
+        "type": "GtnxShippingOrder__PackUnitType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__PackUnitType": {
+      "PackUnitHeader": {
+        "type": "GtnxShippingOrder__PackUnitHeaderType"
+      },
+      "PackUnitItemList": {
+        "type": "GtnxShippingOrder__PackUnitItemFieldType"
+      }
+    },
+    "GtnxShippingOrder__PackUnitHeaderType": {
+      "LPN": {
+        "type": "TEXT"
+      },
+      "PackUnitNo": {
+        "type": "TEXT"
+      },
+      "PalletId": {
+        "type": "TEXT"
+      },
+      "LOTNumber": {
+        "type": "TEXT"
+      },
+      "PackUnitType": {
+        "type": "TEXT"
+      },
+      "PackUnitSizeType": {
+        "type": "TEXT"
+      },
+      "LastPackUnit": {
+        "type": "BOOLEAN"
+      },
+      "MixedPackUnit": {
+        "type": "BOOLEAN"
+      },
+      "Archive": {
+        "type": "BOOLEAN"
+      },
+      "Dimension": {
+        "type": "GtnxShippingOrder__DimensionType"
+      },
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "Weight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Volume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "LabelStatus": {
+        "type": "TEXT"
+      },
+      "PackUnitStatus": {
+        "type": "TEXT"
+      },
+      "ReferenceList": {
+        "type": "GtnxShippingOrder__ReferenceListType"
+      },
+      "ContainerNumber": {
+        "type": "TEXT"
+      },
+      "SealNumber": {
+        "type": "TEXT"
+      },
+      "ContainerWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "NetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "EmptyWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Radius": {
+        "type": "NUMBER"
+      },
+      "SortCode": {
+        "type": "TEXT"
+      },
+      "EquipmentNumber": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__DimensionType": {
+      "DimensionInfo": {
+        "type": "GtnxShippingOrder__Dimension"
+      },
+      "ANSICode": {
+        "type": "TEXT"
+      },
+      "Unit": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__Dimension": {
+      "Length": {
+        "type": "NUMBER"
+      },
+      "Width": {
+        "type": "NUMBER"
+      },
+      "Height": {
+        "type": "NUMBER"
+      }
+    },
+    "GtnxShippingOrder__CountableType": {
+      "value": {
+        "type": "NUMBER"
+      },
+      "ANSICode": {
+        "type": "TEXT"
+      },
+      "Unit": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__WeightType": {
+      "value": {
+        "type": "NUMBER"
+      },
+      "ANSICode": {
+        "type": "TEXT"
+      },
+      "Unit": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__VolumeType": {
+      "value": {
+        "type": "NUMBER"
+      },
+      "ANSICode": {
+        "type": "TEXT"
+      },
+      "Unit": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__ReferenceListType": {
+      "Reference": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__ReferenceType": {
+      "Type": {
+        "type": "TEXT"
+      },
+      "Value": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__PackUnitItemFieldType": {
+      "PackUnitItem": {
+        "type": "GtnxShippingOrder__PackUnitItemType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__PackUnitItemType": {
+      "PackUnitItemIdentifier": {
+        "type": "TEXT"
+      },
+      "PONumber": {
+        "type": "TEXT"
+      },
+      "OrderClass": {
+        "type": "GtnxShippingOrder__OrderClassType"
+      },
+      "POReference": {
+        "type": "TEXT"
+      },
+      "POUserDefCharFld1": {
+        "type": "TEXT"
+      },
+      "POUserDefCharFld2": {
+        "type": "TEXT"
+      },
+      "POObjIdKey": {
+        "type": "TEXT"
+      },
+      "POLineNum": {
+        "type": "TEXT"
+      },
+      "ProductCode": {
+        "type": "TEXT"
+      },
+      "ProductRefNum": {
+        "type": "TEXT"
+      },
+      "POLineUserDefCharFld1": {
+        "type": "TEXT"
+      },
+      "POLineUserDefCharFld2": {
+        "type": "TEXT"
+      },
+      "FinalDestinationCode": {
+        "type": "TEXT"
+      },
+      "ShipWindowEnd": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "POLineObjIdKey": {
+        "type": "TEXT"
+      },
+      "DivisionCode": {
+        "type": "TEXT"
+      },
+      "Color": {
+        "type": "TEXT"
+      },
+      "Size": {
+        "type": "TEXT"
+      },
+      "SizeCategory": {
+        "type": "TEXT"
+      },
+      "Dimension": {
+        "type": "TEXT"
+      },
+      "UPC": {
+        "type": "TEXT"
+      },
+      "AssortmentUserDefChar1": {
+        "type": "TEXT"
+      },
+      "AssortmentUserDefChar2": {
+        "type": "TEXT"
+      },
+      "AssortmentUserDefChar3": {
+        "type": "TEXT"
+      },
+      "AssortmentUserDefChar4": {
+        "type": "TEXT"
+      },
+      "AssortmentUserDefChar5": {
+        "type": "TEXT"
+      },
+      "EAN": {
+        "type": "TEXT"
+      },
+      "PackType": {
+        "type": "TEXT"
+      },
+      "QuotaCategoryNum": {
+        "type": "TEXT"
+      },
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "Weight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "NetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "NetNetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Volume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "BLNumber": {
+        "type": "TEXT"
+      },
+      "ReferenceList": {
+        "type": "GtnxShippingOrder__ReferenceListType"
+      },
+      "PackQuantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "PackingNum": {
+        "type": "TEXT"
+      },
+      "PackFactor": {
+        "type": "GtnxShippingOrder__CountableType"
+      }
+    },
+    "GtnxShippingOrder__OrderClassType": {
+      "Code": {
+        "type": "TEXT"
+      },
+      "Name": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__LocationType": {
+      "LocationCode": {
+        "type": "TEXT"
+      },
+      "Name": {
+        "type": "TEXT"
+      },
+      "Address": {
+        "type": "GtnxShippingOrder__SimpleAddressType"
+      },
+      "City": {
+        "type": "GtnxShippingOrder__CityType"
+      },
+      "PostalCode": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__SimpleAddressType": {
+      "AddressLine": {
+        "type": "COMPLEX",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__CityType": {
+      "CityName": {
+        "type": "TEXT"
+      },
+      "CityCode": {
+        "type": "GtnxShippingOrder__CityCodeType",
+        "isCollection": true
+      },
+      "State": {
+        "type": "TEXT"
+      },
+      "CountryCode": {
+        "type": "TEXT"
+      },
+      "CountryName": {
+        "type": "TEXT"
+      },
+      "cityId": {
+        "type": "NUMBER"
+      }
+    },
+    "GtnxShippingOrder__CityCodeType": {
+      "value": {
+        "type": "TEXT"
+      },
+      "Qualifier": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__ShipTermsType": {
+      "value": {
+        "type": "TEXT"
+      },
+      "Code": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__LineItem": {
+      "Purpose": {
+        "type": "TEXT"
+      },
+      "Division": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "Department": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "PurchaseOrderNumber": {
+        "type": "TEXT"
+      },
+      "OrderClass": {
+        "type": "GtnxShippingOrder__OrderClassType"
+      },
+      "UserRefNumber": {
+        "type": "TEXT"
+      },
+      "ItemNumber": {
+        "type": "TEXT"
+      },
+      "FullHTSNumber": {
+        "type": "TEXT"
+      },
+      "FinalDestination": {
+        "type": "GtnxShippingOrder__LocationType"
+      },
+      "OriginCountry": {
+        "type": "TEXT"
+      },
+      "MarksAndNumber": {
+        "type": "TEXT"
+      },
+      "ParticularsFurnishedByShipper": {
+        "type": "TEXT"
+      },
+      "CommodityDescription": {
+        "type": "TEXT"
+      },
+      "CommodityDescriptionLL": {
+        "type": "TEXT"
+      },
+      "TotalCartons": {
+        "type": "NUMBER"
+      },
+      "TotalPieces": {
+        "type": "NUMBER"
+      },
+      "TotalCubicMeters": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "TotalGrossWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "AssortmentQty": {
+        "type": "NUMBER"
+      },
+      "UOM": {
+        "type": "GtnxShippingOrder__UOMType"
+      },
+      "QuotaCategoryNumber": {
+        "type": "TEXT"
+      },
+      "LetterOfCreditNumber": {
+        "type": "TEXT"
+      },
+      "ShipTerms": {
+        "type": "GtnxShippingOrder__ShipTermsType"
+      },
+      "TransportationMode": {
+        "type": "TEXT"
+      },
+      "PaymentTerms": {
+        "type": "TEXT"
+      },
+      "FactoryCountry": {
+        "type": "TEXT"
+      },
+      "CartonDetail": {
+        "type": "GtnxShippingOrder__CartonDetailType",
+        "isCollection": true
+      },
+      "PackingStatus": {
+        "type": "TEXT"
+      },
+      "LabelStatus": {
+        "type": "TEXT"
+      },
+      "PackingLine": {
+        "type": "GtnxShippingOrder__PackingLineType",
+        "isCollection": true
+      },
+      "ItemAttributes": {
+        "type": "GtnxShippingOrder__ItemAttributesType",
+        "isCollection": true
+      },
+      "HarmonizedCodeInfo": {
+        "type": "GtnxShippingOrder__HarmonizedCodeType",
+        "isCollection": true
+      },
+      "Assortment": {
+        "type": "GtnxShippingOrder__AssortmentInfoType",
+        "isCollection": true
+      },
+      "PartyInfo": {
+        "type": "GtnxShippingOrder__PartyInfoType",
+        "isCollection": true
+      },
+      "VendorItemNumber": {
+        "type": "TEXT"
+      },
+      "NetNetWeight": {
+        "type": "NUMBER"
+      },
+      "ShipWindow": {
+        "type": "GtnxShippingOrder__ShipWindowType"
+      },
+      "ProdReference": {
+        "type": "GtnxShippingOrder__ProdReferenceType"
+      },
+      "CartonRangeFrom": {
+        "type": "TEXT"
+      },
+      "CartonRangeTo": {
+        "type": "TEXT"
+      },
+      "NetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "FirstCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "LandedCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "RetailCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "POReference": {
+        "type": "TEXT"
+      },
+      "POUserDefCharFld1": {
+        "type": "TEXT"
+      },
+      "POUserDefCharFld2": {
+        "type": "TEXT"
+      },
+      "POObjIdKey": {
+        "type": "TEXT"
+      },
+      "POLineNumber": {
+        "type": "TEXT"
+      },
+      "CommodityCode": {
+        "type": "TEXT"
+      },
+      "HarmonizedCode": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "PackUnitItemIdentifier": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "EquipmentNumber": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "POReferences": {
+        "type": "GtnxShippingOrder__POReferencesType"
+      },
+      "POLineReferences": {
+        "type": "GtnxShippingOrder__POLineReferencesType"
+      },
+      "PackInfo": {
+        "type": "GtnxShippingOrder__PackType"
+      },
+      "PackInstruction": {
+        "type": "GtnxShippingOrder__PackInstructionType"
+      },
+      "ExtendedProductDescription": {
+        "type": "GtnxShippingOrder__ExtendedProductDescriptionType"
+      },
+      "ItemizationCode": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "OrderLineShipmentTerms": {
+        "type": "GtnxShippingOrder__ShipTermsType"
+      },
+      "OrderLinePaymentTerms": {
+        "type": "TEXT"
+      },
+      "OrderLineTransportationModeAlias": {
+        "type": "TEXT"
+      },
+      "OrderLineParties": {
+        "type": "GtnxShippingOrder__OrderLinePartyInfoType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__UOMType": {
+      "value": {
+        "type": "TEXT"
+      },
+      "Code": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__CartonDetailType": {
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "CartonStatus": {
+        "type": "TEXT"
+      },
+      "CartonLabel": {
+        "type": "GtnxShippingOrder__CartonLabelType"
+      }
+    },
+    "GtnxShippingOrder__CartonLabelType": {
+      "Sscc": {
+        "type": "TEXT"
+      },
+      "LabelType": {
+        "type": "TEXT"
+      },
+      "LabelStatus": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__PackingLineType": {
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "Cartons": {
+        "type": "NUMBER"
+      },
+      "QuantityPerCarton": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "CartonRangeFrom": {
+        "type": "TEXT"
+      },
+      "CartonRangeTo": {
+        "type": "TEXT"
+      },
+      "CartonDimensions": {
+        "type": "GtnxShippingOrder__DimensionType"
+      },
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      },
+      "GrossWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "NetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Volume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "NetNetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      }
+    },
+    "GtnxShippingOrder__ItemAttributesType": {
+      "Type": {
+        "type": "TEXT"
+      },
+      "Value": {
+        "type": "TEXT"
+      },
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__HarmonizedCodeType": {
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      },
+      "ReferenceValues": {
+        "type": "GtnxShippingOrder__ReferenceValueType",
+        "isCollection": true
+      },
+      "HarmonizedAttributes": {
+        "type": "GtnxShippingOrder__ItemAttributesType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__ReferenceValueType": {
+      "Type": {
+        "type": "TEXT"
+      },
+      "Value": {
+        "type": "NUMBER"
+      }
+    },
+    "GtnxShippingOrder__AssortmentInfoType": {
+      "Sku": {
+        "type": "TEXT"
+      },
+      "UPC": {
+        "type": "TEXT"
+      },
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "Description": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "MasterPackQuantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "InnerPackQuantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "InnersPerMaster": {
+        "type": "NUMBER"
+      },
+      "CartonCount": {
+        "type": "NUMBER"
+      },
+      "CartonRange": {
+        "type": "TEXT"
+      },
+      "TotalWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "TotalVolume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "FirstCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "LandedCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "RetailCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "HarmonizedCodeInfo": {
+        "type": "GtnxShippingOrder__HarmonizedCodeType",
+        "isCollection": true
+      },
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      },
+      "ItemAttributes": {
+        "type": "GtnxShippingOrder__ItemAttributesType",
+        "isCollection": true
+      },
+      "PackUnitItemIdentifier": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "EquipmentNumber": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "ExtendedProductDescription": {
+        "type": "GtnxShippingOrder__ExtendedProductDescriptionType"
+      },
+      "Purpose": {
+        "type": "TEXT"
+      },
+      "CartonDetail": {
+        "type": "GtnxShippingOrder__CartonDetailType",
+        "isCollection": true
+      },
+      "PackingLine": {
+        "type": "GtnxShippingOrder__PackingLineType",
+        "isCollection": true
+      },
+      "CartonRangeFrom": {
+        "type": "TEXT"
+      },
+      "CartonRangeTo": {
+        "type": "TEXT"
+      },
+      "GrossAmount": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "PackingStatus": {
+        "type": "TEXT"
+      },
+      "LabelStatus": {
+        "type": "TEXT"
+      },
+      "NetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      }
+    },
+    "GtnxShippingOrder__PriceType": {
+      "value": {
+        "type": "NUMBER"
+      },
+      "Currency": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__ExtendedProductDescriptionType": {
+      "Color": {
+        "type": "GtnxShippingOrder__AttributeType"
+      },
+      "Size": {
+        "type": "GtnxShippingOrder__AttributeType"
+      },
+      "Style": {
+        "type": "GtnxShippingOrder__AttributeType"
+      }
+    },
+    "GtnxShippingOrder__AttributeType": {
+      "Code": {
+        "type": "TEXT"
+      },
+      "Description": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__PartyInfoType": {
+      "Type": {
+        "type": "TEXT"
+      },
+      "Code": {
+        "type": "TEXT"
+      },
+      "Name": {
+        "type": "TEXT"
+      },
+      "AddressLine1": {
+        "type": "TEXT"
+      },
+      "AddressLine2": {
+        "type": "TEXT"
+      },
+      "AddressLine3": {
+        "type": "TEXT"
+      },
+      "AddressLine4": {
+        "type": "TEXT"
+      },
+      "Country": {
+        "type": "GtnxShippingOrder__CountryType"
+      },
+      "PostalCode": {
+        "type": "TEXT"
+      },
+      "Email": {
+        "type": "TEXT"
+      },
+      "City": {
+        "type": "GtnxShippingOrder__CityType"
+      },
+      "Phone": {
+        "type": "TEXT"
+      },
+      "Fax": {
+        "type": "TEXT"
+      },
+      "CountryCode": {
+        "type": "TEXT"
+      },
+      "CountryName": {
+        "type": "TEXT"
+      },
+      "DisplayAddress": {
+        "type": "GtnxShippingOrder__DisplayAddressType"
+      },
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__CountryType": {
+      "Code": {
+        "type": "TEXT"
+      },
+      "Name": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__DisplayAddressType": {
+      "AddressLine1": {
+        "type": "TEXT"
+      },
+      "AddressLine2": {
+        "type": "TEXT"
+      },
+      "AddressLine3": {
+        "type": "TEXT"
+      },
+      "AddressLine4": {
+        "type": "TEXT"
+      },
+      "AddressLine5": {
+        "type": "TEXT"
+      },
+      "AddressLine6": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__ShipWindowType": {
+      "StartDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "EndDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "CancelDate": {
+        "type": "DATE",
+        "maxLength": 50
+      }
+    },
+    "GtnxShippingOrder__ProdReferenceType": {
+      "ProdReferenceNumber1": {
+        "type": "TEXT"
+      },
+      "ProdReferenceNumber2": {
+        "type": "TEXT"
+      },
+      "ProdReferenceNumber3": {
+        "type": "TEXT"
+      },
+      "ProdReferenceNumber4": {
+        "type": "TEXT"
+      },
+      "ProdReferenceNumber5": {
+        "type": "TEXT"
+      },
+      "ProdReferenceDate1": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "ProdReferenceDate2": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "ProdReferenceDate3": {
+        "type": "DATE",
+        "maxLength": 50
+      }
+    },
+    "GtnxShippingOrder__POReferencesType": {
+      "PoReferenceDate1": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PoReferenceDate2": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PoReferenceDate3": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PoReferenceNumber1": {
+        "type": "TEXT"
+      },
+      "PoReferenceNumber2": {
+        "type": "TEXT"
+      },
+      "PoReferenceNumber3": {
+        "type": "TEXT"
+      },
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      },
+      "StringReferences": {
+        "type": "GtnxShippingOrder__StringReferenceType",
+        "isCollection": true
+      },
+      "DateReferences": {
+        "type": "GtnxShippingOrder__DateReferenceType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__StringReferenceType": {
+      "Type": {
+        "type": "TEXT"
+      },
+      "Value": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__DateReferenceType": {
+      "Type": {
+        "type": "TEXT"
+      },
+      "Value": {
+        "type": "DATE",
+        "maxLength": 50
+      }
+    },
+    "GtnxShippingOrder__POLineReferencesType": {
+      "ProdReference": {
+        "type": "GtnxShippingOrder__ProdReferenceType"
+      },
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      },
+      "ReferenceValues": {
+        "type": "GtnxShippingOrder__ReferenceValueType",
+        "isCollection": true
+      },
+      "StringReferences": {
+        "type": "GtnxShippingOrder__StringReferenceType",
+        "isCollection": true
+      },
+      "DateReferences": {
+        "type": "GtnxShippingOrder__DateReferenceType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__PackType": {
+      "PackingNum": {
+        "type": "TEXT"
+      },
+      "Type": {
+        "type": "TEXT"
+      },
+      "PackingType": {
+        "type": "TEXT"
+      },
+      "PackQuantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "PackFactor": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "PackItem": {
+        "type": "GtnxShippingOrder__PackItemType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__PackItemType": {
+      "Sku": {
+        "type": "TEXT"
+      },
+      "UPC": {
+        "type": "TEXT"
+      },
+      "Description": {
+        "type": "COMPLEX",
+        "isCollection": true
+      },
+      "MasterPackQuantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "InnerPackQuantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "InnersPerMaster": {
+        "type": "NUMBER"
+      },
+      "CartonCount": {
+        "type": "NUMBER"
+      },
+      "CartonRange": {
+        "type": "TEXT"
+      },
+      "TotalWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "TotalVolume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "FirstCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "LandedCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "RetailCostPrice": {
+        "type": "GtnxShippingOrder__PriceType"
+      },
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      },
+      "PackFactor": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "NetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "NetNetWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Volume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "ExtendedProductDescription": {
+        "type": "GtnxShippingOrder__ExtendedProductDescriptionType"
+      }
+    },
+    "GtnxShippingOrder__PackInstructionType": {
+      "PackInstruction": {
+        "type": "TEXT"
+      },
+      "PackUnitMaxQuantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "PackUnitMinQuantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "PackUnitMaxWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "PackUnitMinWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "UserDefChar1": {
+        "type": "TEXT"
+      },
+      "UserDefChar2": {
+        "type": "TEXT"
+      },
+      "UserDefChar3": {
+        "type": "TEXT"
+      },
+      "UserDefChar4": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__OrderLinePartyInfoType": {
+      "PartyInfo": {
+        "type": "GtnxShippingOrder__PartyInfoType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__EquipmentType": {
+      "Code": {
+        "type": "TEXT"
+      },
+      "Type": {
+        "type": "TEXT"
+      },
+      "Quantity": {
+        "type": "NUMBER"
+      },
+      "MinTemp": {
+        "type": "GtnxShippingOrder__TemperatureType"
+      },
+      "MaxTemp": {
+        "type": "GtnxShippingOrder__TemperatureType"
+      },
+      "VentSettingCode": {
+        "type": "TEXT"
+      },
+      "HumidityPercent": {
+        "type": "NUMBER"
+      },
+      "Atmosphere": {
+        "type": "TEXT"
+      },
+      "Genset": {
+        "type": "TEXT"
+      },
+      "AirExchange": {
+        "type": "NUMBER"
+      },
+      "AdditionalServices": {
+        "type": "TEXT"
+      },
+      "EquipmentLoadTypeCode": {
+        "type": "TEXT"
+      },
+      "EquipmentNumberPrefix": {
+        "type": "TEXT"
+      },
+      "EquipmentNumber": {
+        "type": "TEXT"
+      },
+      "EquipmentCheckDigit": {
+        "type": "NUMBER"
+      },
+      "SealNumber": {
+        "type": "TEXT"
+      },
+      "IsPartialLoadIndicator": {
+        "type": "BOOLEAN"
+      },
+      "Notes": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__TemperatureType": {
+      "value": {
+        "type": "NUMBER"
+      },
+      "ANSICode": {
+        "type": "TEXT"
+      },
+      "Unit": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__ProcessingInstructionType": {
+      "value": {
+        "type": "TEXT"
+      },
+      "Object": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__VersionType": {
+      "value": {
+        "type": "TEXT"
+      },
+      "Major": {
+        "type": "NUMBER"
+      },
+      "Minor": {
+        "type": "NUMBER"
+      }
+    },
+    "GtnxShippingOrder__DeclarationLabel": {
+      "value": {
+        "type": "BOOLEAN"
+      },
+      "Label": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__BookingStatusType": {
+      "BookingId": {
+        "type": "TEXT"
+      },
+      "BookingRequestId": {
+        "type": "TEXT"
+      },
+      "OriginalBookingId": {
+        "type": "TEXT"
+      },
+      "Status": {
+        "type": "GtnxShippingOrder__StatusType"
+      },
+      "BookingDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "PickupDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "DeclineStatusReason": {
+        "type": "GtnxShippingOrder__DeclineStatusReasonType"
+      },
+      "References": {
+        "type": "GtnxShippingOrder__ReferenceType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__StatusType": {
+      "value": {
+        "type": "TEXT"
+      },
+      "Code": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__DeclineStatusReasonType": {
+      "ReasonCode": {
+        "type": "TEXT"
+      },
+      "Description": {
+        "type": "TEXT"
+      },
+      "Comments": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__TriggerListType": {
+      "Trigger": {
+        "type": "GtnxShippingOrder__TriggerType",
+        "isCollection": true
+      }
+    },
+    "GtnxShippingOrder__TriggerType": {
+      "Name": {
+        "type": "TEXT"
+      },
+      "Description": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__HandlingUnitListType": {
+      "Purpose": {
+        "type": "TEXT"
+      },
+      "HandlingUnit": {
+        "type": "GtnxShippingOrder__HandlingUnitType",
+        "isCollection": true
+      },
+      "HandlingUnitTotal": {
+        "type": "GtnxShippingOrder__HandlingUnitTotalType"
+      }
+    },
+    "GtnxShippingOrder__HandlingUnitType": {
+      "HandlingUnitHeader": {
+        "type": "GtnxShippingOrder__HandlingUnitHeaderType"
+      }
+    },
+    "GtnxShippingOrder__HandlingUnitHeaderType": {
+      "Type": {
+        "type": "GtnxShippingOrder__PackagingType"
+      },
+      "Description": {
+        "type": "TEXT"
+      },
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "Dimension": {
+        "type": "GtnxShippingOrder__HandlingUnitDimensionType"
+      },
+      "Weight": {
+        "type": "GtnxShippingOrder__WeightType"
+      },
+      "Stackable": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__PackagingType": {
+      "ANSICode": {
+        "type": "TEXT"
+      },
+      "Unit": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__HandlingUnitDimensionType": {
+      "DimensionInfo": {
+        "type": "GtnxShippingOrder__HandlingUnitDimensionInfo"
+      },
+      "ANSICode": {
+        "type": "TEXT"
+      },
+      "Unit": {
+        "type": "TEXT"
+      }
+    },
+    "GtnxShippingOrder__HandlingUnitDimensionInfo": {
+      "Length": {
+        "type": "NUMBER"
+      },
+      "Width": {
+        "type": "NUMBER"
+      },
+      "Height": {
+        "type": "NUMBER"
+      },
+      "Radius": {
+        "type": "NUMBER"
+      }
+    },
+    "GtnxShippingOrder__HandlingUnitTotalType": {
+      "Quantity": {
+        "type": "GtnxShippingOrder__CountableType"
+      },
+      "TotalVolume": {
+        "type": "GtnxShippingOrder__VolumeType"
+      },
+      "TotalGrossWeight": {
+        "type": "GtnxShippingOrder__WeightType"
+      }
+    }
+  }
+}

@@ -1,0 +1,991 @@
+{
+  "design": {
+    "filterAlias": [{
+      "alias": "buyername",
+      "location": "party.buyer[0].name"
+    }, {
+      "alias": "buyerid",
+      "location": "party.buyer[0].memberid"
+    }, {
+      "alias": "sellername",
+      "location": "party.seller[0].name"
+    }, {
+      "alias": "sellerid",
+      "location": "party.seller[0].memberid"
+    }, {
+      "alias": "oogname",
+      "location": "party.origin_of_goods[0].name"
+    }, {
+      "alias": "oogid",
+      "location": "party.origin_of_goods[0].memberid"
+    }, {
+      "alias": "party.buyer.name",
+      "location": "party.buyer[0].name"
+    }, {
+      "alias": "party.buyer.memberid",
+      "location": "party.buyer[0].memberid"
+    }, {
+      "alias": "party.seller.name",
+      "location": "party.seller[0].name"
+    }, {
+      "alias": "party.seller.memberid",
+      "location": "party.seller[0].memberid"
+    }, {
+      "alias": "party.origin_of_goods.name",
+      "location": "party.origin_of_goods[0].name"
+    }, {
+      "alias": "party.origin_of_goods.memberid",
+      "location": "party.origin_of_goods[0].memberid"
+    }]
+  },
+  "DataDictionary": {
+    "type": "PackingListDetail",
+    "PackingListDetail": {
+      "shipmentOrder": {
+        "type": "ShipmentOrder",
+        "isMap": true
+      },
+      "packingListNumber": {
+        "type": "TEXT"
+      },
+      "revisionNumber": {
+        "type": "TEXT"
+      },
+      "packingListFunctionCode": {
+        "type": "TEXT"
+      },
+      "shipmentDocumentDate": {
+        "type": "ShipmentDocumentDate",
+        "isMap": true
+      },
+      "shipment": {
+        "type": "Shipment",
+        "isMap": true
+      },
+      "messageFunctionCode": {
+        "type": "TEXT"
+      },
+      "subscriptionEvent": {
+        "type": "SubscriptionEvent"
+      },
+      "attachment": {
+        "type": "Attachment",
+        "isCollection": true
+      },
+      "shipmentItem": {
+        "type": "ShipmentItem",
+        "isCollection": true
+      },
+      "party": {
+        "type": "Party",
+        "isMap": true
+      },
+      "subMessageId": {
+        "type": "TEXT"
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      },
+      "validationError": {
+        "type": "ValidationError",
+        "isCollection": true
+      },
+      "packageDetail": {
+        "type": "PackageDetail",
+        "isCollection": true
+      },
+      "attachedNotes": {
+        "type": "AttachedNotes",
+        "isCollection": true
+      },
+      "packingListUid": {
+        "type": "NUMBER"
+      },
+      "reopenCount": {
+        "type": "NUMBER"
+      },
+      "notes": {
+        "type": "TEXT"
+      },
+      "redirectUrl": {
+        "type": "TEXT"
+      },
+      "shipmentDocumentTotals": {
+        "type": "ShipmentDocumentTotals"
+      }
+    },
+    "ShipmentOrder": {
+      "shipmentOrderKey": {
+        "type": "TEXT"
+      },
+      "finalDestination": {
+        "type": "Party"
+      },
+      "poNumber": {
+        "type": "TEXT"
+      },
+      "orderReference": {
+        "type": "OrderReference"
+      },
+      "itemXref": {
+        "type": "ItemXref",
+        "isCollection": true
+      },
+      "packageDetailLink": {
+        "type": "PackageDetailLink"
+      }
+    },
+    "Party": {
+      "partyUid": {
+        "type": "NUMBER"
+      },
+      "partyRoleCode": {
+        "type": "TEXT"
+      },
+      "memberId": {
+        "type": "NUMBER"
+      },
+      "divisionUid": {
+        "type": "NUMBER"
+      },
+      "identification": {
+        "type": "Identification",
+        "isMap": true
+      },
+      "name": {
+        "type": "TEXT"
+      },
+      "longName": {
+        "type": "TEXT"
+      },
+      "contact": {
+        "type": "OrganizationContact"
+      },
+      "address": {
+        "type": "Address"
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      }
+    },
+    "Identification": {
+      "$key": {
+        "type": "TEXT"
+      },
+      "$value": {
+        "type": "TEXT"
+      }
+    },
+    "OrganizationContact": {
+      "name": {
+        "type": "TEXT"
+      },
+      "emailAddress": {
+        "type": "TEXT"
+      },
+      "phone": {
+        "type": "TEXT"
+      },
+      "fax": {
+        "type": "TEXT"
+      },
+      "department": {
+        "type": "TEXT"
+      },
+      "region": {
+        "type": "TEXT"
+      }
+    },
+    "Address": {
+      "addressUid": {
+        "type": "NUMBER"
+      },
+      "addressLine1": {
+        "type": "TEXT"
+      },
+      "addressLine2": {
+        "type": "TEXT"
+      },
+      "city": {
+        "type": "TEXT"
+      },
+      "stateOrProvince": {
+        "type": "TEXT"
+      },
+      "postalCodeNumber": {
+        "type": "TEXT"
+      },
+      "countryCode": {
+        "type": "TEXT"
+      },
+      "locationQualifierCode": {
+        "type": "TEXT"
+      },
+      "locationCode": {
+        "type": "TEXT"
+      }
+    },
+    "Reference": {
+      "$key": {
+        "type": "TEXT"
+      },
+      "$value": {
+        "type": "TEXT"
+      }
+    },
+    "OrderReference": {
+      "poNumber": {
+        "type": "TEXT"
+      },
+      "orderUid": {
+        "type": "NUMBER"
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      }
+    },
+    "ItemXref": {
+      "poNumber": {
+        "type": "TEXT"
+      },
+      "itemKey": {
+        "type": "TEXT"
+      },
+      "itemTypeCode": {
+        "type": "TEXT"
+      },
+      "quantity": {
+        "type": "NUMBER"
+      },
+      "packageInstruction": {
+        "type": "PackageInstruction"
+      },
+      "itemXref": {
+        "type": "ItemXref",
+        "isCollection": true
+      }
+    },
+    "PackageInstruction": {
+      "packInstructionReference": {
+        "type": "TEXT"
+      },
+      "packageType": {
+        "type": "TEXT"
+      },
+      "packMethodCode": {
+        "type": "TEXT"
+      },
+      "quantityPerInnerPackage": {
+        "type": "NUMBER"
+      },
+      "quantityPerOuterPackage": {
+        "type": "NUMBER"
+      }
+    },
+    "PackageDetailLink": {
+      "packageDimensionSummary": {
+        "type": "PackageDimensionSummary"
+      },
+      "packageDetailXref": {
+        "type": "PackageDetailXref",
+        "isMap": true
+      }
+    },
+    "PackageDimensionSummary": {
+      "totalPackageQuantity": {
+        "type": "NUMBER"
+      },
+      "packMethodCode": {
+        "type": "TEXT"
+      },
+      "weightUnitCode": {
+        "type": "TEXT"
+      },
+      "totalGrossWeight": {
+        "type": "NUMBER"
+      },
+      "totalNetWeight": {
+        "type": "NUMBER"
+      },
+      "totalNetNetWeight": {
+        "type": "NUMBER"
+      },
+      "volumeUnitCode": {
+        "type": "TEXT"
+      },
+      "totalGrossVolume": {
+        "type": "NUMBER"
+      },
+      "volumeWeightUnitCode": {
+        "type": "TEXT"
+      },
+      "totalVolumeWeight": {
+        "type": "NUMBER"
+      }
+    },
+    "PackageDetailXref": {
+      "$key": {
+        "type": "TEXT"
+      },
+      "$value": {
+        "type": "NUMBER"
+      }
+    },
+    "ShipmentDocumentDate": {
+      "$key": {
+        "type": "TEXT"
+      },
+      "$value": {
+        "type": "DATE",
+        "maxLength": 50
+      }
+    },
+    "Shipment": {
+      "shipmentNumber": {
+        "type": "TEXT"
+      },
+      "shipmentUid": {
+        "type": "NUMBER"
+      },
+      "carrierBookingNumber": {
+        "type": "TEXT"
+      },
+      "cargoReceiptNumber": {
+        "type": "TEXT"
+      },
+      "masterBillOfLadingNumber": {
+        "type": "TEXT"
+      },
+      "houseBillOfLadingNumber": {
+        "type": "TEXT"
+      },
+      "authorizationNumber": {
+        "type": "TEXT"
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      },
+      "invoiceReference": {
+        "type": "InvoiceReference",
+        "isCollection": true
+      },
+      "party": {
+        "type": "Party",
+        "isMap": true
+      },
+      "packageDimensionSummary": {
+        "type": "PackageDimensionSummary"
+      },
+      "packageDetailLink": {
+        "type": "PackageDetailLink"
+      },
+      "shipmentOrderXref": {
+        "type": "ShipmentOrderXref",
+        "isMap": true
+      },
+      "itemXref": {
+        "type": "ItemXref",
+        "isCollection": true
+      },
+      "shipmentDate": {
+        "type": "ShipmentDate",
+        "isMap": true
+      },
+      "shipmentRoute": {
+        "type": "ShipmentRoute",
+        "isCollection": true
+      },
+      "shipmentStage": {
+        "type": "ShipmentStage",
+        "isCollection": true
+      },
+      "transportEquipment": {
+        "type": "TransportEquipment",
+        "isCollection": true
+      },
+      "additionalDocumentPresented": {
+        "type": "DocumentReference",
+        "isMap": true
+      },
+      "freightPaymentCode": {
+        "type": "TEXT"
+      },
+      "equipmentLoadTypeCode": {
+        "type": "TEXT"
+      },
+      "allowanceCharge": {
+        "type": "AllowanceCharge",
+        "isCollection": true
+      },
+      "notes": {
+        "type": "TEXT"
+      },
+      "shipmentTotals": {
+        "type": "ShipmentTotals"
+      }
+    },
+    "InvoiceReference": {
+      "invoiceNumber": {
+        "type": "TEXT"
+      },
+      "invoiceUid": {
+        "type": "NUMBER"
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      }
+    },
+    "ShipmentOrderXref": {
+      "shipmentOrderKey": {
+        "type": "TEXT"
+      }
+    },
+    "ShipmentDate": {
+      "$key": {
+        "type": "TEXT"
+      },
+      "$value": {
+        "type": "DATE",
+        "maxLength": 50
+      }
+    },
+    "ShipmentRoute": {
+      "shipmentStageTypeCode": {
+        "type": "TEXT"
+      },
+      "shipmentMethodCode": {
+        "type": "TEXT"
+      },
+      "shipmentLocation": {
+        "type": "Party"
+      },
+      "shipmentDate": {
+        "type": "ShipmentDate",
+        "isMap": true
+      },
+      "transitDirection": {
+        "type": "TEXT"
+      },
+      "transitUnitCode": {
+        "type": "TEXT"
+      },
+      "transitUnitValue": {
+        "type": "NUMBER"
+      },
+      "carrier": {
+        "type": "Party"
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      },
+      "notes": {
+        "type": "TEXT"
+      }
+    },
+    "ShipmentStage": {
+      "shipmentStageTypeCode": {
+        "type": "TEXT"
+      },
+      "shipmentMethodCode": {
+        "type": "TEXT"
+      },
+      "transportMeansVehicleId": {
+        "type": "TEXT"
+      },
+      "transportMeansVehicleName": {
+        "type": "TEXT"
+      },
+      "transportMeansTripId": {
+        "type": "TEXT"
+      },
+      "shipmentLocation": {
+        "type": "Party",
+        "isCollection": true
+      },
+      "shipmentDate": {
+        "type": "ShipmentDate",
+        "isMap": true
+      },
+      "carrier": {
+        "type": "Party"
+      },
+      "ladingQuantity": {
+        "type": "NUMBER"
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      },
+      "notes": {
+        "type": "TEXT"
+      }
+    },
+    "TransportEquipment": {
+      "transportEquipmentTypeCode": {
+        "type": "TEXT"
+      },
+      "equipmentLoadTypeCode": {
+        "type": "TEXT"
+      },
+      "equipmentNumberPrefix": {
+        "type": "TEXT"
+      },
+      "equipmentNumber": {
+        "type": "TEXT"
+      },
+      "equipmentCheckDigit": {
+        "type": "NUMBER"
+      },
+      "sealNumber": {
+        "type": "TEXT"
+      },
+      "isPartialLoadIndicator": {
+        "type": "BOOLEAN"
+      },
+      "notes": {
+        "type": "TEXT"
+      },
+      "packageDetailLink": {
+        "type": "PackageDetailLink"
+      },
+      "shipmentOrderXref": {
+        "type": "ShipmentOrderXref",
+        "isMap": true
+      }
+    },
+    "DocumentReference": {
+      "documentReferenceTypeCode": {
+        "type": "TEXT"
+      },
+      "documentReferenceStatusCode": {
+        "type": "TEXT"
+      },
+      "partyRoleCode": {
+        "type": "TEXT"
+      },
+      "name": {
+        "type": "TEXT"
+      },
+      "number": {
+        "type": "TEXT"
+      },
+      "notes": {
+        "type": "TEXT"
+      }
+    },
+    "AllowanceCharge": {
+      "allowanceChargeUid": {
+        "type": "NUMBER"
+      },
+      "allowanceChargeNumber": {
+        "type": "TEXT"
+      },
+      "allowanceChargeIndicatorCode": {
+        "type": "TEXT"
+      },
+      "allowanceChargeType": {
+        "type": "TEXT"
+      },
+      "reasonType": {
+        "type": "TEXT"
+      },
+      "reasonDescription": {
+        "type": "TEXT"
+      },
+      "calculatedAllowanceChargeValue": {
+        "type": "NUMBER"
+      },
+      "allowanceChargeValue": {
+        "type": "NUMBER"
+      },
+      "isFlatAmount": {
+        "type": "BOOLEAN"
+      },
+      "quantity": {
+        "type": "NUMBER"
+      },
+      "perUnit": {
+        "type": "NUMBER"
+      },
+      "allowanceChargeHandlingCode": {
+        "type": "TEXT"
+      },
+      "allowanceChargePercentBasisCode": {
+        "type": "TEXT"
+      },
+      "taxRate": {
+        "type": "NUMBER"
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      },
+      "notes": {
+        "type": "TEXT"
+      },
+      "pricing": {
+        "type": "Pricing"
+      }
+    },
+    "Pricing": {
+      "priceTypeCode": {
+        "type": "TEXT"
+      },
+      "priceValue": {
+        "type": "NUMBER"
+      },
+      "currencyCode": {
+        "type": "TEXT"
+      }
+    },
+    "ShipmentTotals": {
+      "totalAllowanceChargeAmount": {
+        "type": "NUMBER"
+      },
+      "totalMerchandiseAmount": {
+        "type": "NUMBER"
+      }
+    },
+    "SubscriptionEvent": {
+      "eventTypeCode": {
+        "type": "TEXT"
+      },
+      "eventRoleCode": {
+        "type": "TEXT"
+      },
+      "eventDate": {
+        "type": "DATE",
+        "maxLength": 50
+      },
+      "eventDateTime": {
+        "type": "DATE",
+        "maxLength": 50
+      }
+    },
+    "Attachment": {
+      "attachmentUid": {
+        "type": "TEXT"
+      },
+      "revisionNumber": {
+        "type": "TEXT"
+      },
+      "name": {
+        "type": "TEXT"
+      },
+      "functionCode": {
+        "type": "TEXT"
+      },
+      "description": {
+        "type": "TEXT"
+      },
+      "encodingCode": {
+        "type": "TEXT"
+      },
+      "mimeType": {
+        "type": "TEXT"
+      },
+      "createUserId": {
+        "type": "TEXT"
+      },
+      "contentSize": {
+        "type": "NUMBER"
+      },
+      "content": {
+        "type": "TEXT"
+      },
+      "self": {
+        "type": "TEXT"
+      }
+    },
+    "ShipmentItem": {
+      "poNumber": {
+        "type": "TEXT"
+      },
+      "itemKey": {
+        "type": "TEXT"
+      },
+      "baseItem": {
+        "type": "BaseItem"
+      },
+      "orderedQuantity": {
+        "type": "NUMBER"
+      },
+      "shipmentOrderXref": {
+        "type": "ShipmentOrderXref",
+        "isMap": true
+      },
+      "packageDetailLink": {
+        "type": "PackageDetailLink"
+      },
+      "shipmentItem": {
+        "type": "ShipmentItem",
+        "isCollection": true
+      }
+    },
+    "BaseItem": {
+      "itemUid": {
+        "type": "NUMBER"
+      },
+      "itemFunctionCode": {
+        "type": "TEXT"
+      },
+      "itemTypeCode": {
+        "type": "TEXT"
+      },
+      "itemIdentifier": {
+        "type": "ItemIdentifier",
+        "isMap": true
+      },
+      "itemDescriptor": {
+        "type": "ItemDescriptor",
+        "isMap": true
+      },
+      "customsClassification": {
+        "type": "CustomsClassification",
+        "isCollection": true
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      },
+      "quantity": {
+        "type": "NUMBER"
+      },
+      "unitOfMeasureCode": {
+        "type": "TEXT"
+      },
+      "packageInstruction": {
+        "type": "PackageInstruction"
+      },
+      "destinationQuantity": {
+        "type": "DestinationQuantity",
+        "isCollection": true
+      },
+      "itemDate": {
+        "type": "ItemDate",
+        "isMap": true
+      },
+      "isInspectionRequired": {
+        "type": "BOOLEAN"
+      },
+      "shipmentMethodCode": {
+        "type": "TEXT"
+      },
+      "itemVariance": {
+        "type": "Variance"
+      },
+      "measurement": {
+        "type": "Measurement",
+        "isCollection": true
+      },
+      "party": {
+        "type": "Party",
+        "isCollection": true
+      }
+    },
+    "ItemIdentifier": {
+      "$key": {
+        "type": "TEXT"
+      },
+      "$value": {
+        "type": "TEXT"
+      }
+    },
+    "ItemDescriptor": {
+      "$key": {
+        "type": "TEXT"
+      },
+      "$value": {
+        "type": "TEXT"
+      }
+    },
+    "CustomsClassification": {
+      "classificationNumber": {
+        "type": "TEXT"
+      },
+      "classificationDescription": {
+        "type": "TEXT"
+      },
+      "countryCode": {
+        "type": "TEXT"
+      }
+    },
+    "DestinationQuantity": {
+      "finalDestinationName": {
+        "type": "TEXT"
+      },
+      "quantity": {
+        "type": "NUMBER"
+      },
+      "unitOfMeasureCode": {
+        "type": "TEXT"
+      }
+    },
+    "ItemDate": {
+      "$key": {
+        "type": "TEXT"
+      },
+      "$value": {
+        "type": "DATE",
+        "maxLength": 50
+      }
+    },
+    "Variance": {
+      "upperVariance": {
+        "type": "NUMBER"
+      },
+      "lowerVariance": {
+        "type": "NUMBER"
+      },
+      "varianceTypeCode": {
+        "type": "TEXT"
+      }
+    },
+    "Measurement": {
+      "measurementTypeCode": {
+        "type": "TEXT"
+      },
+      "measurementValue": {
+        "type": "NUMBER"
+      },
+      "unitOfMeasureCode": {
+        "type": "TEXT"
+      }
+    },
+    "ValidationError": {
+      "text": {
+        "type": "TEXT"
+      }
+    },
+    "PackageDetail": {
+      "shipmentNumber": {
+        "type": "TEXT"
+      },
+      "packageKey": {
+        "type": "TEXT"
+      },
+      "packageUid": {
+        "type": "NUMBER"
+      },
+      "packMethodCode": {
+        "type": "TEXT"
+      },
+      "packageQuantity": {
+        "type": "NUMBER"
+      },
+      "packageItemQuantity": {
+        "type": "NUMBER"
+      },
+      "totalPackageItemQuantity": {
+        "type": "NUMBER"
+      },
+      "packageType": {
+        "type": "TEXT"
+      },
+      "instruction": {
+        "type": "TEXT"
+      },
+      "weightUnitCode": {
+        "type": "TEXT"
+      },
+      "grossWeight": {
+        "type": "NUMBER"
+      },
+      "netWeight": {
+        "type": "NUMBER"
+      },
+      "netNetWeight": {
+        "type": "NUMBER"
+      },
+      "volumeUnitCode": {
+        "type": "TEXT"
+      },
+      "grossVolume": {
+        "type": "NUMBER"
+      },
+      "volumeWeightUnitCode": {
+        "type": "TEXT"
+      },
+      "volumeWeight": {
+        "type": "NUMBER"
+      },
+      "dimensionUnitCode": {
+        "type": "TEXT"
+      },
+      "length": {
+        "type": "NUMBER"
+      },
+      "width": {
+        "type": "NUMBER"
+      },
+      "height": {
+        "type": "NUMBER"
+      },
+      "shipmentOrderXref": {
+        "type": "ShipmentOrderXref",
+        "isMap": true
+      },
+      "itemXref": {
+        "type": "ItemXref",
+        "isCollection": true
+      },
+      "packageDetail": {
+        "type": "PackageDetail",
+        "isCollection": true
+      },
+      "packageMarkDetail": {
+        "type": "PackageMarkDetail",
+        "isCollection": true
+      },
+      "reference": {
+        "type": "Reference",
+        "isMap": true
+      }
+    },
+    "PackageMarkDetail": {
+      "packageMark": {
+        "type": "PackageMark",
+        "isCollection": true
+      }
+    },
+    "PackageMark": {
+      "markNumberTypeCode": {
+        "type": "TEXT"
+      },
+      "markNumberFrom": {
+        "type": "TEXT"
+      },
+      "markNumberTo": {
+        "type": "TEXT"
+      },
+      "mark": {
+        "type": "TEXT"
+      }
+    },
+    "AttachedNotes": {
+      "notes": {
+        "type": "TEXT"
+      }
+    },
+    "ShipmentDocumentTotals": {
+      "totalDocumentAmount": {
+        "type": "NUMBER"
+      },
+      "packagesTotalQuantity": {
+        "type": "NUMBER"
+      },
+      "itemsTotalQuantity": {
+        "type": "NUMBER"
+      },
+      "shipmentTotals": {
+        "type": "ShipmentTotals"
+      }
+    }
+  }
+}
