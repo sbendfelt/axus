@@ -1,14 +1,287 @@
 {
+  "ShippingOrderNumber": "2016234252",
+  "Version": {
+    "value": "5.2",
+    "Major": "5",
+    "Minor": "2"
+  },
+  "LocalLanguage": "zh_CN",
+  "Status": "Draft",
+  "PackingStatus": "Not Packed",
+  "LabelStatus": "Not Printed",
+  "DocumentationStatus": "Not Documented",
+  "CargoReadyDate": "2016-06-08T12:00:00Z",
+  "CommercialInvoiceNumber": "2016234252",
+  "DocumentsCutOffDate": "2016-08-09T13:00:00Z",
   "OriginCity": {
+    "CityName": "Ningbo",
+    "CityCode": [
+      {
+        "value": "CNNGB",
+        "Qualifier": "UN"
+      },
+      {
+        "value": "57020",
+        "Qualifier": "K"
+      }
+    ],
+    "CountryCode": "CN",
+    "CountryName": "China"
+  },
+  "PortOfLoading": {
+    "CityName": "Ningbo",
+    "CityCode": [
+      {
+        "value": "CNNGB",
+        "Qualifier": "UN"
+      },
+      {
+        "value": "57020",
+        "Qualifier": "K"
+      }
+    ],
+    "CountryCode": "CN",
+    "CountryName": "China"
+  },
+  "PortOfDischarge": {
+    "CityName": "Houston",
+    "CityCode": [
+      {
+        "value": "USHOU",
+        "Qualifier": "UN"
+      },
+      {
+        "value": "5301",
+        "Qualifier": "D"
+      }
+    ],
+    "State": "TX",
+    "CountryCode": "US",
+    "CountryName": "United States"
+  },
+  "PlaceOfDelivery": {
+    "CityName": "Houston",
+    "CityCode": [
+      {
+        "value": "USHOU",
+        "Qualifier": "UN"
+      },
+      {
+        "value": "5301",
+        "Qualifier": "D"
+      }
+    ],
+    "State": "TX",
+    "CountryCode": "US",
+    "CountryName": "United States"
+  },
+  "FinalDestination": {
+    "LocationCode": "001",
+    "Name": "001 - Test Location",
+    "City": {
       "CityName": "Oakland",
-      "CityCode":[{
-          "value": "CNNGB",
-          "qualifier": "UN"
-        }, {
-          "value": "57020",
-          "qualifier": "N"
-        }],
-      "State": "CA"
+      "CityCode": [
+        {
+          "value": "USOAK",
+          "Qualifier": "UN"
+        },
+        {
+          "value": "2811",
+          "Qualifier": "D"
+        }
+      ],
+      "State": "CA",
+      "CountryCode": "US",
+      "CountryName": "United States"
+    }
+  },
+  "ReturnExportDocumentationTo": "China office",
+  "ReturnExportDocumentationToLL": "安康",
+  "PartyResponsibleForLocalCharges": "Cheng Me",
+  "PartyResponsibleForLocalChargesLL": "身體健康大家",
+  "LoadType": "CY",
+  "CargoType": "REEFER",
+  "Haulage": "Carrier",
+  "PaymentTerms": "CC",
+  "ShipTerms": {
+    "value": "FOB",
+    "Code": "FOB"
+  },
+  "TransportationMode": "Ocean",
+  "Division": [
+    "GREINT1"
+  ],
+  "Department": [
+    "PARTY GOODS"
+  ],
+  "Item": [
+    {
+      "Division": [
+        "GREINT1"
+      ],
+      "PurchaseOrderNumber": "PO_30005032016",
+      "UserRefNumber": "219122",
+      "ItemNumber": "219122",
+      "FinalDestination": {
+        "LocationCode": "001",
+        "Name": "001 - Test Location",
+        "City": {
+          "CityName": "Oakland",
+          "CityCode": [
+            {
+              "value": "USOAK",
+              "Qualifier": "UN"
+            },
+            {
+              "value": "2811",
+              "Qualifier": "D"
+            }
+          ],
+          "State": "CA",
+          "CountryCode": "US",
+          "CountryName": "United States"
+        }
+      },
+      "MarksAndNumber": "PURCHASE ORDER NO: PO_30005032016\r\nSKU NO: 219122\r\nDESCRIPTIONGIFTBAG LARGE BABY HORIZ (CR)\r\nQUANTITY IN CASE: 11268.0\r\nGROSS CASE WEIGHT: 1277.76 kg\r\nMADE IN",
+      "ParticularsFurnishedByShipper": "Said to contain: 11268.0\r\nProduct Desc.: GIFTBAG LARGE BABY HORIZ (CR)\r\nPurchase Order: PO_30005032016\r\nProduct Code: 219122\r\n313@0.0 cmx0.0 cmx0.0 cm",
+      "CommodityDescription": "GIFTBAG LARGE BABY HORIZ (CR)",
+      "TotalCartons": "313",
+      "TotalPieces": "11268.0",
+      "TotalCubicMeters": {
+        "value": "34.0",
+        "ANSICode": "CR",
+        "Unit": "Cubic Meters"
+      },
+      "TotalGrossWeight": {
+        "value": "1277.76",
+        "ANSICode": "KG",
+        "Unit": "Kilograms"
+      },
+      "Quantity": {
+        "value": "11268.0",
+        "ANSICode": "EA",
+        "Unit": "Each"
+      },
+      "AssortmentQty": "36.0",
+      "TransportationMode": "Ocean",
+      "PaymentTerms": "CC",
+      "FactoryCountry": "CN",
+      "PackingStatus": "Not Packed",
+      "LabelStatus": "Not Printed",
+      "HarmonizedCodeInfo": [
+        {
+          "References": [
+            {
+              "Type": "HTS",
+              "Value": "4819400040"
+            },
+            {
+              "Type": "CustomsHTSText"
+            }
+          ]
+        }
+      ],
+      "PartyInfo": [
+        {
+          "Type": "Factory",
+          "Name": "Bosico Plastic & Metal Products Co. Ltd.",
+          "AddressLine1": "T2-07 Jinguzhou Economical Dev",
+          "AddressLine2": "Xinhui District",
+          "City": {
+            "CityName": "Guangdong",
+            "CityCode": [
+              {
+                "value": "CNGUA",
+                "Qualifier": "UN"
+              }
+            ],
+            "CountryCode": "CN",
+            "CountryName": "China"
+          },
+          "Fax": "(555) 555-5555",
+          "References": [
+            {
+              "Type": "FaxNumber",
+              "Value": "(555) 555-5555"
+            }
+          ]
+        }
+      ],
+      "VendorItemNumber": "SeasonCode;DF SamplApprv:N",
+      "NetNetWeight": "0.0",
+      "ShipWindow": {
+        "StartDate": "2016-06-08T12:00:00Z",
+        "EndDate": "2016-06-15T12:00:00Z"
+      },
+      "ProdReference": {
+        "ProdReferenceNumber1": "SeasonCode;DF SamplApprv:N",
+        "ProdReferenceNumber2": "CNNGB"
+      },
+      "NetWeight": {
+        "value": "1277.76",
+        "ANSICode": "KG",
+        "Unit": "Kilograms"
+      },
+      "FirstCostPrice": {
+        "value": "0.26",
+        "Currency": "USD"
+      },
+      "POUserDefCharFld1": "CNNGB",
+      "POUserDefCharFld2": "Chesapeake~VA~23320~US~001",
+      "POLineNumber": "219122",
+      "POReferences": {
+        "PoReferenceNumber2": "NINGBO, CHINA",
+        "References": [
+          {
+            "Type": "LCTransferable",
+            "Value": "No"
+          },
+          {
+            "Type": "RequiresOriginalBL",
+            "Value": "No"
+          }
+        ]
+      },
+      "POLineReferences": {
+        "ProdReference": {
+          "ProdReferenceNumber1": "SeasonCode;DF SamplApprv:N",
+          "ProdReferenceNumber2": "CNNGB",
+          "ProdReferenceNumber3": "Chesapeake~VA~23320~US~001"
+        },
+        "StringReferences": [
+          {
+            "Type": "StringReference1",
+            "Value": "N"
+          },
+          {
+            "Type": "StringReference2",
+            "Value": "SeasonCode:DF"
+          }
+        ]
+      },
+      "OrderLineShipmentTerms": {
+        "value": "FOB",
+        "Code": "FOB"
+      }
+    }
+  ],
+  "Comments": "This is a APPX SO copy test SO",
+  "HandlingUnitList": {},
+  "TotalCartons": "313",
+  "TotalNetWeight": {
+    "value": "1277.76",
+    "ANSICode": "KG",
+    "Unit": "Kilograms"
+  },
+  "Volume": {
+    "value": "34.0",
+    "ANSICode": "CR",
+    "Unit": "Cubic Meters"
+  },
+  "Weight": {
+    "value": "1277.76",
+    "ANSICode": "KG",
+    "Unit": "Kilograms"
   },
   "Equipment": [
     {
@@ -40,71 +313,428 @@
       "AirExchange": "0.0",
       "EquipmentLoadTypeCode": "NONE",
       "EquipmentCheckDigit": "0"
+    },
+    {
+      "Code": "HC45",
+      "Type": "45' High Cube Dry",
+      "Quantity": "1.0",
+      "MinTemp": {
+        "value": "0.0"
+      },
+      "MaxTemp": {
+        "value": "0.0"
+      },
+      "HumidityPercent": "0.0",
+      "AirExchange": "0.0",
+      "EquipmentLoadTypeCode": "NONE",
+      "EquipmentCheckDigit": "0"
     }
   ],
-  "ReturnExportDocumentationTo": "",
-	"ReturnExportDocumentationToLL": "安康",
-  "Quantity": "1.0",
-  "ETAPortOfDischargeDate": "2016-06-15T20:00:00Z",
+  "PickupType": "Vendor",
+  "PickupOrDropoffFlag": "Pickup",
+  "PickupName": "TEST_SOO",
+  "PickupPhone": "510-222-4444",
+  "PickupFax": "nobody@gtnexus.com",
+  "PickupInfoLL": "身體健康大家",
+  "AppointmentNumber": "45435",
+  "AppointmentType": "Pickup",
+  "EmployeeName": "test",
+  "EmployeeTitle": "510-222-1190",
   "ShippingDeclaration1": {
-		"value": "true"
-	},
-  "PartyInfo": [{
-	  "Type": "Customer",
-	  "Name": "Dollar Tree",
-	  "AddressLine1": "500 Volvo Pkwy",
-	  "PostalCode": "23320",
-	  "Phone": "757-321-5380",
-	  "References": [
-	    {
-	      "Type": "TelephoneNumber",
-	      "Value": "757-321-5380"
-	    }
-	  ]
-	},
-  {
-	  "Type": "Broker",
-	  "Code": "EXPWA",
-	  "Name": "Expeditors International",
-	  "City": {
-	    "CityName": "Seattle",
-	    "CityCode": [
-	      {
-	        "value": "USSEA",
-	        "Qualifier": "UN"
-	      },
-	      {
-	        "value": "3001",
-	        "Qualifier": "D"
-	      }
-	    ],
-	    "State": "WA",
-	    "CountryCode": "US",
-	    "CountryName": "United States"
-	  }
-	},
-	{
-	  "Type": "Consolidator",
-	  "Code": "UPS_OW",
-	  "Name": "UPS Supply Chain Solutions, Inc"
-	},
-	{
-	  "Type": "Consignee",
-	  "Code": "DT",
-	  "Name": "Dollar Tree Stores+1",
-	  "AddressLine1": "500 Volvo Pkwy",
-	  "PostalCode": "23320",
-	  "City": {
-	    "CityName": "Chesapeake",
-	    "CityCode": [
-	      {
-	        "value": "USUFG",
-	        "Qualifier": "UN"
-	      }
-	    ],
-	    "State": "VA",
-	    "CountryCode": "US",
-	    "CountryName": "United States"
-	  }
-	}]
+    "value": "true"
+  },
+  "ShippingDeclaration2": {
+    "value": "true"
+  },
+  "ShippingDeclaration3": {
+    "value": "true"
+  },
+  "ShippingDeclaration4": {
+    "value": "true"
+  },
+  "ShippingDeclaration5": {
+    "value": "true"
+  },
+  "ShippingDeclaration6": {
+    "value": "true"
+  },
+  "ShippingDeclaration7": {
+    "value": "true"
+  },
+  "ShippingDeclaration8": {
+    "value": "true"
+  },
+  "Vessel": "001",
+  "Voyage": "Voy1",
+  "BLNumber": "BLTEST123456",
+  "ETAPortOfDischargeDate": "2016-06-15T13:00:00Z",
+  "ETDPortOfLoadDate": "2016-06-08T12:00:00Z",
+  "ETAFinalDestinationDate": "2016-06-15T13:00:00Z",
+  "ShippingOrderDate": "2016-06-09T01:00:00Z",
+  "ExFactoryDate": "2016-10-05T07:00:00Z",
+  "CargoReceiptDate": "2016-10-19T07:00:00Z",
+  "ExportCustomsClearanceDate": "2016-10-12T07:00:00Z",
+  "TransportationReferenceDate1": "2016-10-17T07:00:00Z",
+  "TransportationReferenceDate2": "2016-10-04T07:00:00Z",
+  "ETDOriginDate": "2016-06-08T12:00:00Z",
+  "ETAPlaceOfDeliveryDate": "2016-06-15T13:00:00Z",
+  "PickupOrDropoffDate": "2016-10-20T00:00:00Z",
+  "UserDefReferenceDate1": "2016-10-19T13:00:00Z",
+  "UserDefReferenceDate2": "2016-10-18T15:00:00Z",
+  "UserDefReferenceDate3": "2016-10-17T09:00:00Z",
+  "CargoCutOffDate": "2016-10-17T07:00:00Z",
+  "SupplierBookingSubmissionDate": "2016-10-19T07:00:00Z",
+  "UserDefReferenceNumber1": "Dollar tree Cust ref",
+  "UserDefReferenceNumber2": "Tan Soo meng",
+  "UserDefReferenceNumber3": "soomeng@gmail.com",
+  "PartyInfo": [
+    {
+      "Type": "Customer",
+      "Name": "Dollar Tree",
+      "AddressLine1": "500 Volvo Pkwy",
+      "PostalCode": "23320",
+      "Phone": "757-321-5380",
+      "References": [
+        {
+          "Type": "TelephoneNumber",
+          "Value": "757-321-5380"
+        }
+      ]
+    },
+    {
+      "Type": "Freight Forwarder",
+      "Name": "UPS Supply Chain Solutions, Inc",
+      "AddressLine1": "12380 Morris Road",
+      "PostalCode": "30005",
+      "Phone": "678-746-3436",
+      "References": [
+        {
+          "Type": "TelephoneNumber",
+          "Value": "678-746-3436"
+        },
+        {
+          "Type": "FaxNumber"
+        }
+      ]
+    },
+    {
+      "Type": "Consignee",
+      "Code": "DT",
+      "Name": "Dollar Tree Stores+1",
+      "AddressLine1": "500 Volvo Pkwy",
+      "PostalCode": "23320",
+      "City": {
+        "CityName": "Chesapeake",
+        "CityCode": [
+          {
+            "value": "USUFG",
+            "Qualifier": "UN"
+          }
+        ],
+        "State": "VA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Supplier",
+      "Code": "16143",
+      "Name": "PARS IMPORTS INC.  (I)",
+      "AddressLine1": "9941 HARWIN DR.",
+      "AddressLine2": "UNIT 1",
+      "PostalCode": "77036",
+      "City": {
+        "CityName": "Houston",
+        "CityCode": [
+          {
+            "value": "USHOU",
+            "Qualifier": "UN"
+          },
+          {
+            "value": "5301",
+            "Qualifier": "D"
+          }
+        ],
+        "State": "TX",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      },
+      "Phone": "510-222-9990",
+      "Fax": "510-222-9999",
+      "References": [
+        {
+          "Type": "TelephoneNumber",
+          "Value": "510-222-9990"
+        },
+        {
+          "Type": "FaxNumber",
+          "Value": "510-222-9999"
+        }
+      ]
+    },
+    {
+      "Type": "Broker",
+      "Code": "EXPWA",
+      "Name": "Expeditors International",
+      "City": {
+        "CityName": "Seattle",
+        "CityCode": [
+          {
+            "value": "USSEA",
+            "Qualifier": "UN"
+          },
+          {
+            "value": "3001",
+            "Qualifier": "D"
+          }
+        ],
+        "State": "WA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Consolidator",
+      "Code": "UPS_OW",
+      "Name": "UPS Supply Chain Solutions, Inc"
+    },
+    {
+      "Type": "Carrier",
+      "Code": "EGLV",
+      "Name": "Evergreen"
+    },
+    {
+      "Type": "Shipper",
+      "Code": "16143",
+      "Name": "PARS IMPORTS INC.  (I)",
+      "AddressLine1": "9941 HARWIN DR.",
+      "AddressLine2": "UNIT 1",
+      "PostalCode": "77036",
+      "City": {
+        "CityName": "Houston",
+        "CityCode": [
+          {
+            "value": "USHOU",
+            "Qualifier": "UN"
+          },
+          {
+            "value": "5301",
+            "Qualifier": "D"
+          }
+        ],
+        "State": "TX",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Agent",
+      "Code": "BL_FCR",
+      "Name": "Shipper AMS (Agent party)",
+      "AddressLine1": "On the Wharf",
+      "AddressLine2": "BL/FCR Addr2",
+      "PostalCode": "98745632",
+      "City": {
+        "CityName": "Qingdao",
+        "CityCode": [
+          {
+            "value": "CNTAO",
+            "Qualifier": "UN"
+          },
+          {
+            "value": "57047",
+            "Qualifier": "K"
+          }
+        ],
+        "CountryCode": "CN",
+        "CountryName": "China"
+      }
+    },
+    {
+      "Type": "Foreign Office",
+      "Code": "FOR_002",
+      "Name": "Foreign office",
+      "AddressLine1": "234534 street 5th",
+      "PostalCode": "56789",
+      "City": {
+        "CityName": "Walnut Creek",
+        "CityCode": [
+          {
+            "value": "USWAC",
+            "Qualifier": "UN"
+          }
+        ],
+        "State": "CA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Production Office",
+      "Code": "PROD_001",
+      "Name": "PROD_001_office",
+      "AddressLine1": "555 Garden Street",
+      "AddressLine2": "56 floor",
+      "PostalCode": "125566",
+      "City": {
+        "CityName": "Fresno",
+        "CityCode": [
+          {
+            "value": "USFAT",
+            "Qualifier": "UN"
+          },
+          {
+            "value": "2803",
+            "Qualifier": "D"
+          }
+        ],
+        "State": "CA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Notify",
+      "Code": "gbr",
+      "Name": "Greenbrier International, Inc.",
+      "AddressLine1": "500 Volvo Parkway",
+      "PostalCode": "23320",
+      "City": {
+        "CityName": "Chesapeake",
+        "CityCode": [
+          {
+            "value": "USUFG",
+            "Qualifier": "UN"
+          }
+        ],
+        "State": "VA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Bank",
+      "Code": "BK_001",
+      "Name": "BANK_dollor_tree",
+      "AddressLine1": "444 1st street",
+      "PostalCode": "12345",
+      "City": {
+        "CityName": "Fremont",
+        "CityCode": [
+          {
+            "value": "USFNC",
+            "Qualifier": "UN"
+          }
+        ],
+        "State": "CA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Bill To",
+      "Code": "BILL_TO_001",
+      "Name": "BILL_TO_001",
+      "AddressLine1": "1235 Broadway",
+      "AddressLine2": "12 street",
+      "PostalCode": "95464",
+      "City": {
+        "CityName": "Oakland",
+        "CityCode": [
+          {
+            "value": "USOAK",
+            "Qualifier": "UN"
+          },
+          {
+            "value": "2811",
+            "Qualifier": "D"
+          }
+        ],
+        "State": "CA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Also Notify",
+      "Code": "ISF_CD_222",
+      "Name": "UPS ISF consolidator",
+      "AddressLine1": "1234 Love suite",
+      "AddressLine2": "Oak street",
+      "PostalCode": "988887",
+      "City": {
+        "CityName": "Sacramento",
+        "CityCode": [
+          {
+            "value": "USSAC",
+            "Qualifier": "UN"
+          },
+          {
+            "value": "2816",
+            "Qualifier": "D"
+          }
+        ],
+        "State": "CA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Ship To",
+      "Code": "998",
+      "Name": "998-(for DC 908, 905, 902)",
+      "AddressLine1": "\"**Upon receipt prior approval from Dollar Tree / Greenbrier.",
+      "AddressLine2": "(Tail load 902)",
+      "City": {
+        "CityName": "Savannah",
+        "CityCode": [
+          {
+            "value": "USSAV",
+            "Qualifier": "UN"
+          },
+          {
+            "value": "1703",
+            "Qualifier": "D"
+          }
+        ],
+        "State": "GA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    },
+    {
+      "Type": "Bill From",
+      "Code": "BILL_FROM_001",
+      "Name": "BILL_FROM_001",
+      "AddressLine1": "123 Webster street",
+      "AddressLine2": "12 street",
+      "PostalCode": "432535",
+      "City": {
+        "CityName": "Danville",
+        "State": "CA",
+        "CountryCode": "US",
+        "CountryName": "United States"
+      }
+    }
+  ],
+  "InvoiceDate": "2016-06-08T12:00:00Z",
+  "TotalPackedCartons": "0",
+  "BookingStatus": {
+    "Status": {}
+  },
+  "UserDefinedReferenceField1": "HKHKG",
+  "UserDefinedReferenceField2": "2016999999",
+  "__metadata": {
+    "apiVersion": "310",
+    "type": "ShippingOrder",
+    "uid": "234252",
+    "createTimestamp": "2016-05-03 02:38:43.58",
+    "modifyTimestamp": "2016-10-21 09:06:31.343",
+    "fingerprint": "eb55e0d0022a7060ace1625abca61bcd",
+    "redirectUrl": "/orders/createso/so_review.jsp?shippingManifestId=234252",
+    "self": "https://commerce-supportq.qa.gtnexus.com/rest/310/ShippingOrder/234252",
+    "TransactionInfo": {
+      "MessageRecipient": "38299"
+    }
+  }
 }

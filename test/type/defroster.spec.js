@@ -1,9 +1,10 @@
 const expect = require('chai').expect;
 const Defroster = require('../../lib/type/defroster');
 
-describe.only('Defroster', () => {
+describe('Defroster', () => {
+  const de = new Defroster();
+
   describe('defrosting a packing list', () => {
-    const de = new Defroster();
     const o = de.defrost('./test/resources/pkm.json');
     it('correctly transforms scalar fields', () => {
       expect(o.reopenCount).to.be.a('number');
@@ -45,6 +46,12 @@ describe.only('Defroster', () => {
     });
   });
 
+  describe('defosting a shipping order', () => {
+    const so = de.defrost('./test/resources/destinationSO2.json');
+    it('transforms dates correctly', () => {
+      expect(so.ETAPortOfDischargeDate).to.be.a('date');
+    });
+  });
   it('creates an object that can be consumed by axus');
   //this is a test to make sure that creating this
   //across contexts is not an issue.
