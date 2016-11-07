@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const Defroster = require('../../lib/thaw/defroster');
+const Defroster = require('../../lib/type/defroster');
 
 describe.only('Defroster', () => {
   describe('defrosting a packing list', () => {
