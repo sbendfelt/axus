@@ -5,7 +5,7 @@ describe('Defroster', () => {
   const de = new Defroster();
 
   describe('defrosting a packing list', () => {
-    const o = de.defrost('./test/resources/pkm.json');
+    const o = de.defrostPath('./test/resources/pkm.json');
     it('correctly transforms scalar fields', () => {
       expect(o.reopenCount).to.be.a('number');
       expect(o.packingListUid).to.be.a('number');
@@ -47,7 +47,7 @@ describe('Defroster', () => {
   });
 
   describe('defosting a shipping order', () => {
-    const so = de.defrost('./test/resources/destinationSO2.json');
+    const so = de.defrostPath('./test/resources/destinationSO2.json');
     it('transforms dates correctly', () => {
       expect(so.ETAPortOfDischargeDate).to.be.a('date');
     });
