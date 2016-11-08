@@ -68,4 +68,11 @@ describe('axus-test-support', () => {
     done();
   });
 
+  describe('require', () => {
+    it('automatically defrosts resources, when we have their DD', () => {
+      let pkm = axus.require('./test/resources/pkm.json');
+      expect(pkm.reopenCount).to.be.a('number');
+    });
+  });
+
 });
