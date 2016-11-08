@@ -70,7 +70,7 @@ describe('ImmutableDefroster', () => {
       expect(o.subMessageId).to.be.a('string');
     });
     describe('defrosting parties', () => {
-      it.only('defrosted the oog correctly', () => {
+      it('defrosted the oog correctly', () => {
           const oog = o.party.OriginOfGoods[0];
           expect(oog.partyRoleCode).to.be.a('string');
           expect(oog.name).to.be.a('string');
