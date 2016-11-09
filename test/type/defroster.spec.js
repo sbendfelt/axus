@@ -1,3 +1,4 @@
+/*jshint expr: true*/
 const expect = require('chai').expect;
 const Defroster = require('../../lib/type/defroster');
 const ImmutableDefroster = require('../../lib/type/immutable-defroster');
@@ -64,6 +65,10 @@ describe('ImmutableDefroster', () => {
 
   describe('defrosting a packing list', () => {
     const o = de.defrostPath('./test/resources/pkm.json');
+    it('copied the __metadata', () => {
+      expect(o.__metadata).to.be.ok;
+      expect(o.__metadata.type).to.be.ok;
+    });
     it('correctly transforms scalar fields', () => {
       expect(o.reopenCount).to.be.a('number');
       expect(o.packingListUid).to.be.a('number');
