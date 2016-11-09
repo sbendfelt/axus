@@ -18,14 +18,14 @@ describe('Types', () => {
       expect(Types.isAppXObject(o)).to.be.true;
     });
   });
-  describe('getType', () => {
+  describe('getTypeDefinition', () => {
     it('returns the Type from APPX_TYPES when present', () => {
       const order = {
         __metadata: {
           type: 'OrderDetail'
         }
       };
-      const OrderDetailType = Types.getType(order);
+      const OrderDetailType = Types.getTypeDefinition(order);
       expect(OrderDetailType.type).to.equal('OrderDetail');
       expect(OrderDetailType.aliases).to.have.length(0);
       expect(OrderDetailType.design).to.be.ok;
