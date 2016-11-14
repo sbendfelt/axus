@@ -5,7 +5,8 @@ const Types = require('../../lib/type/types');
 describe('Types', () => {
   const o = {
     __metadata: {
-      type: 'test'
+      type: 'test',
+      apiVersion: '310'
     }
   };
   describe('getAppXType', () => {
@@ -22,10 +23,12 @@ describe('Types', () => {
     it('returns the Type from APPX_TYPES when present', () => {
       const order = {
         __metadata: {
-          type: 'OrderDetail'
+          type: 'OrderDetail',
+          apiVersion: '310'
         }
       };
       const OrderDetailType = Types.getTypeDefinition(order);
+      expect(OrderDetailType).to.be.ok;
       expect(OrderDetailType.type).to.equal('OrderDetail');
       expect(OrderDetailType.aliases).to.have.length(0);
       expect(OrderDetailType.design).to.be.ok;

@@ -58,6 +58,8 @@ describe('ImmutableDefroster', () => {
             expect(so.ETAPortOfDischargeDate).to.be.a('date');
         });
     });
+    //this is a test to make sure that creating this
+    //across contexts is not an issue.
     it('creates an object that can be consumed by axus', () => {
         const ctx = axus
             .requireLocal('./test/resources/vanilla/types-across-contexts.js')
@@ -66,6 +68,4 @@ describe('ImmutableDefroster', () => {
         const portOfDischargeDate = so.ETAPortOfDischargeDate;
         expect(ctx.isDate(portOfDischargeDate)).to.be.true;
     });
-    //this is a test to make sure that creating this
-    //across contexts is not an issue.
 });
