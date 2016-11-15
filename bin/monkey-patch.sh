@@ -3,14 +3,14 @@
 # monkey-patch
 #   invokes gulp to build latest, and drops result into desired location.
 #   good for testing the axus build without publishing it anywhere.
+#   will overwrite /target /designs at target path.
 
 target_paths=""
-idx=0
 
 function usage {
   echo "monkey-patch invokes a build, and copies the result to the path you\
   supply"
-  exit 1;
+  exit 0;
 }
 
 while [[ $# > 0 ]]; do
@@ -22,7 +22,7 @@ while [[ $# > 0 ]]; do
     --help)
       usage;;
     *)
-      target_paths[idx]="$target_paths $arg"
+      target_paths="$target_paths $arg"
       ;;
   esac
   shift
@@ -35,3 +35,4 @@ fi
 
 gulp
 cp -r ./target ${target_paths}
+cp -r ./designs ${target_paths}
