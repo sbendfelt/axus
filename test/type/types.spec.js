@@ -31,7 +31,7 @@ describe('Types', () => {
             expect(OrderDetailType).to.be.ok;
             expect(OrderDetailType.type).to.equal('OrderDetail');
             expect(OrderDetailType.aliases).to.have.length(0);
-            expect(OrderDetailType.design).to.be.ok;
+            expect(OrderDetailType.schema).to.be.ok;
         });
     });
 
