@@ -75,4 +75,13 @@ describe('axus-test-support', () => {
     });
   });
 
+  describe('registerV310Type', () => {
+    it('can register new types', () => {
+      const parcelTrackerDesign = require('./resources/designs/parcel-tracker.json');
+      axus.registerV310Type('$ParcelTrackerS1', parcelTrackerDesign);
+      const parcelTrackerInstance = axus.require('./test/resources/parcel-tracker.json');
+      expect(parcelTrackerInstance.dateCreated).to.be.a('date');
+    });
+  });
+
 });
