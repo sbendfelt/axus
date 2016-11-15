@@ -24,7 +24,8 @@
     "mocha": "^2.3.2"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers js:babel/register --reporter spec"
+    "test": "./node_modules/.bin/mocha --compilers js:babel/register --reporter spec",
+    "monkey-patch": "./bin/monkey-patch.sh"
   },
   "author": "john.donovan@gtnexus.com",
   "repository": {
