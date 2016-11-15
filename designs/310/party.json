@@ -1,0 +1,104 @@
+{
+    "DataDictionary": {
+        "type": "Party",
+        "Party": {
+            "partyRoleCode": {
+                "type": "TEXT"
+            },
+            "divisionUid": {
+                "type": "NUMBER"
+            },
+            "address": {
+                "type": "Address"
+            },
+            "partyUid": {
+                "type": "NUMBER"
+            },
+            "identification": {
+                "type": "Identification",
+                "isMap": true
+            },
+            "name": {
+                "type": "TEXT"
+            },
+            "longName": {
+                "type": "TEXT"
+            },
+            "memberId": {
+                "type": "NUMBER"
+            },
+            "contact": {
+                "type": "OrganizationContact"
+            },
+            "reference": {
+                "type": "Reference",
+                "isMap": true
+            }
+        },
+        "Address": {
+            "addressUid": {
+                "type": "NUMBER"
+            },
+            "addressLine1": {
+                "type": "TEXT"
+            },
+            "addressLine2": {
+                "type": "TEXT"
+            },
+            "city": {
+                "type": "TEXT"
+            },
+            "stateOrProvince": {
+                "type": "TEXT"
+            },
+            "postalCodeNumber": {
+                "type": "TEXT"
+            },
+            "countryCode": {
+                "type": "TEXT"
+            },
+            "locationQualifierCode": {
+                "type": "TEXT"
+            },
+            "locationCode": {
+                "type": "TEXT"
+            }
+        },
+        "Identification": {
+            "$key": {
+                "type": "TEXT"
+            },
+            "$value": {
+                "type": "TEXT"
+            }
+        },
+        "OrganizationContact": {
+            "name": {
+                "type": "TEXT"
+            },
+            "emailAddress": {
+                "type": "TEXT"
+            },
+            "phone": {
+                "type": "TEXT"
+            },
+            "fax": {
+                "type": "TEXT"
+            },
+            "department": {
+                "type": "TEXT"
+            },
+            "region": {
+                "type": "TEXT"
+            }
+        },
+        "Reference": {
+            "$key": {
+                "type": "TEXT"
+            },
+            "$value": {
+                "type": "TEXT"
+            }
+        }
+    }
+}
