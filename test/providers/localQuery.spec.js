@@ -1,6 +1,6 @@
 /*jshint expr: true*/
 let expect = require('chai').expect;
-let LocalQuery = require('../../lib/providers/query/localquery');
+let LocalQuery = require('../../lib/providers/query/local-query');
 let Bridge = require('../../lib/providers/bridge');
 
 // this must be moved to use the factory, else bridge is not present.

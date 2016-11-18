@@ -1,0 +1,112 @@
+{
+  "__metadata": {
+    "apiVersion": "310",
+    "type": "$ParcelTrackerS1",
+    "uid": "384080995",
+    "createTimestamp": "2016-05-25 14:30:32.11",
+    "modifyTimestamp": "2016-08-16 22:26:01.4",
+    "status": "Active",
+    "userModRev": "1",
+    "creatorId": "3717989018020186",
+    "fingerprint": "5173d4cc4cde3f1a88763eaba2c0cf40",
+    "redirectUrl": "https://commerce-supportq.qa.gtnexus.com/en/trade/CustomObject?key=384080995",
+    "self": "https://commerce-supportq.qa.gtnexus.com/rest/310/$ParcelTrackerS1/384080995"
+  },
+  "type": "$ParcelTrackerS1",
+  "uid": "384080995",
+  "naturalIdentifier": "384083613_1Z874400105",
+  "parcelTrackingId": "1Z874400105",
+  "gtnxCarrierCode": "UPSN",
+  "licensePlateNumber": "00004101221000760794",
+  "packingListUid": "384083613",
+  "manifestReferenceNumber": "384083613",
+  "workflowState": "New",
+  "dateCreated": "2016-08-16",
+  "dateLastModified": "2016-08-16",
+  "buyer": {
+    "partyRoleCode": "Buyer",
+    "memberId": "3717989018020186",
+    "identification": {
+      "GTNxPublish": "36590"
+    },
+    "name": "MyBiz, Inc. (Enterprise)",
+    "contact": {},
+    "address": {
+      "addressLine1": "900 Folsom Street",
+      "city": "San Francisco",
+      "stateOrProvince": "CA",
+      "postalCodeNumber": "94105",
+      "countryCode": "US"
+    },
+    "__metadata": {
+      "apiVersion": "310",
+      "type": "Party",
+      "self": "https://commerce-supportq.qa.gtnexus.com/rest/310/Party"
+    }
+  },
+  "seller": {
+    "partyRoleCode": "Seller",
+    "memberId": "3717989018020189",
+    "name": "MyBiz Vendor 1",
+    "contact": {},
+    "address": {
+      "addressLine1": "725 East 9th Street",
+      "addressLine2": "7TH FLOOR",
+      "city": "NEW YORK",
+      "stateOrProvince": "NEW YORK",
+      "postalCodeNumber": "10009",
+      "countryCode": "US"
+    },
+    "__metadata": {
+      "apiVersion": "310",
+      "type": "Party",
+      "self": "https://commerce-supportq.qa.gtnexus.com/rest/310/Party"
+    }
+  },
+  "items": [
+    {
+      "uid": "408244027",
+      "poNumber": "WE4FQDA",
+      "itemKey": "2212580013430",
+      "destinationType": "Store",
+      "quantity": "1"
+    },
+    {
+      "uid": "408244028",
+      "poNumber": "WE4FQDA",
+      "itemKey": "2212580013330",
+      "destinationType": "Store",
+      "quantity": "1"
+    },
+    {
+      "uid": "408244029",
+      "poNumber": "WE4FQDA",
+      "itemKey": "2212580013230",
+      "destinationType": "Store",
+      "quantity": "3"
+    }
+  ],
+  "references": [
+    {
+      "uid": "408244030",
+      "refType": "BrandId",
+      "value": "3"
+    },
+    {
+      "uid": "408244031",
+      "refType": "ChannelId",
+      "value": "1"
+    },
+    {
+      "uid": "408244032",
+      "refType": "MarketId",
+      "value": "1"
+    },
+    {
+      "uid": "408244033",
+      "refType": "FinalDestinationCode",
+      "value": "000006095"
+    }
+  ],
+  "fingerprint": "5173d4cc4cde3f1a88763eaba2c0cf40"
+}

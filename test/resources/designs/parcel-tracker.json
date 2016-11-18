@@ -1,0 +1,310 @@
+{
+    "design": {
+        "globalObjectType": "$ParcelTrackerS1",
+        "designType": "PRIMARY",
+        "identification": {
+            "naturalIdentifier": "naturalIdentifier"
+        },
+        "runtime": {
+            "visibilityMode": "INSTANCE"
+        },
+        "i18nKey": "$ParcelTrackerS1",
+        "feature": {
+            "integration": [{
+                "enabled": "true",
+                "uploadRuntimeEnabled": "true"
+            }],
+            "navigation": [{
+                "enabled": "true",
+                "navHeading": "process"
+            }],
+            "scripting": [{
+                "enabled": "true"
+            }],
+            "workflow": [{
+                "enabled": "true",
+                "businessStatusField": "workflowState",
+                "initialStatus": "New",
+                "workflowStep": [{
+                    "state": "New",
+                    "editRoles": "ObjectCreator\u002cLicensee\u002cBuyer",
+                    "transition": [{
+                        "action": "Deliver",
+                        "toState": "Delivered",
+                        "roles": "ObjectCreator\u002cLicensee\u002cBuyer",
+                        "i18nKey": "state.New.Deliver"
+                    }, {
+                        "action": "PermanentlyDelete",
+                        "toState": "Deleted",
+                        "roles": "ObjectCreator\u002cLicensee\u002cBuyer",
+                        "i18nKey": "state.New.PermanentlyDelete"
+                    }],
+                    "i18nKey": "state.New"
+                }, {
+                    "state": "Delivered",
+                    "editRoles": "ObjectCreator\u002cLicensee",
+                    "transition": [{
+                        "action": "Undeliver",
+                        "toState": "New",
+                        "roles": "ObjectCreator\u002cLicensee\u002cBuyer",
+                        "postTransitionFn": "hardReset",
+                        "i18nKey": "state.Delivered.Undeliver"
+                    }],
+                    "i18nKey": "state.Delivered"
+                }, {
+                    "state": "Deleted",
+                    "editRoles": "ObjectCreator\u002cLicensee\u002cBuyer",
+                    "systemDelete": true,
+                    "i18nKey": "state.Deleted"
+                }]
+            }],
+            "localization": {
+                "enabled": "true",
+                "en_US": {
+                    "gtnxCarrierCode": "Gtnx Carrier Code",
+                    "manifestReferenceNumber": "Manifest Reference Number",
+                    "state.Delivered.Undeliver": "Undeliver",
+                    "state.New.Delete": "Delete",
+                    "dateLastModified": "Date Last Modified",
+                    "state.Deleted": "Deleted",
+                    "id": "Id",
+                    "parcelTrackingId": "Parcel Tracking Id",
+                    "references": "References",
+                    "state.Delivered": "Delivered",
+                    "state.Unlinked": "Unlinked",
+                    "licensePlateNumber": "License Plate Number",
+                    "buyer": "Buyer",
+                    "state.New.PermanentlyDelete": "Permanently Delete",
+                    "state.Delivered.Reset": "Reset",
+                    "workflowState": "Workflow State",
+                    "naturalIdentifier": "Natural Identifier",
+                    "ParcelTracker.navigation": "Parcel Trackers",
+                    "seller": "Seller",
+                    "state.New": "New",
+                    "items": "Items",
+                    "state.New.Deliver": "Deliver",
+                    "orderNumber": "Order Number",
+                    "$ParcelTrackerS1": "Parcel Tracker",
+                    "dateCreated": "Date Created",
+                    "packingListUid": "Packing List Uid"
+                }
+            }
+        },
+        "fieldData": {
+            "naturalIdentifier": {
+                "type": "TEXT",
+                "position": "5",
+                "summary": "true",
+                "indexed": "true",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "naturalIdentifier"
+            },
+            "parcelTrackingId": {
+                "type": "TEXT",
+                "position": "10",
+                "summary": "true",
+                "indexed": "true",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "parcelTrackingId"
+            },
+            "gtnxCarrierCode": {
+                "type": "TEXT",
+                "position": "20",
+                "summary": "true",
+                "indexed": "true",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "gtnxCarrierCode"
+            },
+            "licensePlateNumber": {
+                "type": "TEXT",
+                "position": "30",
+                "indexed": "true",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "licensePlateNumber"
+            },
+            "packingListUid": {
+                "type": "TEXT",
+                "position": "35",
+                "indexed": "true",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "packingListUid"
+            },
+            "manifestReferenceNumber": {
+                "type": "TEXT",
+                "position": "40",
+                "indexed": "true",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "manifestReferenceNumber"
+            },
+            "workflowState": {
+                "type": "TEXT",
+                "position": "50",
+                "summary": "true",
+                "indexed": "true",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "workflowState"
+            },
+            "dateCreated": {
+                "type": "DATE",
+                "position": "60",
+                "indexed": "true",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "dateCreated"
+            },
+            "dateLastModified": {
+                "type": "DATE",
+                "position": "70",
+                "maxLength": "200",
+                "fieldmask": "READONLY",
+                "i18nKey": "dateLastModified"
+            },
+            "buyer": {
+                "type": "PARTY",
+                "position": "80",
+                "maxLength": "200",
+                "role": "Buyer",
+                "fieldmask": "READONLY",
+                "i18nKey": "buyer"
+            },
+            "seller": {
+                "type": "PARTY",
+                "position": "90",
+                "maxLength": "200",
+                "role": "Seller",
+                "fieldmask": "READONLY",
+                "i18nKey": "seller"
+            },
+            "items": {
+                "type": "$itemInformationS1",
+                "position": "100",
+                "isCollection": "true",
+                "i18nKey": "items"
+            },
+            "references": {
+                "type": "$referenceS1",
+                "position": "110",
+                "isCollection": "true",
+                "fieldmask": "READONLY",
+                "i18nKey": "references"
+            }
+        }
+    },
+    "DataDictionary": {
+        "type": "$ParcelTrackerS1",
+        "$ParcelTrackerS1": {
+            "type": {
+                "type": "TEXT"
+            },
+            "__metadata.uid": {
+                "type": "NUMBER"
+            },
+            "__metadata.createTimestamp": {
+                "type": "DATE"
+            },
+            "__metadata.modifyTimestamp": {
+                "type": "DATE"
+            },
+            "__metadata.userModRev": {
+                "type": "NUMBER"
+            },
+            "__metadata.creatorId": {
+                "type": "NUMBER"
+            },
+            "naturalIdentifier": {
+                "type": "TEXT"
+            },
+            "parcelTrackingId": {
+                "type": "TEXT"
+            },
+            "gtnxCarrierCode": {
+                "type": "TEXT"
+            },
+            "licensePlateNumber": {
+                "type": "TEXT"
+            },
+            "packingListUid": {
+                "type": "TEXT"
+            },
+            "manifestReferenceNumber": {
+                "type": "TEXT"
+            },
+            "workflowState": {
+                "type": "TEXT"
+            },
+            "dateCreated": {
+                "type": "DATE"
+            },
+            "dateLastModified": {
+                "type": "DATE"
+            },
+            "buyer.name": {
+                "type": "TEXT"
+            },
+            "buyer.orgid": {
+                "type": "NUMBER"
+            },
+            "buyer.divisionUid": {
+                "type": "NUMBER"
+            },
+            "buyer.divisionName": {
+                "type": "TEXT"
+            },
+            "seller.name": {
+                "type": "TEXT"
+            },
+            "seller.orgid": {
+                "type": "NUMBER"
+            },
+            "seller.divisionUid": {
+                "type": "NUMBER"
+            },
+            "seller.divisionName": {
+                "type": "TEXT"
+            },
+            "items": {
+                "type": "$itemInformationS1",
+                "isCollection": true
+            },
+            "references": {
+                "type": "$referenceS1",
+                "isCollection": true
+            }
+        },
+        "$itemInformationS1": {
+            "type": {
+                "type": "TEXT"
+            },
+            "poNumber": {
+                "type": "TEXT"
+            },
+            "itemKey": {
+                "type": "TEXT"
+            },
+            "destinationType": {
+                "type": "TEXT"
+            },
+            "quantity": {
+                "type": "NUMBER"
+            }
+        },
+        "$referenceS1": {
+            "type": {
+                "type": "TEXT"
+            },
+            "refType": {
+                "type": "TEXT"
+            },
+            "value": {
+                "type": "TEXT"
+            }
+        }
+    }
+}
