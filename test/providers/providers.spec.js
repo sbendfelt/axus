@@ -42,9 +42,7 @@ describe('providers', () => {
         const lookup_positive = lProviders
           .getCustomTableProvider()
           .lookup('$testTableQ1', 'testEntries', 'field1 = \'fieldValue\'');
-        const lookup_negative = lProviders
-          .getCustomTableProvider()
-          .lookup('$testTableQ2', 'testEntries', 'field1 = \'fieldValue\'');
+
         it('can perform a table lookup succesfully', (done) => {
           expect(lookup_positive).to.be.a('array');
           expect(lookup_positive.length).to.be.ok;
@@ -58,9 +56,13 @@ describe('providers', () => {
             'columnC': 'value1'
           }]);
         });
-        it('returns empty when no match is found', () => {
-          expect(lookup_negative).to.be.a('array');
-          expect(lookup_negative.length).to.equal(0);
+        it('throws error when global object type doesnt have digest', () => {
+          const lookup = () => {
+            lProviders
+              .getCustomTableProvider()
+              .lookup('$testTableQ2', 'testEntries', 'field1 = \'fieldValue\'');
+          };
+          expect(lookup).to.be.throw(Error, /^No digest found for/);
         });
       });
       describe('matchLookup', () => {
@@ -70,12 +72,7 @@ describe('providers', () => {
           .optionalMatch("columnA ='value1'", "columnA")
           .optionalMatch("columnC ='ZZZZZZ'", "columnC")
           .execute();
-        const matchLookup_negative = lProviders.getCustomTableProvider()
-          .matchLookup('$testTableQ2', 'testEntries')
-          .withOql("field1 = 'fieldValue'")
-          .optionalMatch("columnA ='value1'", "columnA")
-          .optionalMatch("columnC ='ZZZZZZ'", "columnC")
-          .execute();
+
         it('can perform a table matchLookup succesfully', (done) => {
           expect(matchLookup_positive).to.be.a('array');
           expect(matchLookup_positive.length).to.be.ok;
@@ -91,8 +88,15 @@ describe('providers', () => {
           done();
         });
         it('returns empty when no match is found', (done) => {
-          expect(matchLookup_negative).to.be.a('array');
-          expect(matchLookup_negative.length).to.equal(0);
+          const lookup = () => {
+            lProviders.getCustomTableProvider()
+              .matchLookup('$testTableQ2', 'testEntries')
+              .withOql("field1 = 'fieldValue'")
+              .optionalMatch("columnA ='value1'", "columnA")
+              .optionalMatch("columnC ='ZZZZZZ'", "columnC")
+              .execute();
+          };
+          expect(lookup).to.throw(Error, /^No digest found for/);
           done();
         });
       });

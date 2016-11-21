@@ -34,7 +34,7 @@ describe('axus-test-support', () => {
     let ctx = axus.requireLocal('./test/resources/testModule').seed();
     expect(ctx).to.be.defined;
     expect(ctx.obiWan).to.be.defined;
-    expect(ctx.Providers.bridge.getModuleDigest()).to.be.defined;
+    expect(ctx.Providers.bridge.getModuleDigestForType('$testTableQ1')).to.be.defined;
     done();
   });
 
