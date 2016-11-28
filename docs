@@ -1,0 +1,33 @@
+https://developer.gtnexus.com/platform/scripts/built-in-functions
+
++ DataApiProvider
+  /api-get-request
+
++ DictionaryProvider
+  /getting-object-design
+
++ MessageProvider
+  /error-messages-to-ui
+
++ NotificationProvider
+  /setting-data-for-notifications
+
++ ObjectFactoryProvider
+  /creating-an-object
+
++ SessionProvider
+  /retrieving-user-details
+
++ PersistenceProvider
+  /saving-an-object
+  /fetching-an-object
+  /transitioning-an-object
+  /checking-if-object-saved
+  /getting-last-state
+  /sending-a-notification
+
++ QueryProvider
+  /querying-for-objects
+
++ ViewAccessProvider
+  /granting-visibility
