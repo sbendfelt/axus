@@ -2,7 +2,7 @@
 const expect = require('chai').expect;
 const sync = require('synchronize');
 const RestScriptEngineApiRequest = require('../../lib/providers/api/rest-script-engine-api-request');
-const conf = require('../../lib/config-loader').readConfig();
+const conf = require('../../lib/connection-params').readConfig();
 
 
 describe.skip('RestScriptEngineApiRequest', () => {
