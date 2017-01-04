@@ -32,6 +32,9 @@
     "monkey-patch": "./bin/monkey-patch.sh",
     "repl": "node lib/appx-repl.js"
   },
+  "bin" : {
+    "axus": "lib/appx-repl.js"
+  },
   "author": "john.donovan@gtnexus.com",
   "repository": {
     "type": "git",
