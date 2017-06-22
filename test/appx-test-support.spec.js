@@ -70,7 +70,7 @@ describe('axus-test-support', () => {
 
   describe('require', () => {
     it('automatically defrosts resources, when we have their DD', () => {
-      let pkm = axus.require('./test/resources/pkm.json');
+      let pkm = axus.defrost('./test/resources/pkm.json');
       expect(pkm.reopenCount).to.be.a('number');
     });
   });
@@ -79,7 +79,7 @@ describe('axus-test-support', () => {
     it('can register new types', () => {
       const parcelTrackerDesign = require('./resources/designs/parcel-tracker.json');
       axus.registerV310Type('$ParcelTrackerS1', parcelTrackerDesign);
-      const parcelTrackerInstance = axus.require('./test/resources/parcel-tracker.json');
+      const parcelTrackerInstance = axus.defrost('./test/resources/parcel-tracker.json');
       expect(parcelTrackerInstance.dateCreated).to.be.a('date');
     });
   });
