@@ -74,6 +74,15 @@ describe('axus-test-support', () => {
       let ctx = axus.require('./test/resources/testModule').useLocal();
       expect(ctx.Providers).to.be.defined;
     });
+
+    it('allows the consumption and lookup of additional digests', () => {
+     let ctx = axus
+      .require('./test/resources/testModule')
+      .addToContext({console: console})
+      .dependsOn('./test/resources/RequiredDocsTable')
+      .useLocal();
+     ctx.testCustomTableProviderDependency();
+    });
   });
 
   describe('defrost', () => {
