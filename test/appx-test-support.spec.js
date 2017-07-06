@@ -3,6 +3,7 @@ const expect = require('chai').expect;
 const axus = require('../lib/appx-test-support');
 
 describe('axus-test-support', () => {
+
   it('correctly loads a vanilla script', (done) => {
     let ctx = axus.requireLocal('./test/resources/vanilla/jake.js').seed();
     let jake = axus.requireRest('./test/resources/vanilla/jake.js', 'jake');
@@ -69,6 +70,22 @@ describe('axus-test-support', () => {
   });
 
   describe('require', () => {
+    it('works the same as requireLocal', () => {
+      let ctx = axus.require('./test/resources/testModule').useLocal();
+      expect(ctx.Providers).to.be.defined;
+    });
+
+    it('allows the consumption and lookup of additional digests', () => {
+     let ctx = axus
+      .require('./test/resources/testModule')
+      .addToContext({console: console})
+      .dependsOn('./test/resources/RequiredDocsTable')
+      .useLocal();
+     ctx.testCustomTableProviderDependency();
+    });
+  });
+
+  describe('defrost', () => {
     it('automatically defrosts resources, when we have their DD', () => {
       let pkm = axus.defrost('./test/resources/pkm.json');
       expect(pkm.reopenCount).to.be.a('number');
