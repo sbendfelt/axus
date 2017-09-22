@@ -40,5 +40,8 @@
     "type": "git",
     "url": "https://github.com/AppXpress/axus.git"
   },
+  "publishConfig": {
+    "registry": "http://myreg.npmjitsu.com"
+  },
   "license": "MIT"
 }
