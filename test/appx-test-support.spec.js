@@ -53,6 +53,24 @@ describe('axus-test-support', () => {
     done();
   });
 
+  it('contextualizes run as scope', (done) => {
+    let ctx1 = axus
+    .require('./test/resources/testModule')
+    .setRunAsScope({"userId": "user1"})
+    .useLocal('./test/resources/vanilla/loginfo.js');
+
+    let ctx2 = axus
+    .require('./test/resources/testModule')
+    .setRunAsScope({"userId": "user2"})
+    .useLocal('./test/resources/vanilla/loginfo.js');
+
+    let user1 = ctx1.Providers.getSessionProvider().getCurrentUserId();
+    let user2 = ctx2.Providers.getSessionProvider().getCurrentUserId();
+
+    expect(user1).to.not.equal(user2);
+    done();
+  });
+
   it('correctly loads a custom appx module', (done) => {
     let ctx = axus.requireLocal('./test/resources/testModule').seed();
     let obiWan = axus.requireRest('./test/resources/testModule', 'obiWan');
