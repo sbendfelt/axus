@@ -101,6 +101,13 @@ describe('axus-test-support', () => {
       .useLocal();
      ctx.testCustomTableProviderDependency();
     });
+
+    it('allows the consumption and lookup of additional digests (alternative requires pattern)', () => {
+      let ctx = axus
+       .requireLocal('./test/resources/testModule', undefined, {console: console}, '3.1.0', './test/resources/RequiredDocsTable')
+       .seed();
+      ctx.testCustomTableProviderDependency();
+     });
   });
 
   describe('defrost', () => {
@@ -121,17 +128,23 @@ describe('axus-test-support', () => {
 
   describe('register API version', () => {
     it('can default contextualized API binding', () => {
-      let ctx = axus.require('./test/resources/testModule').useLocal();
-      expect(ctx.Providers.bridge.apiVersion).to.equal('310');
+      let ctx1 = axus.require('./test/resources/testModule').useLocal();
+      let ctx2 = axus.requireLocal('./test/resources/testModule', undefined, undefined, '3.1.0').seed();
+
+      expect(ctx1.Providers.bridge.apiVersion).to.equal('310');
+      expect(ctx2.Providers.bridge.apiVersion).to.equal('3.1.0');
     });
 
     it('can register contextualized API bindings', () => {
       let ctx1 = axus.require('./test/resources/testModule').useApiVersion('3.1.0').useLocal();
       let ctx2 = axus.require('./test/resources/testModule').useApiVersion('3.2.0').useRest();
+      let ctx3 = axus.requireLocal('./test/resources/testModule', undefined, undefined,'3.1.0').seed();
+      let ctx4 = axus.requireRest('./test/resources/testModule', undefined, undefined,'3.2.0');
 
       expect(ctx1.Providers.bridge.apiVersion).to.equal('3.1.0');
       expect(ctx2.Providers.bridge.apiVersion).to.equal('3.2.0');
+      expect(ctx3.Providers.bridge.apiVersion).to.equal('3.1.0');
+      expect(ctx4.Providers.bridge.apiVersion).to.equal('3.2.0');
     });
   });
-
 });
