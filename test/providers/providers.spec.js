@@ -50,7 +50,8 @@ const runAsScope = {
   'userId': 'Han@ShotFirst',
   'orgId': '1234',
   'orgName': 'MulleniumFalcon',
-  'orgRoles': ['Smuggler','Gunship']
+  'orgRoles': ['Smuggler','Gunship'],
+  'stateAsLoaded': {'previousObjectState': '12345'}
 };
 const apiVersion = '3.1.0'
 const digest = require('../../test/resources/digest/digest.json');
@@ -244,6 +245,10 @@ describe('providers', () => {
                     .execute();
                 const fetches = lProviders.getPersistenceProvider().getFetchRequests();
                 expect(fetches).to.have.length(1);
+            });
+            it('can retrieve the provided stateAsLoaded run as context', () => {
+                const stateAsLoaded = lProviders.getPersistenceProvider().getStateAsLoaded()
+                expect(stateAsLoaded).to.deep.equals({'previousObjectState': '12345'});
             });
         });
 

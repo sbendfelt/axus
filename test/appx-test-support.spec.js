@@ -87,6 +87,15 @@ describe('axus-test-support', () => {
     done();
   });
 
+  it('supports runAsScope', (done) => {
+    let ctx = axus
+    .requireLocal('./test/resources/testModule',null,null,null,null,{"stateAsLoaded":"test"}).seed();
+    expect(ctx).to.be.defined;
+    expect(ctx.Providers.configurations).to.be.defined;
+    expect(ctx.Providers.bridge.runAsScope).to.be.defined;    
+    done();
+  });
+
   describe('require', () => {
     it('works the same as requireLocal', () => {
       let ctx = axus.require('./test/resources/testModule').useLocal();
