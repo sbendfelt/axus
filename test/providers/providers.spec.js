@@ -51,9 +51,10 @@ const runAsScope = {
   'orgId': '1234',
   'orgName': 'MulleniumFalcon',
   'orgRoles': ['Smuggler','Gunship'],
-  'stateAsLoaded': {'previousObjectState': '12345'}
+  'stateAsLoaded': 'Pending',
+  'targetAsLoaded': {'previousObjectState': '12345'}
 };
-const apiVersion = '3.1.0'
+const apiVersion = '3.1.0';
 const digest = require('../../test/resources/digest/digest.json');
 const Bridge = require('../../lib/providers/bridge');
 const Providers = require('../../lib/providers/providers');
@@ -247,8 +248,12 @@ describe('providers', () => {
                 expect(fetches).to.have.length(1);
             });
             it('can retrieve the provided stateAsLoaded run as context', () => {
-                const stateAsLoaded = lProviders.getPersistenceProvider().getStateAsLoaded()
-                expect(stateAsLoaded).to.deep.equals({'previousObjectState': '12345'});
+                const stateAsLoaded = lProviders.getPersistenceProvider().getStateAsLoaded();
+                expect(stateAsLoaded).to.equal('Pending');
+            });
+            it('can retrieve the provided targetAsLoaded run as context', () => {
+                const targetAsLoaded = lProviders.getPersistenceProvider().getTargetAsLoaded();
+                expect(targetAsLoaded).to.deep.equals({'previousObjectState': '12345'});
             });
         });
 
