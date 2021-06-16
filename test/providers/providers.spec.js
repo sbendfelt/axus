@@ -24,6 +24,20 @@ const seed = {
                         'columnC': 'AAAAAA'
                     }]
                 }
+            }],
+            'Status = \'Complete\'': [{
+                'testEntries': {
+                    'field1 = \'fieldValue\'': [{
+                        'columnA': 'value1',
+                        'columnB': 'value1',
+                        'columnC': 'value1'
+                    }],
+                    'field1 = \'fieldValue\'columnA =\'valueX\',columnA:columnC =\'ZZZZZZ\',columnC': [{
+                        'columnA': 'valueX',
+                        'columnB': 'value1',
+                        'columnC': 'AAAAAA'
+                    }]
+                }
             }]
         },
         'NumberingPool': {
@@ -119,7 +133,23 @@ describe('providers', () => {
                     }]);
                     done();
                 });
-                it('returns empty when no match is found', (done) => {
+                it('can override the standard provider table oql', (done) => {
+                    const overrideTableOqlLookup = lProviders.getCustomTableProvider()
+                            .matchLookup('$testTableQ1', 'testEntries')
+                            .withOql("field1 = 'fieldValue'")
+                            .withTableOql("Status = 'Complete'")
+                            .optionalMatch("columnA ='valueX'", "columnA")
+                            .optionalMatch("columnC ='ZZZZZZ'", "columnC")
+                            .execute();
+                    expect(overrideTableOqlLookup.length).to.equal(1);
+                    expect(overrideTableOqlLookup).to.deep.equal([{
+                        'columnA': 'valueX',
+                        'columnB': 'value1',
+                        'columnC': 'AAAAAA'
+                    }]);
+                    done();
+                });
+                it('returns error when no match is found', (done) => {
                     const lookup = () => {
                         lProviders.getCustomTableProvider()
                             .matchLookup('$testTableQ2', 'testEntries')
