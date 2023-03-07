@@ -1,6 +1,5 @@
 /*jshint expr: true*/
 const expect = require('chai').expect;
-const sync = require('synchronize');
 const Bridge = require('../../lib/providers/bridge');
 const Providers = require('../../lib/providers/providers');
 const RestScriptEngineApiRequest = require('../../lib/providers/api/rest-script-engine-api-request');
@@ -152,13 +151,13 @@ describe.skip('RestScriptEngineApiRequest', () => {
     const request = new RestScriptEngineApiRequest('rest/310/MasterData/city', {
       config: conf
     });
-    sync.fiber(() => {
-      const result = request
+    (async () => {
+      const result = await request
         .withParameter('oql', 'city="QUEBEC"')
         .execute();
       expect(result).to.be.ok;
       done();
-    });
+    })();
 
   });
 });

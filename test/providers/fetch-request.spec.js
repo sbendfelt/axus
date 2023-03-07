@@ -4,7 +4,6 @@ const Bridge = require('../../lib/providers/bridge');
 const BaseFetchRequest = require('../../lib/providers/fetch/fetch-request');
 const LocalFetchRequest = require('../../lib/providers/fetch/local-fetch-request');
 const RestFetchRequest = require('../../lib/providers/fetch/rest-fetch-request');
-const sync = require('synchronize');
 
 describe('Base FetchRequest', () => {
   it('exposes resource()', () => {
@@ -30,12 +29,12 @@ describe.skip('restful fetch request', () => {
       310,
       '404477900'
     );
-    sync.fiber(() => {
-      const response = req.execute();
+    (async () => {
+      const response = await req.execute();
       expect(response).to.be.ok;
       expect(response.__metadata.uid).to.equal('404477900');
       done();
-    });
+    })();
   });
   it('can fetch all attachments', function(done) {
     this.timeout(10000); //give api some time
@@ -46,12 +45,12 @@ describe.skip('restful fetch request', () => {
       '404477900'
     );
     req.resource('attachments');
-    sync.fiber(() => {
-      const response = req.execute();
+    (async () => {
+      const response = await req.execute();
       expect(response).to.be.ok;
       expect(response.result.length).to.equal(2);
       done();
-    });
+    })();
   });
   it('can fetch an attachment', function(done) {
     this.timeout(10000); //give api some time
@@ -62,12 +61,12 @@ describe.skip('restful fetch request', () => {
       '404477900'
     );
     req.resource('attachment', '404583599');
-    sync.fiber(() => {
-      const response = req.execute();
+    (async () => {
+      const response = await req.execute();
       expect(response).to.be.ok;
       expect(response).to.not.equal(undefined);
       done();
-    });
+    })();
   });
 });
 
