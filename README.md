@@ -16,8 +16,8 @@ Local Providers really shine when you already know what your data looks like, or
   npm install axus
 ```
 
-# Interacting with the REPL
-
+# Node Vversion
+This version of Axus was tested and confirmed working in node v19. Feel free to create an issue on the github if it's not working with an LTS version of node
 
 # Running locally against the REST API
 Your project will need a `appx.json` file in the project's root. This file contains the username, password, and dataKey needed to authenticate with the service, as well as the base url of the intended service. Here's an example `appx.json` file:
@@ -36,17 +36,6 @@ To import the RESTful Providers along with your module:
 ```js
 let test-support = require('appx-test-support');
 test-support.requireRest('../path/to/my/script');
-```
-
-Node assumes all `IO` to be asynchronous. However, the AppXpress Providers operate in a synchronous manner. AppX-Test-Support relies on [synchronize.js](http://alexeypetrushin.github.io/synchronize/docs/index.html) in order to simulate a synchronous environment.
-
-Any code relying on `Providers.rest` will need to be wrapped as such:
-
-```js
-let sync = require('synchronize');
-sync.fiber(() => {
-  //your code goes here
-});
 ```
 
 # Running against a local store
