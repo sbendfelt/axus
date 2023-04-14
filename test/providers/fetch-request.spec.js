@@ -25,14 +25,14 @@ describe.skip('restful fetch request', () => {
     this.timeout(10000); //give api some time
     const req = new RestFetchRequest(
       bridge,
-      '$DocumentPouchC1',
+      'PackageBookingDetail',
       310,
-      '404477900'
+      '1024686038'
     );
     (async () => {
       const response = await req.execute();
       expect(response).to.be.ok;
-      expect(response.__metadata.uid).to.equal('404477900');
+      expect(response.__metadata.uid).to.equal('1024686038');
       done();
     })();
   });
