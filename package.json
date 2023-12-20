@@ -1,6 +1,6 @@
 {
   "name": "axus",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "AppXpress wrapper for a CLI/REPL and Unit Testing (AppXpress Unit test Support)",
   "main": "target/appx-test-support.js",
   "directories": {
@@ -29,8 +29,8 @@
     "test": "./node_modules/.bin/mocha --compilers js:babel/register --reporter spec",
     "monkey-patch": "./bin/monkey-patch.sh",
     "repl": "node target/appx-repl.js",
-    "build": "node node_modules/gulp/bin/gulp.js" 
-  },  
+    "build": "node node_modules/gulp/bin/gulp.js"
+  },
   "bin": {
     "axus": "target/appx-repl.js"
   },
