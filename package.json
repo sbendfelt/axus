@@ -29,8 +29,8 @@
     "test": "./node_modules/.bin/mocha --compilers js:babel/register --reporter spec",
     "monkey-patch": "./bin/monkey-patch.sh",
     "repl": "node target/appx-repl.js",
-    "build": "node node_modules/gulp/bin/gulp.js",
-    "postinstall": "gulp"
+    "build": "npx gulp",
+    "postinstall": "npm run build"
   },
   "bin": {
     "axus": "target/appx-repl.js"
