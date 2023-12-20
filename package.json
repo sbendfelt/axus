@@ -26,11 +26,11 @@
     "mocha": "^2.3.2"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel/register --reporter spec",
+    "test": "./node_modules/.bin/mocha --compilers js:babel/register --reporter spec",
     "monkey-patch": "./bin/monkey-patch.sh",
     "repl": "node target/appx-repl.js",
-    "build": "echo 'Building application..."
-  },
+    "build": "node node_modules/gulp/bin/gulp.js" 
+  },  
   "bin": {
     "axus": "target/appx-repl.js"
   },
