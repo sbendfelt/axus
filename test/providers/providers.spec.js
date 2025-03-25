@@ -62,8 +62,10 @@ const seed = {
 };
 const runAsScope = {
   'userId': 'Han@ShotFirst',
+  'userNumericId': '9999',
   'orgId': '1234',
   'orgName': 'MulleniumFalcon',
+  'locale': 'en_US',
   'orgRoles': ['Smuggler','Gunship'],
   'stateAsLoaded': 'Pending',
   'targetAsLoaded': {'previousObjectState': '12345'}
@@ -339,8 +341,17 @@ describe('providers', () => {
           it('can return currentOrgName', () => {
             expect(sessionProvider.getCurrentOrgName()).to.equal('MulleniumFalcon');
           });
+          it('can return currentUserNumericId', () => {
+            expect(sessionProvider.getCurrentUserNumericId()).to.equal('9999');
+          });
+          it('can return user locale', () => {
+            expect(sessionProvider.getLocale()).to.equal('en_US');
+          });
           it('can return currentOrgRoles', () => {
             expect(sessionProvider.getCurrentOrgRoles()).to.deep.equal(['Smuggler','Gunship']);
+          });
+          it('can log', () => {
+            expect(sessionProvider.log('DEBUG')).to.equal('com.tradecard.platform.scripting.PlatformScriptSessionProviderImpl - PLATFORM SCRIPT LOG: EventName=null, PlatformModuleId=null, ModuleOwner=1234, LicenseeOrg=1234 (MulleniumFalcon), RequestingUser=9999 (Han@ShotFirst), RequestingOrg=1234 (MulleniumFalcon), Locale=en_US RequestUUID=0, DEBUG');
           });
         });
     });
